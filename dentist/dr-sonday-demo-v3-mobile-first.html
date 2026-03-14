@@ -3,9 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dr. Sonday Dentistry — gentle, affordable family dentistry in Ocean View, Cape Town. 20+ years experience. Same-day emergencies. Book via phone or WhatsApp.">
 <title>Dr. Sonday Dentistry — Ocean View, Cape Town</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Dr. Sonday Dentistry",
+  "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Flat 1, 18 Gemini",
+    "addressLocality": "Ocean View",
+    "addressRegion": "Cape Town",
+    "postalCode": "7975",
+    "addressCountry": "ZA"
+  },
+  "telephone": "+27217830024",
+  "url": "https://drsonday.co.za",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:30", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:30" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "47"
+  },
+  "priceRange": "R"
+}
+</script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -207,7 +238,7 @@ nav {
 /* ─── HERO ─── */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: auto;
   display: flex; align-items: flex-end;
   padding-top: 64px;
   overflow: hidden;
@@ -845,6 +876,51 @@ footer p {
 .hours-day { font-weight: 600; color: var(--navy); font-size: 13px; margin-bottom: 4px; }
 .hours-time { color: var(--text-mid); font-size: 14px; }
 
+/* ─── TRUST STRIP SCROLL HINT ─── */
+.trust-strip { position: relative; }
+.trust-strip::after {
+  content: '';
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: 48px;
+  background: linear-gradient(to left, var(--navy) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── MEDICAL AID BANNER ─── */
+.medical-aid-banner {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  align-items: center; justify-content: center;
+  padding: 16px 24px;
+  background: var(--blue-light);
+  border-bottom: 1px solid var(--border);
+  font-size: 13px; color: var(--text-mid);
+  text-align: center;
+}
+.medical-aid-banner strong { color: var(--navy); }
+
+/* ─── FORM VALIDATION ─── */
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: #e53e3e;
+}
+.form-error { color: #e53e3e; font-size: 12px; margin-top: 4px; display: none; }
+.form-group input:invalid:not(:placeholder-shown) ~ .form-error { display: block; }
+
+/* ─── GOOGLE MAP ─── */
+.map-embed {
+  width: 100%; height: 280px;
+  border: none; border-radius: 0;
+  display: block;
+}
+
+/* ─── PRICING TAG ─── */
+.price-from {
+  display: inline-block;
+  font-size: 12px; font-weight: 600;
+  color: var(--teal); margin-top: 6px;
+}
+
 /* ─── ANIMATIONS ─── */
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
@@ -865,6 +941,7 @@ footer p {
     align-items: center;
     min-height: 100vh;
   }
+  .trust-strip::after { display: none; }
 
   .hero-bg::after {
     background: linear-gradient(
@@ -942,6 +1019,8 @@ footer p {
 </style>
 </head>
 <body>
+
+<a href="#page-home" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:999" onfocus="this.style.cssText='position:fixed;left:16px;top:16px;width:auto;height:auto;overflow:visible;z-index:999;background:var(--navy);color:white;padding:12px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:14px'">Skip to content</a>
 
 <!-- ═══ NAV ═══ -->
 <nav>
@@ -1070,6 +1149,12 @@ footer p {
     </div>
   </div>
 
+  <!-- MEDICAL AID BANNER -->
+  <div class="medical-aid-banner">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+    <strong>Medical aid accepted</strong> — Discovery, Gems, Bonitas, Medihelp & all major schemes. Cash & card patients welcome.
+  </div>
+
   <!-- SERVICES -->
   <div class="section services-bg">
     <div class="section-inner">
@@ -1086,6 +1171,7 @@ footer p {
           <div class="service-card-body">
             <h3>General & Preventive</h3>
             <p>Check-ups, cleans, fillings and gum care for the whole family.</p>
+            <span class="price-from">From R350</span>
           </div>
           <div class="service-card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
@@ -1094,6 +1180,7 @@ footer p {
           <div class="service-card-body">
             <h3>Teeth Whitening</h3>
             <p>Professional whitening — safe, effective, long-lasting results.</p>
+            <span class="price-from">From R1,500</span>
           </div>
           <div class="service-card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
@@ -1102,6 +1189,7 @@ footer p {
           <div class="service-card-body">
             <h3>Emergency Dentistry</h3>
             <p>Same-day appointments — never left waiting in pain.</p>
+            <span class="price-from">Same-day available</span>
           </div>
           <div class="service-card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
@@ -1110,6 +1198,7 @@ footer p {
           <div class="service-card-body">
             <h3>Children's Dentistry</h3>
             <p>Gentle, fun care that builds healthy habits from the start.</p>
+            <span class="price-from">From R250</span>
           </div>
           <div class="service-card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
@@ -1118,6 +1207,7 @@ footer p {
           <div class="service-card-body">
             <h3>Fillings & Crowns</h3>
             <p>Natural-looking restorations that blend seamlessly.</p>
+            <span class="price-from">From R450</span>
           </div>
           <div class="service-card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
@@ -1126,6 +1216,7 @@ footer p {
           <div class="service-card-body">
             <h3>Dentures & Extractions</h3>
             <p>Comfortable fit, gentle extractions, restored confidence.</p>
+            <span class="price-from">From R500</span>
           </div>
           <div class="service-card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </a>
@@ -1153,7 +1244,7 @@ footer p {
           <p style="color:var(--text-mid);font-size:15px;line-height:1.8;font-weight:300;margin-bottom:12px">Dr. S. Sonday has been caring for Ocean View and the surrounding Cape Town community for over two decades. His philosophy is simple: affordable, high-quality dentistry delivered with warmth and respect.</p>
           <p style="color:var(--text-mid);font-size:15px;line-height:1.8;font-weight:300">From your very first visit, you'll notice the difference — no rushing, no unnecessary procedures. Just honest care from a doctor who listens.</p>
           <ul class="check-list">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Qualified General Dentist (BChD)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Qualified General Dentist (BChD) · HPCSA Registered</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Transparent pricing — no surprises</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Gentle approach for anxious patients</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Same-day emergency appointments</li>
@@ -1252,7 +1343,7 @@ footer p {
   <section class="cta-section">
     <div class="eyebrow" style="justify-content:center;color:var(--teal);margin-bottom:16px">Ready to Book?</div>
     <h2>Your Best Smile Starts Today</h2>
-    <p>New patients always welcome. Call us, WhatsApp us, or book online.</p>
+    <p>New patients always welcome — limited same-week slots available. Call us, WhatsApp us, or book online.</p>
     <div class="cta-buttons">
       <a href="#" class="btn-white" onclick="showPage('contact')">Book Appointment</a>
       <a href="https://wa.me/27649447759" target="_blank" class="btn-ghost">
@@ -1399,7 +1490,7 @@ footer p {
     <h2>Not Sure What You Need?</h2>
     <p>Book a consultation and Dr. Sonday will recommend the best, most affordable treatment for you.</p>
     <div class="cta-buttons">
-      <a href="#" class="btn-white" onclick="showPage('contact')">Book a Free Consultation</a>
+      <a href="#" class="btn-white" onclick="showPage('contact')">Book a Consultation</a>
     </div>
   </section>
 
@@ -1442,17 +1533,18 @@ footer p {
 
     <div class="form-section">
       <div class="form-card">
-        <div id="form-content">
+        <form id="form-content" onsubmit="submitForm(event)">
           <h2>Request an Appointment</h2>
           <p>We'll call or WhatsApp to confirm within 2 hours.</p>
           <div class="form-row-2">
-            <div class="form-group"><label>First Name *</label><input type="text" placeholder="Your name"></div>
-            <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Last name"></div>
+            <div class="form-group"><label for="fname">First Name *</label><input id="fname" name="first_name" type="text" placeholder="Your name" required></div>
+            <div class="form-group"><label for="lname">Last Name *</label><input id="lname" name="last_name" type="text" placeholder="Last name" required></div>
           </div>
-          <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" placeholder="e.g. 082 000 0000"></div>
+          <div class="form-group"><label for="phone">Phone / WhatsApp *</label><input id="phone" name="phone" type="tel" placeholder="e.g. 082 000 0000" required pattern="[0-9+\s\-]{7,15}"></div>
+          <div class="form-group"><label for="email">Email (optional)</label><input id="email" name="email" type="email" placeholder="you@example.com"></div>
           <div class="form-group">
-            <label>Service Needed</label>
-            <select>
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
               <option>General Check-Up & Clean</option>
               <option>Teeth Whitening</option>
               <option>Filling or Crown</option>
@@ -1464,18 +1556,18 @@ footer p {
             </select>
           </div>
           <div class="form-group">
-            <label>Preferred Time</label>
-            <select>
+            <label for="time">Preferred Time</label>
+            <select id="time" name="preferred_time">
               <option>Morning (8:30–12:00)</option>
               <option>Afternoon (12:00–17:00)</option>
               <option>Saturday Morning</option>
               <option>Any time — flexible</option>
             </select>
           </div>
-          <div class="form-group"><label>Anything we should know? (optional)</label><textarea placeholder="e.g. dental anxiety, specific pain..."></textarea></div>
-          <button class="form-submit" onclick="submitForm()">Request My Appointment →</button>
+          <div class="form-group"><label for="notes">Anything we should know? (optional)</label><textarea id="notes" name="notes" placeholder="e.g. dental anxiety, specific pain..."></textarea></div>
+          <button type="submit" class="form-submit">Request My Appointment →</button>
           <div class="form-privacy"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Your details are private and never shared.</div>
-        </div>
+        </form>
         <div class="form-success" id="form-success">
           <div class="success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <h3>Request Received!</h3>
@@ -1484,6 +1576,9 @@ footer p {
       </div>
     </div>
   </div>
+
+  <!-- MAP -->
+  <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.0!2d18.35!3d-34.13!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDA3JzQ4LjAiUyAxOMKwMjEnMDAuMCJF!5e0!3m2!1sen!2sza!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Dr. Sonday Dentistry location"></iframe>
 
   <div class="section" style="background:var(--cream);padding:48px 24px">
     <div style="max-width:800px;margin:0 auto">
@@ -1536,10 +1631,26 @@ function navTo(page) {
   setTimeout(() => showPage(page), 300);
 }
 
-function submitForm() {
-  document.getElementById('form-content').style.display = 'none';
+function submitForm(e) {
+  e.preventDefault();
+  const form = document.getElementById('form-content');
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+  // Build WhatsApp message from form data
+  const data = new FormData(form);
+  const msg = `Hi Dr. Sonday, I'd like to book an appointment.\n\nName: ${data.get('first_name')} ${data.get('last_name')}\nPhone: ${data.get('phone')}${data.get('email') ? '\nEmail: ' + data.get('email') : ''}\nService: ${data.get('service')}\nPreferred time: ${data.get('preferred_time')}${data.get('notes') ? '\nNotes: ' + data.get('notes') : ''}`;
+  // Open WhatsApp with pre-filled message
+  window.open('https://wa.me/27649447759?text=' + encodeURIComponent(msg), '_blank');
+  form.style.display = 'none';
   document.getElementById('form-success').classList.add('show');
 }
+
+// Auto-update copyright year
+document.querySelectorAll('.footer-bottom, .footer-bottom span').forEach(el => {
+  el.innerHTML = el.innerHTML.replace(/© \d{4}/, '© ' + new Date().getFullYear());
+});
 </script>
 </body>
 </html>
