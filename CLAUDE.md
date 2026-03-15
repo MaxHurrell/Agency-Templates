@@ -86,7 +86,7 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 
 ---
 
-## 10 HARD RULES — NEVER VIOLATE
+## 11 HARD RULES — NEVER VIOLATE
 
 1. Never use brand colour as full section background outside the hero
 2. Never use Playfair Display or ornate serif fonts
@@ -98,6 +98,7 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 8. Never use niche default colours without first trying Firecrawl CSS AND Gemini Vision extraction
 9. Never use lorem ipsum — always use realistic dummy content
 10. Never skip the pre-build checklist — even for small changes
+11. **SECURITY: Never expose API keys or tokens in any output.** Never echo, print, log, or include the value of VERCEL_TOKEN, GEMINI_API_KEY, ANTHROPIC_API_KEY, or any secret in terminal output, command strings, commit messages, or any displayed text. Read all secrets silently from environment variables. Sanitize all command output to redact any accidentally leaked values before display.
 
 ---
 
