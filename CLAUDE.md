@@ -67,6 +67,9 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 - [ ] Section padding desktop: maximum 96px top/bottom
 - [ ] Section padding mobile: maximum 64px top/bottom
 - [ ] No wasted space — every section earns its place
+- [ ] Zero dead space between sections. Sections flow directly into each other with consistent rhythm — no large gaps
+- [ ] Hero content starts within 40px of navbar on mobile (hero top padding = navbar height + 40px)
+- [ ] Hero bottom padding tight against next section (max 48px)
 
 ### Technical Rules
 - [ ] All CSS variables defined at top before any component code
