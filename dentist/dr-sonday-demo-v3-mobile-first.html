@@ -3,1773 +3,1809 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dr. Sonday Dentistry — gentle, affordable family dentistry in Ocean View, Cape Town. 20+ years experience. Same-day emergencies. Book via phone or WhatsApp.">
-<title>Dr. Sonday Dentistry — Ocean View, Cape Town</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
+<title>Dr. Sonday Dentistry | Premium Dental Care in Ocean View, Cape Town</title>
+<meta name="description" content="Dr. Sonday Dentistry - 20+ years of exceptional dental care in Ocean View, Cape Town. HPCSA registered. 5.0 Google Rating. Book your consultation today.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Dentist",
-  "name": "Dr. Sonday Dentistry",
-  "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Flat 1, 18 Gemini",
-    "addressLocality": "Ocean View",
-    "addressRegion": "Cape Town",
-    "postalCode": "7975",
-    "addressCountry": "ZA"
-  },
-  "telephone": "+27217830024",
-  "url": "https://drsonday.co.za",
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:30", "closes": "17:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:30" }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "47"
-  },
-  "priceRange": "R"
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --navy: #0b2545;
-  --navy-mid: #134074;
-  --blue: #1a6faf;
-  --blue-light: #eaf4fd;
+  --navy: #0a1628;
+  --navy-mid: #0f2847;
+  --navy-light: #162d50;
+  --gold: #b8955a;
+  --gold-light: #d4b896;
+  --gold-bg: rgba(184, 149, 90, 0.08);
   --teal: #2ec4b6;
   --white: #ffffff;
-  --cream: #f8f9fb;
-  --text: #1a1a2e;
+  --off-white: #f7f8fa;
+  --cream: #faf9f7;
+  --text-dark: #1a1a2e;
   --text-mid: #4a5568;
   --text-light: #8896a7;
-  --border: #e2e8f0;
-  --radius: 8px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-  --shadow-lg: 0 12px 48px rgba(0,0,0,0.16);
+  --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.06);
+  --shadow-md: 0 8px 30px rgba(10, 22, 40, 0.08);
+  --shadow-lg: 0 20px 60px rgba(10, 22, 40, 0.10);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --max-width: 1200px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
+  color: var(--text-dark);
   background: var(--white);
-  color: var(--text);
-  font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  /* bottom padding for floating bar on mobile */
-  padding-bottom: 72px;
 }
 
-/* ─── PAGES ─── */
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: color var(--transition); }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+ul { list-style: none; }
+
+.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height: 1.2; color: var(--text-dark); }
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
+h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: block;
+}
+.gold { color: var(--gold); }
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  max-width: 600px;
+  line-height: 1.8;
+}
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), #c9a566);
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(184, 149, 90, 0.3);
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(184, 149, 90, 0.45);
+}
+.btn-ghost {
+  border: 2px solid rgba(255,255,255,0.3);
+  color: var(--white);
+  backdrop-filter: blur(4px);
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(184, 149, 90, 0.05);
+}
+.btn-outline {
+  border: 2px solid var(--gold);
+  color: var(--gold);
+}
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+.btn-navy {
+  background: var(--navy);
+  color: var(--white);
+}
+.btn-navy:hover { background: var(--navy-mid); transform: translateY(-2px); }
+.btn-white {
+  background: var(--white);
+  color: var(--navy);
+  font-weight: 700;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.btn-sm { padding: 10px 24px; font-size: 0.85rem; }
+
+/* NAVBAR */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 12px 0;
+  transition: all var(--transition);
+  background: rgba(10, 22, 40, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.nav.scrolled {
+  background: rgba(10, 22, 40, 0.95);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+  padding: 8px 0;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.nav-logo-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--white);
+}
+.nav-links { display: none; align-items: center; gap: 32px; }
+.nav-links a {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition);
+  position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--white); }
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+.nav-phone { display: none; color: var(--gold-light); font-weight: 500; font-size: 0.85rem; align-items: center; gap: 6px; }
+.nav-cta { display: none; }
+.nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+.nav-hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--navy);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+.mobile-menu.open { opacity: 1; pointer-events: all; }
+.mobile-menu a {
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color var(--transition);
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--white);
+  font-size: 2rem;
+  padding: 8px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+}
+
+.mobile-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  z-index: 998;
+  background: var(--navy);
+  border-top: 1px solid rgba(184,149,90,0.2);
+}
+.mobile-bottom-bar a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background var(--transition);
+  min-height: 48px;
+}
+.mobile-bottom-bar a:first-child { background: var(--gold); }
+.mobile-bottom-bar a:last-child { background: #25d366; }
+.mobile-bottom-bar a:hover { opacity: 0.9; }
+
 .page { display: none; }
 .page.active { display: block; }
 
-/* ─── NAV ─── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-  background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  height: 64px;
-  display: flex; align-items: center;
-  padding: 0 20px;
-  justify-content: space-between;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
-
-.nav-logo {
-  display: flex; align-items: center; gap: 10px;
-  text-decoration: none; flex-shrink: 0;
-}
-
-.nav-logo-icon {
-  width: 34px; height: 34px;
-  background: var(--navy); border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-
-.nav-logo-text {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px; font-weight: 700;
-  color: var(--navy); line-height: 1.1;
-}
-
-.nav-logo-text small {
-  display: block; font-family: 'Inter', sans-serif;
-  font-size: 10px; font-weight: 400;
-  color: var(--text-light); letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-/* Desktop nav links */
-.nav-desktop {
-  display: none;
-  gap: 28px; list-style: none; align-items: center;
-}
-
-.nav-desktop a {
-  color: var(--text-mid); text-decoration: none;
-  font-size: 14px; font-weight: 500; transition: color 0.2s;
-}
-.nav-desktop a:hover { color: var(--navy); }
-
-.nav-desktop .btn-nav {
-  background: var(--navy); color: var(--white) !important;
-  padding: 10px 20px; border-radius: var(--radius);
-  font-size: 13px !important; font-weight: 600 !important;
-}
-
-/* Hamburger */
-.hamburger {
-  width: 40px; height: 40px;
-  background: none; border: none;
-  cursor: pointer; padding: 8px;
-  display: flex; flex-direction: column;
-  justify-content: space-between; align-items: center;
-  border-radius: var(--radius);
-  transition: background 0.2s;
-}
-.hamburger:hover { background: var(--cream); }
-.hamburger span {
-  display: block; width: 22px; height: 2px;
-  background: var(--navy); border-radius: 2px;
-  transition: all 0.3s;
-  transform-origin: center;
-}
-.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-/* Mobile menu drawer */
-.mobile-menu {
-  position: fixed; top: 64px; left: 0; right: 0; bottom: 0;
-  background: var(--white);
-  z-index: 299;
-  transform: translateX(100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 32px 24px;
-  display: flex; flex-direction: column;
-  overflow-y: auto;
-}
-.mobile-menu.open { transform: translateX(0); }
-
-.mobile-menu-links {
-  list-style: none;
-  flex: 1;
-}
-
-.mobile-menu-links li {
-  border-bottom: 1px solid var(--border);
-}
-
-.mobile-menu-links a {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 0;
-  color: var(--navy); text-decoration: none;
-  font-size: 20px; font-weight: 600;
-  font-family: 'DM Sans', sans-serif;
-  transition: color 0.2s;
-}
-.mobile-menu-links a:hover { color: var(--blue); }
-
-.mobile-menu-contact {
-  margin-top: 32px;
-  display: flex; flex-direction: column; gap: 12px;
-}
-
-.mobile-menu-contact a {
-  display: flex; align-items: center; gap: 12px;
-  padding: 14px 18px;
-  border-radius: var(--radius-lg);
-  text-decoration: none; font-size: 15px; font-weight: 600;
-  transition: all 0.2s;
-}
-
-.mobile-call {
-  background: var(--navy); color: var(--white);
-}
-
-.mobile-whatsapp {
-  background: #e8fdf2; color: #147a3e;
-  border: 1.5px solid #b7edd0;
-}
-
-/* ─── FLOATING BAR (mobile only) ─── */
-.float-bar {
-  position: fixed; bottom: 0; left: 0; right: 0;
-  z-index: 290;
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  padding: 10px 16px;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
-}
-
-.float-btn {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  padding: 13px 16px; border-radius: var(--radius);
-  font-size: 14px; font-weight: 600;
-  text-decoration: none; transition: all 0.2s;
-  border: none; cursor: pointer;
-}
-
-.float-btn-book {
-  background: var(--navy); color: var(--white);
-}
-
-.float-btn-whatsapp {
-  background: #e8fdf2; color: #147a3e;
-  border: 1.5px solid #b7edd0;
-}
-
-/* ─── HERO ─── */
+/* HERO */
 .hero {
   position: relative;
-  min-height: 92svh;
-  display: flex; align-items: flex-end;
-  padding-top: 64px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(165deg, rgba(10,22,40,0.92) 0%, rgba(15,40,71,0.88) 50%, rgba(10,22,40,0.94) 100%),
+    url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80') center/cover no-repeat;
+  padding: 120px 0 100px;
   overflow: hidden;
 }
-
-.hero-bg {
-  position: absolute; inset: 0;
-  z-index: 0;
-}
-
-.hero-bg img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center 20%;
-  display: block;
-}
-
-.hero-bg::after {
+.hero::after {
   content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(11,37,69,0.98) 0%,
-    rgba(11,37,69,0.92) 35%,
-    rgba(11,37,69,0.75) 60%,
-    rgba(11,37,69,0.55) 80%,
-    rgba(11,37,69,0.4) 100%
-  );
-}
-
-.hero-content {
-  position: relative; z-index: 2;
-  padding: 40px 20px 28px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
+  height: 200px;
+  background: linear-gradient(to top, var(--white), transparent);
+  pointer-events: none;
 }
-
+.hero-content { position: relative; z-index: 2; }
 .hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(46,196,182,0.15);
-  border: 1px solid rgba(46,196,182,0.35);
-  color: var(--teal);
-  padding: 6px 14px; border-radius: 20px;
-  font-size: 11px; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(184, 149, 90, 0.15);
+  border: 1px solid rgba(184, 149, 90, 0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  color: var(--gold-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
 }
-
-.hero-badge-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--teal); animation: pulse 2s infinite;
-}
-
+.hero-badge svg { flex-shrink: 0; }
 .hero h1 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(34px, 8vw, 52px);
-  font-weight: 700; line-height: 1.1;
-  color: var(--white); margin-bottom: 16px;
+  color: var(--white);
+  margin-bottom: 24px;
+  max-width: 700px;
+  font-weight: 700;
 }
-
-.hero h1 em { font-style: normal; color: var(--teal); font-weight: 700; }
-
-.hero-desc {
-  font-size: 15px; color: rgba(255,255,255,0.78);
-  line-height: 1.65; font-weight: 300;
+.hero-sub {
+  color: rgba(255,255,255,0.75);
+  font-size: 1.1rem;
+  max-width: 540px;
   margin-bottom: 20px;
+  line-height: 1.8;
 }
-
-/* Google badge in hero */
-.hero-google {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: rgba(255,255,255,0.09);
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 10px; padding: 10px 14px;
-  text-decoration: none; margin-bottom: 18px;
-}
-
-.google-logo {
-  font-size: 15px; font-weight: 700;
-  font-family: 'Inter', sans-serif; letter-spacing: -0.5px;
-}
-.g-blue { color: #4285F4; }
-.g-red { color: #EA4335; }
-.g-yellow { color: #FBBC05; }
-.g-green { color: #34A853; }
-
-.hero-google-text { line-height: 1.25; }
-.hero-google-stars { color: #FBBC05; font-size: 13px; }
-.hero-google-label { color: rgba(255,255,255,0.55); font-size: 11px; }
-
-/* Hero trust pills */
-.hero-trust-pills {
-  display: flex; flex-wrap: wrap; gap: 8px;
-}
-
-.trust-pill {
-  display: flex; align-items: center; gap: 6px;
+.hero-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 20px; padding: 6px 12px;
-  font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.8);
+  border-radius: 50px;
+  padding: 8px 18px;
+  margin-bottom: 32px;
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 500;
 }
-
-/* ─── SECTIONS ─── */
-.section {
-  padding: 64px 24px;
+.hero-stars { color: #fbbf24; font-size: 1rem; letter-spacing: 2px; }
+.hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
-
-.section-inner { max-width: 1100px; margin: 0 auto; }
-
-.eyebrow {
-  font-size: 11px; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--blue); margin-bottom: 12px;
-  display: flex; align-items: center; gap: 8px;
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.82rem;
+  font-weight: 500;
 }
-.eyebrow::before {
-  content: ''; width: 16px; height: 2px;
-  background: var(--blue); border-radius: 1px;
-  flex-shrink: 0;
-}
+.hero-trust-item svg { color: var(--teal); flex-shrink: 0; }
 
-.section-title {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(26px, 5vw, 40px);
-  font-weight: 700; line-height: 1.15;
-  color: var(--navy); margin-bottom: 14px;
-}
-
-.section-sub {
-  font-size: 16px; color: var(--text-mid);
-  line-height: 1.75; font-weight: 300;
-  max-width: 540px;
-}
-
-/* ─── TRUST STRIP ─── */
+/* TRUST STRIP */
 .trust-strip {
   background: var(--navy);
-  padding: 0 24px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  padding: 48px 0;
+  position: relative;
+  z-index: 3;
 }
-.trust-strip::-webkit-scrollbar { display: none; }
+.trust-strip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  text-align: center;
+}
+.trust-stat-num {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.trust-stat-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
 
-.trust-strip-inner {
+/* PROMISE */
+.promise { padding: 80px 0; background: var(--white); }
+.promise-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.promise-card {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  border-top: 3px solid var(--gold);
+}
+.promise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.promise-card-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--gold-bg);
+  border-radius: var(--radius-sm);
   display: flex;
-  min-width: max-content;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--gold);
 }
+.promise-card h3 { margin-bottom: 12px; }
+.promise-card p { color: var(--text-mid); font-size: 0.95rem; }
 
-.trust-item {
-  display: flex; align-items: center; gap: 12px;
-  padding: 22px 24px;
-  border-right: 1px solid rgba(255,255,255,0.07);
-  min-width: 200px;
-}
-.trust-item:last-child { border-right: none; }
-
-.trust-icon {
-  width: 38px; height: 38px; flex-shrink: 0;
-  background: rgba(255,255,255,0.06);
-  border-radius: 9px;
-  display: flex; align-items: center; justify-content: center;
-}
-
-.trust-item strong {
-  display: block; color: var(--white);
-  font-size: 13px; font-weight: 600; margin-bottom: 1px;
-}
-.trust-item span { color: rgba(255,255,255,0.45); font-size: 11px; }
-
-/* ─── SERVICES ─── */
-.services-bg { background: var(--cream); }
-
+/* SERVICES PREVIEW */
+.services-preview { padding: 80px 0; background: var(--off-white); }
 .services-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px; margin-top: 40px;
+  gap: 20px;
+  margin-top: 48px;
 }
-
 .service-card {
   background: var(--white);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px 24px;
-  display: flex; gap: 18px; align-items: flex-start;
-  text-decoration: none; color: inherit;
-  transition: all 0.22s; cursor: pointer;
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all var(--transition);
 }
-
 .service-card:hover {
-  border-color: var(--blue);
-  box-shadow: var(--shadow);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
-
 .service-card-icon {
-  width: 48px; height: 48px; flex-shrink: 0;
-  background: var(--blue-light);
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: var(--gold);
 }
-
-.service-card-body h3 {
-  font-size: 17px; font-weight: 600; color: var(--navy);
-  margin-bottom: 6px; line-height: 1.3;
+.service-card h3 { margin-bottom: 8px; font-size: 1.15rem; }
+.service-card p { color: var(--text-mid); font-size: 0.9rem; margin-bottom: 16px; }
+.service-card-price {
+  display: inline-block;
+  background: var(--gold-bg);
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 4px 14px;
+  border-radius: 50px;
 }
+.services-cta-wrap { text-align: center; margin-top: 40px; }
 
-.service-card-body p {
-  font-size: 14px; color: var(--text-mid);
-  line-height: 1.6; font-weight: 300;
+/* ABOUT PREVIEW */
+.about-preview { padding: 80px 0; background: var(--white); }
+.about-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 40px;
 }
-
-.service-card-arrow {
-  margin-left: auto; flex-shrink: 0;
-  color: var(--blue); margin-top: 4px;
-}
-
-/* ─── ABOUT ─── */
-.about-image {
-  border-radius: var(--radius-xl);
+.about-preview-img {
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  position: relative; margin-bottom: 36px;
-  aspect-ratio: 4/3;
+  box-shadow: var(--shadow-lg);
+  position: relative;
 }
-
-.about-image img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
+.about-preview-img img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
 }
-
-.about-badge {
-  position: absolute; bottom: 20px; right: 20px;
-  background: var(--white); border-radius: var(--radius-lg);
-  padding: 14px 18px; box-shadow: var(--shadow-lg);
-  display: flex; align-items: center; gap: 10px;
+.about-preview-img-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: var(--gold);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 8px 18px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
 }
-
-.about-badge-num {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 28px; font-weight: 700; color: var(--navy); line-height: 1;
+.about-preview-content h2 { margin-bottom: 20px; }
+.about-preview-content p { color: var(--text-mid); margin-bottom: 20px; line-height: 1.8; }
+.about-check-list { margin-bottom: 28px; }
+.about-check-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-dark);
 }
+.about-check-list li svg { color: var(--teal); flex-shrink: 0; }
 
-.about-badge-label {
-  font-size: 11px; color: var(--text-light); line-height: 1.3;
+/* REVIEWS */
+.reviews { padding: 80px 0; background: var(--navy); }
+.reviews h2, .reviews .eyebrow { color: var(--white); }
+.reviews .section-subtitle { color: rgba(255,255,255,0.6); }
+.reviews-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 48px;
 }
-
-.check-list { list-style: none; margin: 20px 0 28px; }
-.check-list li {
-  display: flex; align-items: flex-start; gap: 10px;
-  padding: 10px 0; border-bottom: 1px solid var(--border);
-  font-size: 15px; color: var(--text-mid);
-}
-.check-list li:last-child { border-bottom: none; }
-.check-list svg { flex-shrink: 0; margin-top: 2px; }
-
-/* ─── REVIEWS ─── */
-.reviews-section {
-  background: var(--navy); padding: 64px 24px;
-}
-
-.reviews-section .eyebrow { color: var(--teal); }
-.reviews-section .eyebrow::before { background: var(--teal); }
-.reviews-section .section-title { color: var(--white); }
-.reviews-section .section-sub { color: rgba(255,255,255,0.6); }
-
-.google-score-card {
-  display: flex; align-items: center; gap: 16px;
+.reviews-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-lg);
-  padding: 18px 20px; margin: 24px 0 32px;
-  text-decoration: none; transition: background 0.2s;
+  border-radius: var(--radius-md);
+  padding: 16px 24px;
+  margin-bottom: 24px;
 }
-.google-score-card:hover { background: rgba(255,255,255,0.1); }
-
-.google-score-num {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 44px; font-weight: 700; color: var(--white); line-height: 1;
+.reviews-score-num {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
 }
-
-.google-score-right { line-height: 1.3; }
-.google-score-stars { color: #FBBC05; font-size: 18px; letter-spacing: 1px; }
-.google-score-label { color: rgba(255,255,255,0.5); font-size: 12px; margin-top: 4px; }
-
-.reviews-list {
-  display: flex; flex-direction: column; gap: 16px;
-  margin-bottom: 28px;
+.reviews-score-detail { text-align: left; }
+.reviews-score-stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; }
+.reviews-score-count { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 2px; }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
-
 .review-card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--radius-lg); padding: 24px;
-  transition: border-color 0.2s;
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  transition: all var(--transition);
 }
-.review-card:hover { border-color: rgba(46,196,182,0.3); }
-
-.review-top {
-  display: flex; justify-content: space-between;
-  align-items: center; margin-bottom: 12px;
+.review-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-2px); }
+.review-card-stars { color: #fbbf24; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 14px; }
+.review-card p { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.8; margin-bottom: 16px; font-style: italic; }
+.review-card-author { display: flex; align-items: center; gap: 12px; }
+.review-card-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.85rem;
 }
-.review-stars { color: #FBBC05; font-size: 14px; }
+.review-card-name { color: var(--white); font-weight: 600; font-size: 0.9rem; }
+.review-card-src { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
+.reviews-link { text-align: center; margin-top: 32px; }
+.reviews-link a { color: var(--gold-light); font-weight: 600; font-size: 0.9rem; transition: color var(--transition); }
+.reviews-link a:hover { color: var(--gold); }
 
-.review-text {
-  font-size: 14px; color: rgba(255,255,255,0.78);
-  line-height: 1.7; font-style: italic; font-weight: 300;
+/* MEDICAL AIDS */
+.med-aids { padding: 80px 0; background: var(--cream); }
+.med-aids-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+.med-aid-pill {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 50px;
+  padding: 10px 22px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+}
+.med-aid-pill:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+.med-aids-note {
+  text-align: center;
+  margin-top: 24px;
+  color: var(--text-mid);
+  font-size: 0.9rem;
+}
+
+/* CTA SECTION */
+.cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0d3460 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(184,149,90,0.08), transparent 70%);
+  border-radius: 50%;
+}
+.cta-section h2 { color: var(--white); margin-bottom: 16px; position: relative; z-index: 1; }
+.cta-section p { color: rgba(255,255,255,0.65); margin-bottom: 32px; position: relative; z-index: 1; max-width: 500px; }
+.cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; position: relative; z-index: 1; }
+
+/* FOOTER */
+.footer {
+  background: #060e1a;
+  padding: 60px 0 0;
+  color: rgba(255,255,255,0.55);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand p { font-size: 0.9rem; line-height: 1.8; margin-top: 12px; }
+.footer-col h4 {
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   margin-bottom: 16px;
 }
-
-.reviewer {
-  display: flex; align-items: center; gap: 10px;
-}
-
-.reviewer-avatar {
-  width: 34px; height: 34px; border-radius: 50%;
-  background: var(--teal); color: var(--navy);
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 13px; flex-shrink: 0;
-}
-
-.reviewer-name { font-weight: 600; color: var(--white); font-size: 14px; }
-.reviewer-time { color: rgba(255,255,255,0.4); font-size: 12px; }
-
-.btn-google {
-  width: 100%;
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  background: var(--white); color: var(--text);
-  padding: 14px 20px; border-radius: var(--radius);
-  font-size: 14px; font-weight: 600;
-  text-decoration: none; transition: all 0.2s;
-  box-shadow: var(--shadow);
-}
-.btn-google:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); }
-
-/* ─── TEAM ─── */
-.team-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 16px; margin-top: 36px;
-}
-
-.team-card { text-align: center; }
-
-.team-photo {
-  border-radius: var(--radius-lg);
-  overflow: hidden; margin-bottom: 12px;
-  aspect-ratio: 1; background: var(--cream);
-}
-
-.team-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.team-name { font-weight: 600; color: var(--navy); font-size: 15px; margin-bottom: 3px; }
-.team-role { color: var(--text-light); font-size: 12px; line-height: 1.4; }
-
-/* ─── CTA BANNER ─── */
-.cta-section {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-  padding: 64px 24px; text-align: center;
-}
-
-.cta-section h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(26px, 5vw, 40px);
-  font-weight: 700; color: var(--white); margin-bottom: 14px;
-}
-
-.cta-section p {
-  font-size: 16px; color: rgba(255,255,255,0.65);
-  margin-bottom: 32px; font-weight: 300; line-height: 1.7;
-  max-width: 480px; margin-left: auto; margin-right: auto;
-}
-
-.cta-buttons { display: flex; flex-direction: column; gap: 12px; align-items: center; }
-
-.btn-white {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--white); color: var(--navy);
-  padding: 15px 28px; border-radius: var(--radius);
-  font-size: 15px; font-weight: 600;
-  text-decoration: none; width: 100%; max-width: 320px;
-  justify-content: center; transition: all 0.2s;
-}
-.btn-white:hover { background: var(--cream); }
-
-.btn-ghost {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: transparent; color: rgba(255,255,255,0.85);
-  padding: 14px 28px; border-radius: var(--radius);
-  border: 1.5px solid rgba(255,255,255,0.25);
-  font-size: 15px; font-weight: 600;
-  text-decoration: none; width: 100%; max-width: 320px;
-  justify-content: center; transition: all 0.2s;
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.08); }
-
-/* ─── FOOTER ─── */
-footer {
-  background: #060e1d; padding: 48px 24px 28px;
-}
-
-.footer-logo {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 16px; text-decoration: none;
-}
-
-.footer-logo-text {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 17px; font-weight: 700; color: var(--white);
-  line-height: 1.1;
-}
-
-.footer-logo-text small {
-  display: block; font-family: 'Inter', sans-serif;
-  font-size: 10px; color: rgba(255,255,255,0.35);
-  letter-spacing: 0.06em; text-transform: uppercase;
-  font-weight: 400;
-}
-
-footer p {
-  font-size: 13px; color: rgba(255,255,255,0.4);
-  line-height: 1.7; margin-bottom: 32px;
-  max-width: 280px;
-}
-
-.footer-links {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 32px; margin-bottom: 40px;
-}
-
-.footer-col h4 {
-  color: var(--white); font-size: 12px; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px;
-}
-
-.footer-col ul { list-style: none; }
-.footer-col ul li { margin-bottom: 9px; }
-.footer-col ul li a {
-  color: rgba(255,255,255,0.4); text-decoration: none;
-  font-size: 14px; transition: color 0.2s;
-}
-.footer-col ul li a:hover { color: var(--teal); }
-
+.footer-col li { padding: 4px 0; }
+.footer-col a { color: rgba(255,255,255,0.55); font-size: 0.9rem; transition: color var(--transition); }
+.footer-col a:hover { color: var(--gold-light); }
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding-top: 20px; font-size: 12px;
-  color: rgba(255,255,255,0.25);
+  padding: 20px 0 90px;
+  text-align: center;
+  font-size: 0.82rem;
 }
 
-/* ─── SERVICES PAGE ─── */
+/* PAGE HERO */
 .page-hero {
-  background: var(--navy);
-  padding: 120px 24px 64px;
+  background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 100%);
+  padding: 140px 0 60px;
   text-align: center;
 }
-
-.page-hero .eyebrow { justify-content: center; color: var(--teal); }
-.page-hero .eyebrow::before { background: var(--teal); }
-
-.page-hero h1 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(30px, 7vw, 52px);
-  font-weight: 700; color: var(--white); margin-bottom: 16px;
+.page-hero h1 { color: var(--white); margin-bottom: 8px; }
+.page-hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 16px;
 }
+.page-hero-breadcrumb a { color: var(--gold-light); }
+.page-hero p { color: rgba(255,255,255,0.6); max-width: 550px; margin: 0 auto; }
 
-.page-hero p {
-  font-size: 16px; color: rgba(255,255,255,0.6);
-  max-width: 500px; margin: 0 auto;
-  font-weight: 300; line-height: 1.7;
+/* ABOUT PAGE */
+.about-story { padding: 80px 0; }
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
 }
+.about-story-img img { border-radius: var(--radius-lg); width: 100%; height: 400px; object-fit: cover; box-shadow: var(--shadow-lg); }
+.about-story-content h2 { margin-bottom: 20px; }
+.about-story-content p { color: var(--text-mid); margin-bottom: 16px; line-height: 1.8; }
 
-.service-row {
-  padding: 48px 0;
-  border-bottom: 1px solid var(--border);
+.about-philosophy { padding: 80px 0; background: var(--off-white); }
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 48px;
 }
-.service-row:last-child { border-bottom: none; }
-
-.service-row-img {
-  border-radius: var(--radius-xl);
-  overflow: hidden; margin-bottom: 28px;
-  aspect-ratio: 16/9;
-}
-.service-row-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.service-tag {
-  display: inline-block;
-  background: var(--blue-light); color: var(--blue);
-  padding: 5px 12px; border-radius: 20px;
-  font-size: 12px; font-weight: 600; margin-bottom: 12px;
-}
-
-.service-row h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(22px, 5vw, 32px);
-  font-weight: 700; color: var(--navy);
-  margin-bottom: 12px; line-height: 1.2;
-}
-
-.service-row p {
-  font-size: 15px; color: var(--text-mid);
-  line-height: 1.75; font-weight: 300; margin-bottom: 12px;
-}
-
-/* ─── CONTACT PAGE ─── */
-.contact-hero {
-  background: var(--navy);
-  padding: 120px 24px 48px;
-}
-
-.contact-hero .eyebrow { color: var(--teal); }
-.contact-hero .eyebrow::before { background: var(--teal); }
-
-.contact-hero h1 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(28px, 7vw, 48px);
-  font-weight: 700; color: var(--white);
-  margin-bottom: 14px; line-height: 1.15;
-}
-
-.contact-hero p {
-  font-size: 16px; color: rgba(255,255,255,0.6);
-  font-weight: 300; line-height: 1.7;
-  margin-bottom: 32px;
-}
-
-.contact-quick {
-  display: flex; flex-direction: column; gap: 12px;
-}
-
-.contact-quick-item {
-  display: flex; align-items: center; gap: 14px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-lg); padding: 14px 16px;
-  text-decoration: none; transition: background 0.2s;
-}
-.contact-quick-item:hover { background: rgba(255,255,255,0.1); }
-
-.contact-quick-icon {
-  width: 40px; height: 40px; flex-shrink: 0;
-  border-radius: 10px; background: rgba(255,255,255,0.07);
-  display: flex; align-items: center; justify-content: center;
-}
-
-.contact-quick-body strong {
-  display: block; color: var(--white); font-size: 14px; font-weight: 600;
-}
-.contact-quick-body span { color: rgba(255,255,255,0.5); font-size: 13px; }
-
-/* FORM */
-.form-section { padding: 48px 24px; background: var(--cream); }
-
-.form-card {
+.philosophy-card {
   background: var(--white);
-  border-radius: var(--radius-xl); padding: 32px 24px;
-  box-shadow: var(--shadow-lg); max-width: 560px; margin: 0 auto;
-}
-
-.form-card h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 6px;
-}
-
-.form-card > p { font-size: 14px; color: var(--text-light); margin-bottom: 28px; }
-
-.form-group { margin-bottom: 16px; }
-
-.form-group label {
-  display: block; font-size: 13px; font-weight: 600;
-  color: var(--navy); margin-bottom: 6px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%; padding: 12px 14px;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  font-family: 'Inter', sans-serif;
-  font-size: 15px; color: var(--text);
-  background: var(--white); outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  -webkit-appearance: none; appearance: none;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(26,111,175,0.1);
-}
-
-.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
-.form-group textarea { resize: vertical; min-height: 88px; }
-
-.form-submit {
-  width: 100%; padding: 16px;
-  background: var(--navy); color: var(--white);
-  border: none; border-radius: var(--radius);
-  font-family: 'Inter', sans-serif;
-  font-size: 15px; font-weight: 600;
-  cursor: pointer; transition: all 0.2s; margin-top: 4px;
-}
-.form-submit:hover { background: var(--blue); transform: translateY(-1px); }
-
-.form-privacy {
-  display: flex; align-items: center; gap: 7px;
-  font-size: 12px; color: var(--text-light);
-  margin-top: 10px; justify-content: center;
-}
-
-.form-success {
-  display: none; text-align: center; padding: 24px 0;
-}
-.form-success.show { display: block; }
-
-.success-icon {
-  width: 60px; height: 60px; border-radius: 50%;
-  background: #e6faf0; margin: 0 auto 16px;
-  display: flex; align-items: center; justify-content: center;
-}
-
-.form-success h3 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 22px; color: var(--navy); margin-bottom: 8px;
-}
-.form-success p { color: var(--text-mid); font-size: 14px; line-height: 1.6; }
-
-/* Hours */
-.hours-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px;
-}
-
-.hours-card {
-  background: var(--white); border: 1.5px solid var(--border);
-  border-radius: var(--radius-lg); padding: 20px 16px;
-}
-.hours-day { font-weight: 600; color: var(--navy); font-size: 13px; margin-bottom: 4px; }
-.hours-time { color: var(--text-mid); font-size: 14px; }
-
-/* ─── TRUST STRIP SCROLL HINT ─── */
-.trust-strip { position: relative; }
-.trust-strip::after {
-  content: '';
-  position: absolute; right: 0; top: 0; bottom: 0;
-  width: 48px;
-  background: linear-gradient(to left, var(--navy) 0%, transparent 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* ─── MEDICAL AID BANNER ─── */
-.medical-aid-banner {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  align-items: center; justify-content: center;
-  padding: 16px 24px;
-  background: var(--blue-light);
-  border-bottom: 1px solid var(--border);
-  font-size: 13px; color: var(--text-mid);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-sm);
+  border-top: 3px solid var(--gold);
   text-align: center;
 }
-.medical-aid-banner strong { color: var(--navy); }
-
-/* ─── FORM VALIDATION ─── */
-.form-group input:invalid:not(:placeholder-shown),
-.form-group textarea:invalid:not(:placeholder-shown) {
-  border-color: #e53e3e;
+.philosophy-card-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gold-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--gold);
 }
-.form-error { color: #e53e3e; font-size: 12px; margin-top: 4px; display: none; }
-.form-group input:invalid:not(:placeholder-shown) ~ .form-error { display: block; }
+.philosophy-card h3 { margin-bottom: 12px; }
+.philosophy-card p { color: var(--text-mid); font-size: 0.93rem; }
 
-/* ─── GOOGLE MAP ─── */
-.map-embed {
-  width: 100%; height: 280px;
-  border: none; border-radius: 0;
-  display: block;
+.team-section { padding: 80px 0; }
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 48px;
 }
+.team-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.04);
+  text-align: center;
+  transition: all var(--transition);
+}
+.team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.team-card-img {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+.team-card-body { padding: 20px 16px; }
+.team-card h3 { font-size: 1rem; margin-bottom: 4px; }
+.team-card p { color: var(--text-mid); font-size: 0.82rem; }
+.team-card .team-title { color: var(--gold); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px; }
 
-/* ─── PRICING TAG ─── */
-.price-from {
+/* SERVICES PAGE */
+.service-detail { padding: 60px 0; }
+.service-detail:nth-child(even) { background: var(--off-white); }
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+.service-detail-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.service-detail-content h3 { font-size: 1.5rem; margin-bottom: 12px; }
+.service-detail-content p { color: var(--text-mid); margin-bottom: 20px; line-height: 1.8; }
+.service-detail-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  color: var(--text-mid);
+  font-size: 0.93rem;
+}
+.service-detail-checklist li svg { color: var(--teal); flex-shrink: 0; margin-top: 3px; }
+.service-detail-price {
   display: inline-block;
-  font-size: 12px; font-weight: 600;
-  color: var(--teal); margin-top: 6px;
+  margin-top: 16px;
+  background: var(--gold-bg);
+  border: 1px solid rgba(184,149,90,0.2);
+  padding: 8px 20px;
+  border-radius: 50px;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.9rem;
 }
+.service-detail-cta { margin-top: 20px; }
 
-/* ─── ANIMATIONS ─── */
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.75); }
+/* CONTACT PAGE */
+.contact-section { padding: 80px 0; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
 }
+.contact-info {
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  padding: 40px 28px;
+  color: var(--white);
+}
+.contact-info h3 { color: var(--white); margin-bottom: 8px; font-size: 1.5rem; }
+.contact-info > p { color: rgba(255,255,255,0.6); margin-bottom: 32px; font-size: 0.95rem; }
+.contact-item { display: flex; gap: 14px; margin-bottom: 24px; }
+.contact-item-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(184,149,90,0.12);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.contact-item-label { color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.contact-item-value { color: var(--white); font-weight: 500; font-size: 0.95rem; margin-top: 2px; }
+.contact-item-value a { color: var(--gold-light); }
+.contact-item-value a:hover { color: var(--gold); }
 
-/* ─── DESKTOP OVERRIDES ─── */
+.contact-form-wrap {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px 28px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.contact-form-wrap h3 { margin-bottom: 8px; }
+.contact-form-wrap > p { color: var(--text-mid); margin-bottom: 28px; font-size: 0.93rem; }
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.93rem;
+  transition: border-color var(--transition);
+  background: var(--white);
+  color: var(--text-dark);
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184,149,90,0.1);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-submit { width: 100%; }
+
+.contact-hours { padding: 60px 0; background: var(--off-white); }
+.hours-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 32px;
+  max-width: 500px;
+}
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  font-size: 0.93rem;
+}
+.hours-row-day { font-weight: 600; color: var(--text-dark); }
+.hours-row-time { color: var(--text-mid); }
+.hours-row.today { border-left: 3px solid var(--gold); background: var(--gold-bg); }
+
+.contact-map { padding: 0; }
+.contact-map iframe { width: 100%; height: 350px; border: none; display: block; }
+
+/* ANIMATIONS */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* TABLET */
 @media (min-width: 768px) {
-  body { padding-bottom: 0; }
-  .float-bar { display: none; }
-  .hamburger { display: none; }
-  .nav-desktop { display: flex; }
-  .mobile-menu { display: none !important; }
-
-  nav { padding: 0 5%; height: 68px; }
-
-  .hero {
-    align-items: center;
-    min-height: 100vh;
-  }
-  .trust-strip::after { display: none; }
-
-  .hero-bg::after {
-    background: linear-gradient(
-      to right,
-      rgba(11,37,69,0.96) 0%,
-      rgba(11,37,69,0.88) 45%,
-      rgba(11,37,69,0.3) 70%,
-      rgba(11,37,69,0.1) 100%
-    );
-  }
-
-  .hero-content {
-    padding: 80px 8%;
-    max-width: 620px;
-  }
-
-  .hero-desc { font-size: 16px; margin-bottom: 28px; }
-
-  .hero h1 { font-size: clamp(40px, 5vw, 62px); }
-
-  .trust-strip-inner {
-    min-width: unset;
-    flex-wrap: wrap;
-  }
-  .trust-item { min-width: unset; flex: 1; }
-
-  .section { padding: 96px 8%; }
-
-  .services-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .service-card { flex-direction: column; }
-  .service-card-arrow { margin-left: 0; margin-top: 16px; }
-
-  .about-layout {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 72px; align-items: center;
-  }
-  .about-image { margin-bottom: 0; aspect-ratio: unset; height: 480px; }
-
-  .reviews-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-
+  .container { padding: 0 32px; }
+  .trust-strip-grid { grid-template-columns: repeat(4, 1fr); }
+  .promise-grid { grid-template-columns: repeat(3, 1fr); }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+  .about-preview-grid { grid-template-columns: 1fr 1fr; }
+  .about-preview-img img { height: 420px; }
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
   .team-grid { grid-template-columns: repeat(4, 1fr); }
-
-  .cta-buttons { flex-direction: row; justify-content: center; }
-  .btn-white, .btn-ghost { width: auto; }
-
-  footer { padding: 64px 8% 32px; }
-  .footer-links { grid-template-columns: repeat(4, 1fr); }
-
-  .page-hero { padding: 140px 8% 80px; }
-
-  .service-row-layout {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 64px; align-items: center;
-  }
-  .service-row-layout.rev > :first-child { order: 2; }
-  .service-row-layout.rev > :last-child { order: 1; }
-  .service-row-img { margin-bottom: 0; aspect-ratio: unset; height: 340px; }
-
-  .contact-layout {
-    display: grid; grid-template-columns: 1fr 1fr;
-    min-height: calc(100vh - 68px);
-  }
-  .contact-hero { padding: 100px 8% 80px; display: flex; flex-direction: column; justify-content: center; }
-  .form-section { padding: 80px 8%; display: flex; align-items: center; background: var(--cream); }
-  .form-card { padding: 48px 40px; }
-  .form-row-2 { grid-template-columns: 1fr 1fr; }
-
-  .hours-grid { grid-template-columns: repeat(4, 1fr); }
-  .values-grid { grid-template-columns: repeat(3, 1fr); }
+  .about-story-grid { grid-template-columns: 1fr 1fr; }
+  .philosophy-grid { grid-template-columns: repeat(3, 1fr); }
+  .service-detail-grid { grid-template-columns: 1fr 1fr; }
+  .service-detail:nth-child(even) .service-detail-grid { direction: rtl; }
+  .service-detail:nth-child(even) .service-detail-grid > * { direction: ltr; }
+  .contact-grid { grid-template-columns: 1fr 1fr; }
+  .promise, .services-preview, .about-preview, .reviews, .med-aids, .cta-section,
+  .about-story, .about-philosophy, .team-section, .contact-section { padding: 100px 0; }
+  .hero { padding: 140px 0 120px; }
 }
 
+/* DESKTOP */
 @media (min-width: 1024px) {
+  .nav-links { display: flex; }
+  .nav-phone { display: flex; }
+  .nav-cta { display: inline-flex; }
+  .nav-hamburger { display: none; }
+  .mobile-bottom-bar { display: none; }
+  .footer-bottom { padding-bottom: 24px; }
   .services-grid { grid-template-columns: repeat(3, 1fr); }
+  .hero h1 { font-size: 3.5rem; }
+  .trust-stat-num { font-size: 2.5rem; }
+  .contact-map iframe { height: 450px; }
+  .promise, .services-preview, .about-preview, .reviews, .med-aids, .cta-section,
+  .about-story, .about-philosophy, .team-section, .contact-section { padding: 120px 0; }
 }
 </style>
 </head>
 <body>
 
-<a href="#page-home" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:999" onfocus="this.style.cssText='position:fixed;left:16px;top:16px;width:auto;height:auto;overflow:visible;z-index:999;background:var(--navy);color:white;padding:12px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:14px'">Skip to content</a>
-
-<!-- ═══ NAV ═══ -->
-<nav>
-  <a href="#" class="nav-logo" onclick="showPage('home')">
-    <div class="nav-logo-icon">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 5 5 5 8c0 4 3 6 4 10h6c1-4 4-6 4-10 0-3-3-6-7-6z"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="21" x2="14" y2="21"/></svg>
+<!-- NAVBAR -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="navTo('home');return false;">
+      <div class="nav-logo-icon">DS</div>
+      Dr. Sonday
+    </a>
+    <div class="nav-links">
+      <a href="#" class="active" data-page="home" onclick="navTo('home');return false;">Home</a>
+      <a href="#" data-page="about" onclick="navTo('about');return false;">About</a>
+      <a href="#" data-page="services" onclick="navTo('services');return false;">Services</a>
+      <a href="#" data-page="contact" onclick="navTo('contact');return false;">Contact</a>
     </div>
-    <div class="nav-logo-text">
-      Dr. Sonday Dentistry
-      <small>Ocean View, Cape Town</small>
-    </div>
-  </a>
-
-  <ul class="nav-desktop">
-    <li><a href="#" onclick="showPage('home')">Home</a></li>
-    <li><a href="#" onclick="showPage('about')">About</a></li>
-    <li><a href="#" onclick="showPage('services')">Services</a></li>
-    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-    <li><a href="tel:+27217830024" style="display:flex;align-items:center;gap:6px;color:var(--navy);font-weight:600">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <a href="tel:+27217830024" class="nav-phone">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       021 783 0024
-    </a></li>
-    <li><a href="#" class="btn-nav" onclick="showPage('contact')">Book Appointment</a></li>
-  </ul>
-
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+    </a>
+    <a href="https://wa.me/27649447759?text=Hi%20Dr.%20Sonday%2C%20I%27d%20like%20to%20schedule%20a%20consultation." class="btn btn-gold btn-sm nav-cta" target="_blank" rel="noopener">Schedule Consultation</a>
+    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- Mobile Menu -->
-<div class="mobile-menu" id="mobile-menu">
-  <ul class="mobile-menu-links">
-    <li><a href="#" onclick="navTo('home')">Home <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li>
-    <li><a href="#" onclick="navTo('about')">About Us <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li>
-    <li><a href="#" onclick="navTo('services')">Services <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li>
-    <li><a href="#" onclick="navTo('contact')">Book Appointment <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li>
-  </ul>
-  <div class="mobile-menu-contact">
-    <a href="tel:+27217830024" class="mobile-call">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      Call 021 783 0024
-    </a>
-    <a href="https://wa.me/27649447759" target="_blank" class="mobile-whatsapp">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp Us
-    </a>
-  </div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">&times;</button>
+  <a href="#" onclick="navTo('home');closeMenu();return false;">Home</a>
+  <a href="#" onclick="navTo('about');closeMenu();return false;">About</a>
+  <a href="#" onclick="navTo('services');closeMenu();return false;">Services</a>
+  <a href="#" onclick="navTo('contact');closeMenu();return false;">Contact</a>
+  <a href="tel:+27217830024" class="btn btn-gold" style="margin-top:16px;">Call 021 783 0024</a>
 </div>
 
-<!-- ═══ FLOATING BOTTOM BAR ═══ -->
-<div class="float-bar" id="float-bar">
-  <a href="tel:+27217830024" class="float-btn float-btn-book">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-    Call Now
+<!-- Mobile bottom bar -->
+<div class="mobile-bottom-bar" id="mobileBar">
+  <a href="tel:+27217830024">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Us
   </a>
-  <a href="https://wa.me/27649447759" target="_blank" class="float-btn float-btn-whatsapp">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="#147a3e"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <a href="https://wa.me/27649447759?text=Hi%20Dr.%20Sonday%2C%20I%27d%20like%20to%20schedule%20a%20consultation." target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     WhatsApp
   </a>
 </div>
 
-<!-- ═══════════════ HOME PAGE ═══════════════ -->
-<div id="page-home" class="page active">
 
-  <!-- HERO -->
+<!-- ========== HOME PAGE ========== -->
+<div class="page active" id="page-home">
+
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-bg">
-      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1400&q=80" alt="Patient receiving gentle dental care at Dr. Sonday Dentistry" loading="eager"/>
-    </div>
-    <div class="hero-content">
-      <div class="hero-badge"><div class="hero-badge-dot"></div>Now Accepting New Patients</div>
-      <h1>A Smile You're <em>Proud</em> to Show</h1>
-      <p class="hero-desc">Gentle, affordable family dentistry in Ocean View. Dr. Sonday has been caring for Cape Town families for over 20 years — with warmth, skill, and honest pricing.</p>
-      <a href="https://www.google.com/maps/search/Dr+Sonday+Dentistry+Ocean+View+Cape+Town" target="_blank" class="hero-google">
-        <div class="google-logo"><span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span></div>
-        <div class="hero-google-text">
-          <div class="hero-google-stars">★★★★★</div>
-          <div class="hero-google-label">5.0 · 47 Google Reviews</div>
-        </div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        HPCSA Registered Practice
+      </div>
+      <h1>Exceptional Dental Care, Delivered with <span class="gold">Heart</span></h1>
+      <p class="hero-sub">For over 20 years, Dr. Sonday and his dedicated team have been providing gentle, high-quality dental care to Cape Town families. Your smile is in safe hands.</p>
+      <a href="https://maps.app.goo.gl/search/Dr+Sonday+Dentistry+Ocean+View" target="_blank" rel="noopener" class="hero-rating">
+        <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>5.0 rating &middot; 47 Google Reviews</span>
       </a>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px">
-        <a href="#" class="btn-white" style="width:auto;max-width:none;padding:15px 28px" onclick="showPage('contact')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Book Appointment
-        </a>
-        <a href="https://wa.me/27649447759" target="_blank" class="btn-ghost" style="width:auto;max-width:none;padding:14px 28px">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <div class="hero-btns">
+        <a href="https://wa.me/27649447759?text=Hi%20Dr.%20Sonday%2C%20I%27d%20like%20to%20schedule%20a%20consultation." class="btn btn-gold" target="_blank" rel="noopener">Schedule a Consultation</a>
+        <a href="https://wa.me/27649447759?text=Hi%20Dr.%20Sonday%2C%20I%20have%20a%20quick%20question." class="btn btn-ghost" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           WhatsApp Us
         </a>
       </div>
-      <div class="hero-trust-pills">
-        <div class="trust-pill">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          20+ Years Experience
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          BChD Qualified
         </div>
-        <div class="trust-pill">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Affordable Pricing
+        <div class="hero-trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          All Medical Aids Accepted
         </div>
-        <div class="trust-pill">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <div class="hero-trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           Same-Day Emergencies
         </div>
+        <div class="hero-trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Family-Friendly Practice
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TRUST STRIP -->
-  <div class="trust-strip">
-    <div class="trust-strip-inner">
-      <div class="trust-item">
-        <div class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <div><strong>20+ Years</strong><span>Serving Cape Town</span></div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <div><strong>4,800+ Patients</strong><span>All ages welcome</span></div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div><strong>Affordable Fees</strong><span>Transparent pricing</span></div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-        <div><strong>WhatsApp Bookings</strong><span>Message anytime</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MEDICAL AID BANNER -->
-  <div class="medical-aid-banner">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-    <strong>Medical aid accepted</strong> — Discovery, Gems, Bonitas, Medihelp & all major schemes. Cash & card patients welcome.
-  </div>
-
-  <!-- SERVICES -->
-  <div class="section services-bg">
-    <div class="section-inner">
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:0">
-        <div>
-          <div class="eyebrow">Our Services</div>
-          <h2 class="section-title">Everything Your Smile Needs</h2>
-          <p class="section-sub">Comprehensive care for the whole family — from routine check-ups to emergency treatment.</p>
+  <!-- Trust Strip -->
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-strip-grid">
+        <div class="fade-in">
+          <div class="trust-stat-num">20+</div>
+          <div class="trust-stat-label">Years Experience</div>
+        </div>
+        <div class="fade-in">
+          <div class="trust-stat-num">4,800+</div>
+          <div class="trust-stat-label">Patients Treated</div>
+        </div>
+        <div class="fade-in">
+          <div class="trust-stat-num">5.0</div>
+          <div class="trust-stat-label">Google Rating</div>
+        </div>
+        <div class="fade-in">
+          <div class="trust-stat-num">24hr</div>
+          <div class="trust-stat-label">Same-Day Emergencies</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Promise -->
+  <section class="promise">
+    <div class="container text-center">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>Our Promise to You</h2>
+      <p class="section-subtitle mx-auto" style="margin-top:12px;">We believe dental care should be comfortable, transparent, and built around long-term results. Here is what you can expect from every visit.</p>
+      <div class="promise-grid">
+        <div class="promise-card fade-in">
+          <div class="promise-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3>Your Comfort Comes First</h3>
+          <p>We understand dental anxiety. Dr. Sonday takes a gentle, patient-centred approach, walking you through every step so you feel safe, informed, and at ease throughout your visit.</p>
+        </div>
+        <div class="promise-card fade-in">
+          <div class="promise-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Transparent, Honest Pricing</h3>
+          <p>No surprises, no hidden fees. You will always receive an upfront quote before any treatment begins. We believe in honest communication and fair pricing for every patient.</p>
+        </div>
+        <div class="promise-card fade-in">
+          <div class="promise-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3>Lasting Results, Not Quick Fixes</h3>
+          <p>We focus on quality over shortcuts. Every treatment plan is designed for long-term dental health, because your smile deserves care that stands the test of time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="services-preview">
+    <div class="container text-center">
+      <span class="eyebrow">Our Services</span>
+      <h2>Comprehensive Care for Every Smile</h2>
+      <p class="section-subtitle mx-auto" style="margin-top:12px;">From routine check-ups to emergency treatments, we provide a full range of dental services to keep your family smiling with confidence.</p>
       <div class="services-grid">
-        <a href="#" class="service-card" onclick="showPage('services')">
-          <div class="service-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a6faf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 5 5 5 8c0 4 3 6 4 10h6c1-4 4-6 4-10 0-3-3-6-7-6z"/></svg></div>
-          <div class="service-card-body">
-            <h3>General & Preventive</h3>
-            <p>Check-ups, cleans, fillings and gum care for the whole family.</p>
-            <span class="price-from">From R350</span>
+        <div class="service-card fade-in">
+          <div class="service-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <div class="service-card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        </a>
-        <a href="#" class="service-card" onclick="showPage('services')">
-          <div class="service-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a6faf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-          <div class="service-card-body">
-            <h3>Teeth Whitening</h3>
-            <p>Professional whitening — safe, effective, long-lasting results.</p>
-            <span class="price-from">From R1,500</span>
-          </div>
-          <div class="service-card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        </a>
-        <a href="#" class="service-card" onclick="showPage('services')">
-          <div class="service-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a6faf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-          <div class="service-card-body">
-            <h3>Emergency Dentistry</h3>
-            <p>Same-day appointments — never left waiting in pain.</p>
-            <span class="price-from">Same-day available</span>
-          </div>
-          <div class="service-card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        </a>
-        <a href="#" class="service-card" onclick="showPage('services')">
-          <div class="service-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a6faf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-          <div class="service-card-body">
-            <h3>Children's Dentistry</h3>
-            <p>Gentle, fun care that builds healthy habits from the start.</p>
-            <span class="price-from">From R250</span>
-          </div>
-          <div class="service-card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        </a>
-        <a href="#" class="service-card" onclick="showPage('services')">
-          <div class="service-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a6faf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
-          <div class="service-card-body">
-            <h3>Fillings & Crowns</h3>
-            <p>Natural-looking restorations that blend seamlessly.</p>
-            <span class="price-from">From R450</span>
-          </div>
-          <div class="service-card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        </a>
-        <a href="#" class="service-card" onclick="showPage('services')">
-          <div class="service-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a6faf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <div class="service-card-body">
-            <h3>Dentures & Extractions</h3>
-            <p>Comfortable fit, gentle extractions, restored confidence.</p>
-            <span class="price-from">From R500</span>
-          </div>
-          <div class="service-card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        </a>
-      </div>
-      <div style="text-align:center;margin-top:32px">
-        <a href="#" onclick="showPage('services')" style="display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-weight:600;font-size:15px;text-decoration:none">View all services <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <div class="section">
-    <div class="section-inner">
-      <div class="about-layout">
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1629909615957-be38d29fc62c?w=800&q=80" alt="Dentist consulting with a patient" loading="lazy"/>
-          <div class="about-badge">
-            <div class="about-badge-num">20+</div>
-            <div class="about-badge-label">Years serving<br>Cape Town</div>
-          </div>
+          <h3>General &amp; Preventive</h3>
+          <p>Comprehensive check-ups, professional cleanings, and preventive care to keep your teeth healthy and catch problems early.</p>
+          <span class="service-card-price">From R350</span>
         </div>
-        <div>
-          <div class="eyebrow">About Dr. Sonday</div>
-          <h2 class="section-title">Dentistry with a Human Touch</h2>
-          <p style="color:var(--text-mid);font-size:15px;line-height:1.8;font-weight:300;margin-bottom:12px">Dr. S. Sonday has been caring for Ocean View and the surrounding Cape Town community for over two decades. His philosophy is simple: affordable, high-quality dentistry delivered with warmth and respect.</p>
-          <p style="color:var(--text-mid);font-size:15px;line-height:1.8;font-weight:300">From your very first visit, you'll notice the difference — no rushing, no unnecessary procedures. Just honest care from a doctor who listens.</p>
-          <ul class="check-list">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Qualified General Dentist (BChD) · HPCSA Registered</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Transparent pricing — no surprises</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Gentle approach for anxious patients</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Same-day emergency appointments</li>
-          </ul>
-          <a href="#" class="btn-white" style="background:var(--navy);color:white;display:inline-flex;width:auto;padding:14px 24px" onclick="showPage('contact')">Book an Appointment</a>
+        <div class="service-card fade-in">
+          <div class="service-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <h3>Teeth Whitening</h3>
+          <p>Professional whitening treatments for a noticeably brighter, more confident smile. Safe, effective, and long-lasting results.</p>
+          <span class="service-card-price">From R1,500</span>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Emergency Dentistry</h3>
+          <p>Dental emergencies cannot wait. We offer same-day emergency appointments for pain, trauma, and urgent dental issues.</p>
+          <span class="service-card-price">Same-Day Care</span>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3>Children's Dentistry</h3>
+          <p>Gentle, fun dental care designed to put young patients at ease. Building healthy habits and positive associations from the start.</p>
+          <span class="service-card-price">From R250</span>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          </div>
+          <h3>Fillings &amp; Crowns</h3>
+          <p>Durable, natural-looking restorations that protect and strengthen damaged teeth. We use only high-quality materials for lasting results.</p>
+          <span class="service-card-price">From R450</span>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Dentures &amp; Extractions</h3>
+          <p>Custom-fitted dentures for a natural appearance and comfortable fit. Gentle extractions when teeth cannot be saved.</p>
+          <span class="service-card-price">From R500</span>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- REVIEWS -->
-  <section class="reviews-section">
-    <div class="section-inner" style="max-width:1100px;margin:0 auto">
-      <div class="eyebrow">Patient Reviews</div>
-      <h2 class="section-title">What Our Patients Say</h2>
-      <p class="section-sub">Real reviews from real patients — straight from Google.</p>
-      <a href="https://www.google.com/maps/search/Dr+Sonday+Dentistry+Ocean+View+Cape+Town" target="_blank" class="google-score-card">
-        <div class="google-score-num">5.0</div>
-        <div class="google-score-right">
-          <div class="google-score-stars">★★★★★</div>
-          <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
-            <div class="google-logo" style="font-size:13px"><span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span></div>
-            <div class="google-score-label">47 reviews · Tap to read all</div>
-          </div>
-        </div>
-        <svg style="margin-left:auto;flex-shrink:0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <div class="reviews-list">
-        <div class="review-card">
-          <div class="review-top">
-            <div class="review-stars">★★★★★</div>
-            <div class="google-logo" style="font-size:11px"><span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span></div>
-          </div>
-          <p class="review-text">"I wouldn't go anywhere else now. Dr Sonday and his team deliver excellent dental service. Highly recommended."</p>
-          <div class="reviewer"><div class="reviewer-avatar">C</div><div><div class="reviewer-name">Clare Bowen</div><div class="reviewer-time">Google Review</div></div></div>
-        </div>
-        <div class="review-card">
-          <div class="review-top">
-            <div class="review-stars">★★★★★</div>
-            <div class="google-logo" style="font-size:11px"><span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span></div>
-          </div>
-          <p class="review-text">"Had a tooth removed and was anxious. He walked me through everything and helped me relax. Highly recommend."</p>
-          <div class="reviewer"><div class="reviewer-avatar">S</div><div><div class="reviewer-name">Savannah Finlay</div><div class="reviewer-time">Google Review</div></div></div>
-        </div>
-        <div class="review-card">
-          <div class="review-top">
-            <div class="review-stars">★★★★★</div>
-            <div class="google-logo" style="font-size:11px"><span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span></div>
-          </div>
-          <p class="review-text">"So affordable and genuine! Charged R900 for a bite plate that cost R3500 elsewhere. Highly recommended for anyone looking for affordable dental care."</p>
-          <div class="reviewer"><div class="reviewer-avatar">S</div><div><div class="reviewer-name">Shelley Bright</div><div class="reviewer-time">Google Review</div></div></div>
-        </div>
+      <div class="services-cta-wrap">
+        <a href="#" onclick="navTo('services');return false;" class="btn btn-outline">View All Services</a>
       </div>
-      <a href="https://www.google.com/maps/search/Dr+Sonday+Dentistry+Ocean+View+Cape+Town" target="_blank" class="btn-google">
-        <div class="google-logo" style="font-size:15px"><span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span></div>
-        Read All 47 Reviews
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
     </div>
   </section>
 
-  <!-- TEAM -->
-  <div class="section" style="background:var(--cream)">
-    <div class="section-inner">
-      <div style="text-align:center;margin-bottom:8px">
-        <div class="eyebrow" style="justify-content:center">Our Team</div>
-        <h2 class="section-title">The People Behind Your Smile</h2>
-        <p class="section-sub" style="margin:0 auto">A small, dedicated team who genuinely care about every patient.</p>
-      </div>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-photo"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" alt="Dr Sonday" loading="lazy"/></div>
-          <div class="team-name">Dr. S. Sonday</div>
-          <div class="team-role">General Dentist (BChD) · Owner</div>
+  <!-- About Preview -->
+  <section class="about-preview">
+    <div class="container">
+      <div class="about-preview-grid">
+        <div class="about-preview-img fade-in">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80" alt="Dr. Sonday Dentistry practice">
+          <div class="about-preview-img-badge">20+ Years of Excellence</div>
         </div>
-        <div class="team-card">
-          <div class="team-photo"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80" alt="Harriet" loading="lazy"/></div>
-          <div class="team-name">Harriet Lamb</div>
-          <div class="team-role">Practice Manager</div>
-        </div>
-        <div class="team-card">
-          <div class="team-photo"><img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=400&q=80" alt="Lungelwa" loading="lazy"/></div>
-          <div class="team-name">Lungelwa</div>
-          <div class="team-role">Dental Assistant</div>
-        </div>
-        <div class="team-card">
-          <div class="team-photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Zee" loading="lazy"/></div>
-          <div class="team-name">Zee</div>
-          <div class="team-role">Dental Assistant</div>
+        <div class="about-preview-content fade-in">
+          <span class="eyebrow">About Our Practice</span>
+          <h2>The Dr. Sonday Approach</h2>
+          <p>Dr. S. Sonday, BChD, has spent over two decades building more than just a dental practice. He has built a trusted community institution where patients feel like family. Every treatment plan is crafted with your long-term health and comfort in mind.</p>
+          <p>Our philosophy is simple: listen carefully, explain thoroughly, treat gently, and always put the patient first. It is an approach that has earned us a perfect 5.0 Google rating and the loyalty of thousands of Cape Town families.</p>
+          <ul class="about-check-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              BChD Qualified, HPCSA Registered
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              20+ Years Clinical Experience
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              All Major Medical Aids Accepted
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Dedicated, Caring Team of 4
+            </li>
+          </ul>
+          <a href="#" onclick="navTo('about');return false;" class="btn btn-outline">Learn More About Us</a>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <div class="container">
+      <div class="reviews-header">
+        <div class="reviews-score fade-in">
+          <div class="reviews-score-num">5.0</div>
+          <div class="reviews-score-detail">
+            <div class="reviews-score-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="reviews-score-count">Based on 47 Google Reviews</div>
+          </div>
+        </div>
+        <span class="eyebrow">Patient Reviews</span>
+        <h2 style="color:var(--white);">What Our Patients Say</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.6);margin-top:12px;">Real reviews from real patients. Our 5.0-star Google rating speaks to the quality of care you can expect.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card fade-in">
+          <div class="review-card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"I wouldn't go anywhere else now. Dr Sonday and his team deliver excellent dental service. Highly recommended."</p>
+          <div class="review-card-author">
+            <div class="review-card-avatar">CB</div>
+            <div>
+              <div class="review-card-name">Clare Bowen</div>
+              <div class="review-card-src">Google Review</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Had a tooth removed and was anxious. He walked me through everything and helped me relax. Highly recommend."</p>
+          <div class="review-card-author">
+            <div class="review-card-avatar">SF</div>
+            <div>
+              <div class="review-card-name">Savannah Finlay</div>
+              <div class="review-card-src">Google Review</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"So affordable and genuine! Charged R900 for a bite plate that cost R3500 elsewhere. Highly recommended for anyone looking for affordable dental care."</p>
+          <div class="review-card-author">
+            <div class="review-card-avatar">SB</div>
+            <div>
+              <div class="review-card-name">Shelley Bright</div>
+              <div class="review-card-src">Google Review</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-link">
+        <a href="https://maps.app.goo.gl/search/Dr+Sonday+Dentistry+Ocean+View" target="_blank" rel="noopener">Read all 47 reviews on Google &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Medical Aids -->
+  <section class="med-aids">
+    <div class="container text-center">
+      <span class="eyebrow">Medical Aids</span>
+      <h2>We Work With All Major Medical Aids</h2>
+      <p class="section-subtitle mx-auto" style="margin-top:12px;">We accept a wide range of medical aid schemes to make quality dental care accessible to you and your family.</p>
+      <div class="med-aids-grid fade-in">
+        <div class="med-aid-pill">Discovery</div>
+        <div class="med-aid-pill">GEMS</div>
+        <div class="med-aid-pill">Bonitas</div>
+        <div class="med-aid-pill">Medihelp</div>
+        <div class="med-aid-pill">Keyhealth</div>
+        <div class="med-aid-pill">Medshield</div>
+        <div class="med-aid-pill">Momentum</div>
+        <div class="med-aid-pill">Fedhealth</div>
+      </div>
+      <p class="med-aids-note">Plus all other major medical aid schemes. Cash and card payments also welcome.</p>
+    </div>
+  </section>
 
   <!-- CTA -->
   <section class="cta-section">
-    <div class="eyebrow" style="justify-content:center;color:var(--teal);margin-bottom:16px">Ready to Book?</div>
-    <h2>Your Best Smile Starts Today</h2>
-    <p>New patients always welcome — limited same-week slots available. Call us, WhatsApp us, or book online.</p>
-    <div class="cta-buttons">
-      <a href="#" class="btn-white" onclick="showPage('contact')">Book Appointment</a>
-      <a href="https://wa.me/27649447759" target="_blank" class="btn-ghost">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp Us
-      </a>
+    <div class="container">
+      <span class="eyebrow" style="color:var(--gold-light);">Get Started Today</span>
+      <h2>Your Best Smile Starts with a Conversation</h2>
+      <p class="section-subtitle mx-auto">Whether you need a routine check-up or have a specific concern, we are here to help. Reach out today and take the first step towards a healthier, happier smile.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/27649447759?text=Hi%20Dr.%20Sonday%2C%20I%27d%20like%20to%20schedule%20a%20consultation." class="btn btn-gold" target="_blank" rel="noopener">Schedule a Consultation</a>
+        <a href="tel:+27217830024" class="btn btn-ghost">Call 021 783 0024</a>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner" style="max-width:1100px;margin:0 auto">
-      <a href="#" class="footer-logo" onclick="showPage('home')">
-        <div class="nav-logo-icon" style="width:30px;height:30px;background:var(--navy-mid);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 5 5 5 8c0 4 3 6 4 10h6c1-4 4-6 4-10 0-3-3-6-7-6z"/></svg>
-        </div>
-        <div class="footer-logo-text">Dr. Sonday Dentistry<small>Ocean View, Cape Town</small></div>
-      </a>
-      <p>Gentle, affordable family dentistry serving Ocean View and Cape Town for over 20 years.</p>
-      <div class="footer-links">
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="#" onclick="showPage('services')">General Dentistry</a></li>
-            <li><a href="#" onclick="showPage('services')">Teeth Whitening</a></li>
-            <li><a href="#" onclick="showPage('services')">Emergency Care</a></li>
-            <li><a href="#" onclick="showPage('services')">Children's Dentistry</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Practice</h4>
-          <ul>
-            <li><a href="#" onclick="showPage('about')">About Us</a></li>
-            <li><a href="https://www.google.com/maps/search/Dr+Sonday+Dentistry+Ocean+View+Cape+Town" target="_blank">Google Reviews</a></li>
-            <li><a href="#" onclick="showPage('contact')">Book Appointment</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="tel:+27217830024">021 783 0024</a></li>
-            <li><a href="https://wa.me/27649447759">064 944 7759</a></li>
-            <li><a href="mailto:docsonday12@gmail.com">Email Us</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Hours</h4>
-          <ul>
-            <li><a href="#">Mon–Fri: 08:30–17:00</a></li>
-            <li><a href="#">Sat: 08:00–12:30</a></li>
-            <li><a href="#">Sun: Closed</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">© 2025 Dr. Sonday Dentistry · Ocean View, Cape Town</div>
-    </div>
-  </footer>
 </div>
 
-<!-- ═══════════════ ABOUT PAGE ═══════════════ -->
-<div id="page-about" class="page">
-  <div class="page-hero">
-    <div class="eyebrow">About Us</div>
-    <h1>Meet Dr. Sonday & Team</h1>
-    <p>Over 20 years of gentle, affordable dentistry — built on trust, honesty, and genuine care for every patient.</p>
-  </div>
 
-  <div class="section">
-    <div class="section-inner" style="max-width:900px">
-      <div class="about-layout">
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1629909615957-be38d29fc62c?w=800&q=80" alt="Dr. Sonday with patient" loading="lazy"/>
-          <div class="about-badge">
-            <div class="about-badge-num">20+</div>
-            <div class="about-badge-label">Years serving<br>Cape Town</div>
-          </div>
+<!-- ========== ABOUT PAGE ========== -->
+<div class="page" id="page-about">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-breadcrumb">
+        <a href="#" onclick="navTo('home');return false;">Home</a>
+        <span>/</span>
+        <span>About Us</span>
+      </div>
+      <h1>About Dr. Sonday Dentistry</h1>
+      <p>Two decades of trusted, compassionate dental care in Ocean View, Cape Town.</p>
+    </div>
+  </section>
+
+  <section class="about-story">
+    <div class="container">
+      <div class="about-story-grid">
+        <div class="about-story-img fade-in">
+          <img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=800&q=80" alt="Dental practice interior">
         </div>
-        <div>
-          <div class="eyebrow">Our Story</div>
-          <h2 class="section-title">Dentistry with a Human Touch</h2>
-          <p style="color:var(--text-mid);font-size:15px;line-height:1.8;font-weight:300;margin-bottom:12px">Dr. S. Sonday opened his practice in Ocean View over two decades ago with a simple mission: provide affordable, high-quality dental care to his community. Today, that same mission drives everything we do.</p>
-          <p style="color:var(--text-mid);font-size:15px;line-height:1.8;font-weight:300;margin-bottom:12px">We believe everyone deserves a healthy smile — regardless of budget. That's why we keep our pricing transparent and fair, never recommending unnecessary procedures.</p>
-          <p style="color:var(--text-mid);font-size:15px;line-height:1.8;font-weight:300">From nervous first-time visitors to lifelong regulars, our patients are family. We take the time to listen, explain, and make sure you're comfortable at every step.</p>
-          <ul class="check-list">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Qualified General Dentist (BChD) · HPCSA Registered</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>4,800+ patients treated</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>5-star Google rating (47 reviews)</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>All major medical aids accepted</li>
-          </ul>
+        <div class="about-story-content fade-in">
+          <span class="eyebrow">Our Story</span>
+          <h2>A Practice Built on Trust</h2>
+          <p>Dr. S. Sonday, BChD, founded his practice with a clear vision: to provide the highest standard of dental care in a warm, welcoming environment where every patient is treated like family.</p>
+          <p>Over 20 years later, that vision remains at the heart of everything we do. From our treatment rooms to the friendly smiles that greet you at reception, every detail of our practice is designed with your comfort and care in mind.</p>
+          <p>As an HPCSA-registered practitioner, Dr. Sonday combines extensive clinical expertise with a genuinely compassionate approach. He takes time to listen to your concerns, explain your options clearly, and ensure you are comfortable with every step of your treatment plan.</p>
+          <p>Our team of dedicated professionals shares this commitment. Together, we have earned a perfect 5.0 Google rating and the trust of over 4,800 patients across Cape Town.</p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- TEAM -->
-  <div class="section" style="background:var(--cream)">
-    <div class="section-inner">
-      <div style="text-align:center;margin-bottom:8px">
-        <div class="eyebrow" style="justify-content:center">Our Team</div>
-        <h2 class="section-title">The People Behind Your Smile</h2>
-        <p class="section-sub" style="margin:0 auto">A small, dedicated team who genuinely care about every patient.</p>
+  <section class="about-philosophy">
+    <div class="container text-center">
+      <span class="eyebrow">Our Philosophy</span>
+      <h2>The Dr. Sonday Way</h2>
+      <p class="section-subtitle mx-auto" style="margin-top:12px;">Three principles guide every decision we make, every treatment we recommend, and every interaction we have with our patients.</p>
+      <div class="philosophy-grid">
+        <div class="philosophy-card fade-in">
+          <div class="philosophy-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3>Patient-First Care</h3>
+          <p>Your needs, concerns, and comfort always come first. We never rush a consultation or push unnecessary treatments. Your trust is our greatest asset, and we work hard to keep it.</p>
+        </div>
+        <div class="philosophy-card fade-in">
+          <div class="philosophy-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3>Radical Honesty</h3>
+          <p>We tell you what you need to hear, not what you want to hear. From diagnosis to pricing, every conversation is rooted in transparency. No upselling, no hidden costs, just honest care.</p>
+        </div>
+        <div class="philosophy-card fade-in">
+          <div class="philosophy-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Quality Without Compromise</h3>
+          <p>We use premium materials, proven techniques, and take the time to do things right. Your dental health is a long-term investment, and we treat it that way with every procedure.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container text-center">
+      <span class="eyebrow">Our Team</span>
+      <h2>Meet the Team Behind Your Smile</h2>
+      <p class="section-subtitle mx-auto" style="margin-top:12px;">A small, dedicated team that works together seamlessly to deliver an exceptional patient experience every single time.</p>
       <div class="team-grid">
-        <div class="team-card">
-          <div class="team-photo"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" alt="Dr Sonday" loading="lazy"/></div>
-          <div class="team-name">Dr. S. Sonday</div>
-          <div class="team-role">General Dentist (BChD) · Owner</div>
+        <div class="team-card fade-in">
+          <div class="team-card-img">DS</div>
+          <div class="team-card-body">
+            <h3>Dr. S. Sonday</h3>
+            <p class="team-title">Owner &amp; Dentist, BChD</p>
+            <p>20+ years of clinical excellence and compassionate care.</p>
+          </div>
         </div>
-        <div class="team-card">
-          <div class="team-photo"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80" alt="Harriet" loading="lazy"/></div>
-          <div class="team-name">Harriet Lamb</div>
-          <div class="team-role">Practice Manager</div>
+        <div class="team-card fade-in">
+          <div class="team-card-img">HL</div>
+          <div class="team-card-body">
+            <h3>Harriet Lamb</h3>
+            <p class="team-title">Practice Manager</p>
+            <p>Keeping operations smooth and patients smiling.</p>
+          </div>
         </div>
-        <div class="team-card">
-          <div class="team-photo"><img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=400&q=80" alt="Lungelwa" loading="lazy"/></div>
-          <div class="team-name">Lungelwa</div>
-          <div class="team-role">Dental Assistant</div>
+        <div class="team-card fade-in">
+          <div class="team-card-img">L</div>
+          <div class="team-card-body">
+            <h3>Lungelwa</h3>
+            <p class="team-title">Dental Assistant</p>
+            <p>Skilled chairside support with a gentle touch.</p>
+          </div>
         </div>
-        <div class="team-card">
-          <div class="team-photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Zee" loading="lazy"/></div>
-          <div class="team-name">Zee</div>
-          <div class="team-role">Dental Assistant</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VALUES -->
-  <div class="section">
-    <div class="section-inner" style="max-width:900px;text-align:center">
-      <div class="eyebrow" style="justify-content:center">Why Choose Us</div>
-      <h2 class="section-title">What Makes Us Different</h2>
-      <p class="section-sub" style="margin:0 auto 40px">We're not the biggest practice — but our patients stay for a reason.</p>
-      <div style="display:grid;grid-template-columns:1fr;gap:16px">
-        <div style="background:var(--cream);border-radius:var(--radius-lg);padding:28px 24px;text-align:left;display:flex;gap:16px;align-items:flex-start">
-          <div style="width:44px;height:44px;flex-shrink:0;background:var(--blue-light);border-radius:12px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-          <div><h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:4px">Honest, Affordable Pricing</h3><p style="font-size:14px;color:var(--text-mid);line-height:1.6;font-weight:300">No hidden fees, no surprise bills. We quote upfront and keep costs fair. Medical aid claims handled for you.</p></div>
-        </div>
-        <div style="background:var(--cream);border-radius:var(--radius-lg);padding:28px 24px;text-align:left;display:flex;gap:16px;align-items:flex-start">
-          <div style="width:44px;height:44px;flex-shrink:0;background:var(--blue-light);border-radius:12px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-          <div><h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:4px">Gentle & Patient-Focused</h3><p style="font-size:14px;color:var(--text-mid);line-height:1.6;font-weight:300">Anxious about the dentist? You're not alone. Dr. Sonday takes extra time with nervous patients — no rushing, no judgment.</p></div>
-        </div>
-        <div style="background:var(--cream);border-radius:var(--radius-lg);padding:28px 24px;text-align:left;display:flex;gap:16px;align-items:flex-start">
-          <div style="width:44px;height:44px;flex-shrink:0;background:var(--blue-light);border-radius:12px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div><h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:4px">Same-Day Emergencies</h3><p style="font-size:14px;color:var(--text-mid);line-height:1.6;font-weight:300">Toothache? Broken tooth? Call us and we'll fit you in the same day. No one should be left in pain waiting for help.</p></div>
+        <div class="team-card fade-in">
+          <div class="team-card-img">Z</div>
+          <div class="team-card-body">
+            <h3>Zee</h3>
+            <p class="team-title">Dental Assistant</p>
+            <p>Dedicated to patient comfort and quality care.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <section class="cta-section">
-    <h2>Ready to Experience the Difference?</h2>
-    <p>New patients always welcome. Book your first visit today.</p>
-    <div class="cta-buttons">
-      <a href="#" class="btn-white" onclick="showPage('contact')">Book Appointment</a>
-      <a href="https://wa.me/27649447759" target="_blank" class="btn-ghost">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp Us
-      </a>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-inner" style="max-width:1100px;margin:0 auto">
-      <div class="footer-bottom" style="border-top:none;padding-top:0;display:flex;justify-content:space-between">
-        <span>© 2025 Dr. Sonday Dentistry.</span>
-        <a href="#" onclick="showPage('home')" style="color:var(--teal);text-decoration:none;font-size:13px">← Back to Home</a>
-      </div>
-    </div>
-  </footer>
-</div>
-
-<!-- ═══════════════ SERVICES PAGE ═══════════════ -->
-<div id="page-services" class="page">
-  <div class="page-hero">
-    <div class="eyebrow">Our Services</div>
-    <h1>Comprehensive Dental Care</h1>
-    <p>Everything your family needs — delivered with expertise, compassion, and honest pricing.</p>
-  </div>
-
-  <div class="section">
-    <div class="section-inner" style="max-width:900px">
-
-      <div class="service-row">
-        <div class="service-row-layout">
-          <div class="service-row-img"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&q=80" alt="General dentistry" loading="lazy"/></div>
-          <div>
-            <div class="service-tag">Preventive</div>
-            <h2>General & Preventive Dentistry</h2>
-            <p>Regular check-ups, professional cleans and early treatment are the foundation of good oral health for the whole family.</p>
-            <ul class="check-list">
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Comprehensive oral examinations</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Professional scale & polish</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Gum disease treatment</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Children's hygiene guidance</li>
-            </ul>
-            <a href="#" class="btn-white" style="background:var(--navy);color:white;display:inline-flex;width:auto;padding:13px 22px;font-size:14px" onclick="showPage('contact')">Book a Check-Up</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-row">
-        <div class="service-row-layout rev">
-          <div class="service-row-img"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=700&q=80" alt="Teeth whitening" loading="lazy"/></div>
-          <div>
-            <div class="service-tag">Cosmetic</div>
-            <h2>Teeth Whitening</h2>
-            <p>Professional whitening that's safe, effective and tailored to your teeth. Achieve the brightness you want without sensitivity.</p>
-            <ul class="check-list">
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>In-chair professional whitening</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Take-home whitening kits</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sensitivity-safe formulas</li>
-            </ul>
-            <a href="#" class="btn-white" style="background:var(--navy);color:white;display:inline-flex;width:auto;padding:13px 22px;font-size:14px" onclick="showPage('contact')">Book Consultation</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-row">
-        <div class="service-row-layout">
-          <div class="service-row-img"><img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?w=700&q=80" alt="Emergency dentistry" loading="lazy"/></div>
-          <div>
-            <div class="service-tag">Emergency</div>
-            <h2>Emergency & Extractions</h2>
-            <p>Dental pain doesn't wait. Same-day emergency appointments — because no one should suffer through the night waiting for help.</p>
-            <ul class="check-list">
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Same-day appointments</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Gentle tooth extractions</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Pain relief & infection treatment</li>
-            </ul>
-            <a href="tel:+27217830024" class="btn-white" style="background:var(--navy);color:white;display:inline-flex;width:auto;padding:13px 22px;font-size:14px">Call Now: 021 783 0024</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-row">
-        <div class="service-row-layout rev">
-          <div class="service-row-img"><img src="https://images.unsplash.com/photo-1643902795258-9b1d9cdb6b64?w=700&q=80" alt="Dental fillings" loading="lazy"/></div>
-          <div>
-            <div class="service-tag">Restorative</div>
-            <h2>Fillings, Crowns & Dentures</h2>
-            <p>Restore damaged or missing teeth with natural-looking materials — strong, durable and comfortable for everyday life.</p>
-            <ul class="check-list">
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tooth-coloured fillings</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Crowns & bridges</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Comfortable dentures</li>
-            </ul>
-            <a href="#" class="btn-white" style="background:var(--navy);color:white;display:inline-flex;width:auto;padding:13px 22px;font-size:14px" onclick="showPage('contact')">Get a Quote</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
   <section class="cta-section">
-    <h2>Not Sure What You Need?</h2>
-    <p>Book a consultation and Dr. Sonday will recommend the best, most affordable treatment for you.</p>
-    <div class="cta-buttons">
-      <a href="#" class="btn-white" onclick="showPage('contact')">Book a Consultation</a>
+    <div class="container">
+      <span class="eyebrow" style="color:var(--gold-light);">Join Our Family</span>
+      <h2>Experience the Dr. Sonday Difference</h2>
+      <p class="section-subtitle mx-auto">Discover what thousands of Cape Town families already know. Schedule your first consultation and see why our patients never leave.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/27649447759?text=Hi%20Dr.%20Sonday%2C%20I%27d%20like%20to%20schedule%20my%20first%20consultation." class="btn btn-gold" target="_blank" rel="noopener">Schedule a Consultation</a>
+        <a href="tel:+27217830024" class="btn btn-ghost">Call 021 783 0024</a>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-inner" style="max-width:1100px;margin:0 auto">
-      <div class="footer-bottom" style="border-top:none;padding-top:0;display:flex;justify-content:space-between">
-        <span>© 2025 Dr. Sonday Dentistry.</span>
-        <a href="#" onclick="showPage('home')" style="color:var(--teal);text-decoration:none;font-size:13px">← Back to Home</a>
-      </div>
-    </div>
-  </footer>
 </div>
 
-<!-- ═══════════════ CONTACT PAGE ═══════════════ -->
-<div id="page-contact" class="page">
-  <div class="contact-layout">
-    <div class="contact-hero">
-      <div class="eyebrow">Get In Touch</div>
-      <h1>Book Your Appointment</h1>
-      <p>New patients always welcome. We confirm within 2 hours during business hours.</p>
-      <div class="contact-quick">
-        <a href="tel:+27217830024" class="contact-quick-item">
-          <div class="contact-quick-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <div class="contact-quick-body"><strong>021 783 0024</strong><span>Call to book</span></div>
-        </a>
-        <a href="https://wa.me/27649447759" target="_blank" class="contact-quick-item">
-          <div class="contact-quick-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
-          <div class="contact-quick-body"><strong>064 944 7759</strong><span>WhatsApp us</span></div>
-        </a>
-        <div class="contact-quick-item" style="cursor:default">
-          <div class="contact-quick-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div class="contact-quick-body"><strong>Ocean View, Cape Town</strong><span>Flat 1, 18 Gemini, 7975</span></div>
-        </div>
-        <div class="contact-quick-item" style="cursor:default">
-          <div class="contact-quick-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div class="contact-quick-body"><strong>Mon–Fri 08:30–17:00</strong><span>Sat 08:00–12:30</span></div>
-        </div>
-      </div>
-    </div>
 
-    <div class="form-section">
-      <div class="form-card">
-        <form id="form-content" onsubmit="submitForm(event)">
-          <h2>Request an Appointment</h2>
-          <p>We'll call or WhatsApp to confirm within 2 hours.</p>
-          <div class="form-row-2">
-            <div class="form-group"><label for="fname">First Name *</label><input id="fname" name="first_name" type="text" placeholder="Your name" required></div>
-            <div class="form-group"><label for="lname">Last Name *</label><input id="lname" name="last_name" type="text" placeholder="Last name" required></div>
+<!-- ========== SERVICES PAGE ========== -->
+<div class="page" id="page-services">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-breadcrumb">
+        <a href="#" onclick="navTo('home');return false;">Home</a>
+        <span>/</span>
+        <span>Services</span>
+      </div>
+      <h1>Our Dental Services</h1>
+      <p>Comprehensive, affordable dental care tailored to your unique needs. Quality you can trust, prices you can afford.</p>
+    </div>
+  </section>
+
+  <section class="service-detail">
+    <div class="container">
+      <div class="service-detail-grid fade-in">
+        <div class="service-detail-img">
+          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80" alt="General dental care">
+        </div>
+        <div class="service-detail-content">
+          <span class="eyebrow">Preventive Care</span>
+          <h3>General &amp; Preventive Dentistry</h3>
+          <p>Prevention is the foundation of great dental health. Our comprehensive check-ups and cleanings catch issues early, saving you time, money, and discomfort in the long run. We take a thorough approach to every examination.</p>
+          <ul class="service-detail-checklist">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Comprehensive oral examinations</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Professional scaling and polishing</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Digital X-rays and diagnostics</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Oral hygiene education and guidance</li>
+          </ul>
+          <div class="service-detail-price">From R350</div>
+          <div class="service-detail-cta">
+            <a href="https://wa.me/27649447759?text=Hi%20Dr.%20Sonday%2C%20I%27d%20like%20to%20book%20a%20general%20check-up." class="btn btn-gold btn-sm" target="_blank" rel="noopener">Book a Check-Up</a>
           </div>
-          <div class="form-group"><label for="phone">Phone / WhatsApp *</label><input id="phone" name="phone" type="tel" placeholder="e.g. 082 000 0000" required pattern="[0-9+\s\-]{7,15}"></div>
-          <div class="form-group"><label for="email">Email (optional)</label><input id="email" name="email" type="email" placeholder="you@example.com"></div>
-          <div class="form-group">
-            <label for="service">Service Needed</label>
-            <select id="service" name="service">
-              <option>General Check-Up & Clean</option>
-              <option>Teeth Whitening</option>
-              <option>Filling or Crown</option>
-              <option>Dental Emergency</option>
-              <option>Children's Dentistry</option>
-              <option>Extraction or Dentures</option>
-              <option>Scale & Polish</option>
-              <option>Other / Not Sure</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="time">Preferred Time</label>
-            <select id="time" name="preferred_time">
-              <option>Morning (8:30–12:00)</option>
-              <option>Afternoon (12:00–17:00)</option>
-              <option>Saturday Morning</option>
-              <option>Any time — flexible</option>
-            </select>
-          </div>
-          <div class="form-group"><label for="notes">Anything we should know? (optional)</label><textarea id="notes" name="notes" placeholder="e.g. dental anxiety, specific pain..."></textarea></div>
-          <button type="submit" class="form-submit">Request My Appointment →</button>
-          <div class="form-privacy"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Your details are private and never shared.</div>
-        </form>
-        <div class="form-success" id="form-success">
-          <div class="success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h3>Request Received!</h3>
-          <p>We'll call or WhatsApp you within 2 hours to confirm.<br><br>See you soon!</p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- MAP -->
-  <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.0!2d18.35!3d-34.13!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDA3JzQ4LjAiUyAxOMKwMjEnMDAuMCJF!5e0!3m2!1sen!2sza!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Dr. Sonday Dentistry location"></iframe>
-
-  <div class="section" style="background:var(--cream);padding:48px 24px">
-    <div style="max-width:800px;margin:0 auto">
-      <h3 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--navy);margin-bottom:6px">Opening Hours</h3>
-      <p style="color:var(--text-light);font-size:13px;margin-bottom:0">Walk-ins welcome. Appointments preferred.</p>
-      <div class="hours-grid">
-        <div class="hours-card"><div class="hours-day">Monday – Friday</div><div class="hours-time">08:30 – 17:00</div></div>
-        <div class="hours-card"><div class="hours-day">Saturday</div><div class="hours-time">08:00 – 12:30</div></div>
-        <div class="hours-card"><div class="hours-day">Sunday</div><div class="hours-time" style="color:var(--text-light)">Closed</div></div>
-        <div class="hours-card" style="background:var(--navy);border-color:var(--navy)"><div class="hours-day" style="color:white">Emergency?</div><div class="hours-time" style="color:var(--teal)">Call 021 783 0024</div></div>
+  <section class="service-detail">
+    <div class="container">
+      <div class="service-detail-grid fade-in">
+        <div class="service-detail-img">
+          <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&q=80" alt="Teeth whitening">
+        </div>
+        <div class="service-detail-content">
+          <span class="eyebrow">Cosmetic</span>
+          <h3>Professional Teeth Whitening</h3>
+          <p>Reveal a brighter, more confident smile with our professional whitening treatments. Unlike over-the-counter products, our in-office treatments deliver dramatic, long-lasting results safely under expert supervision.</p>
+          <ul class="service-detail-checklist">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Professional-grade whitening agents</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Visible results in one session</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Safe for sensitive teeth</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Aftercare guidance included</li>
+          </ul>
+          <div class="service-detail-price">From R1,500</div>
+          <div class="service-detail-cta">
+            <a href="https://wa.me/27649447759?text=Hi%20Dr.%20Sonday%2C%20I%27m%20interested%20in%20teeth%20whitening." class="btn btn-gold btn-sm" target="_blank" rel="noopener">Enquire About Whitening</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <footer>
-    <div class="footer-inner" style="max-width:1100px;margin:0 auto">
-      <div class="footer-bottom" style="border-top:none;padding-top:0;display:flex;justify-content:space-between">
-        <span>© 2025 Dr. Sonday Dentistry.</span>
-        <a href="#" onclick="showPage('home')" style="color:var(--teal);text-decoration:none;font-size:13px">← Back to Home</a>
+  <section class="service-detail">
+    <div class="container">
+      <div class="service-detail-grid fade-in">
+        <div class="service-detail-img">
+          <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&q=80" alt="Fillings and crowns">
+        </div>
+        <div class="service-detail-content">
+          <span class="eyebrow">Restorative</span>
+          <h3>Fillings, Crowns &amp; Restorations</h3>
+          <p>When teeth are damaged by decay, trauma, or wear, our restorative treatments bring them back to full function and appearance. We use high-quality, tooth-coloured materials that blend seamlessly with your natural teeth.</p>
+          <ul class="service-detail-checklist">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tooth-coloured composite fillings</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Porcelain and ceramic crowns</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Long-lasting, natural-looking results</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Gentle, pain-free procedures</li>
+          </ul>
+          <div class="service-detail-price">Fillings from R450 &middot; Crowns from R2,500</div>
+          <div class="service-detail-cta">
+            <a href="https://wa.me/27649447759?text=Hi%20Dr.%20Sonday%2C%20I%20need%20a%20filling%20or%20crown%20consultation." class="btn btn-gold btn-sm" target="_blank" rel="noopener">Book a Consultation</a>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
+  </section>
+
+  <section class="service-detail">
+    <div class="container">
+      <div class="service-detail-grid fade-in">
+        <div class="service-detail-img">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80" alt="Dentures and extractions">
+        </div>
+        <div class="service-detail-content">
+          <span class="eyebrow">Prosthetic &amp; Surgical</span>
+          <h3>Dentures &amp; Extractions</h3>
+          <p>Whether you need a gentle extraction or custom-fitted dentures, we provide compassionate care every step of the way. Our dentures are crafted for a natural appearance and comfortable fit, restoring both function and confidence.</p>
+          <ul class="service-detail-checklist">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full and partial dentures</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Gentle, minimally-invasive extractions</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Custom fitting for maximum comfort</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Comprehensive aftercare support</li>
+          </ul>
+          <div class="service-detail-price">Extractions from R500 &middot; Dentures from R3,500</div>
+          <div class="service-detail-cta">
+            <a href="https://wa.me/27649447759?text=Hi%20Dr.%20Sonday%2C%20I%27d%20like%20to%20discuss%20dentures%20or%20an%20extraction." class="btn btn-gold btn-sm" target="_blank" rel="noopener">Book a Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--gold-light);">Ready to Book?</span>
+      <h2>Not Sure Which Service You Need?</h2>
+      <p class="section-subtitle mx-auto">No problem. Book a general consultation and Dr. Sonday will assess your needs and recommend the best course of action. No pressure, just honest guidance.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/27649447759?text=Hi%20Dr.%20Sonday%2C%20I%27d%20like%20to%20book%20a%20general%20consultation." class="btn btn-gold" target="_blank" rel="noopener">Schedule a Consultation</a>
+        <a href="tel:+27217830024" class="btn btn-ghost">Call 021 783 0024</a>
+      </div>
+    </div>
+  </section>
+
 </div>
+
+
+<!-- ========== CONTACT PAGE ========== -->
+<div class="page" id="page-contact">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-breadcrumb">
+        <a href="#" onclick="navTo('home');return false;">Home</a>
+        <span>/</span>
+        <span>Contact</span>
+      </div>
+      <h1>Get in Touch</h1>
+      <p>We would love to hear from you. Reach out by phone, WhatsApp, or complete the form below and we will get back to you promptly.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info fade-in">
+          <h3>Contact Information</h3>
+          <p>Reach out directly or send us a message. We typically respond within 30 minutes during business hours.</p>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Phone</div>
+              <div class="contact-item-value"><a href="tel:+27217830024">021 783 0024</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">WhatsApp</div>
+              <div class="contact-item-value"><a href="https://wa.me/27649447759" target="_blank" rel="noopener">064 944 7759</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value"><a href="mailto:docsonday12@gmail.com">docsonday12@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Address</div>
+              <div class="contact-item-value">Flat 1, 18 Gemini<br>Ocean View, Cape Town, 7975</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Hours</div>
+              <div class="contact-item-value">Mon-Fri: 08:30 - 17:00<br>Sat: 08:00 - 12:30<br>Sun: Closed</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap fade-in">
+          <h3>Send Us a Message</h3>
+          <p>Fill in the form below and we will respond via WhatsApp. Alternatively, message us directly on WhatsApp for the fastest response.</p>
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <div class="form-group">
+              <label for="formName">Full Name *</label>
+              <input type="text" id="formName" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="formPhone">Phone Number *</label>
+              <input type="tel" id="formPhone" name="phone" placeholder="e.g. 082 123 4567" required>
+            </div>
+            <div class="form-group">
+              <label for="formService">Service Interested In</label>
+              <select id="formService" name="service">
+                <option value="">Select a service</option>
+                <option value="General Check-Up">General Check-Up</option>
+                <option value="Teeth Whitening">Teeth Whitening</option>
+                <option value="Emergency">Emergency Dentistry</option>
+                <option value="Children's Dentistry">Children's Dentistry</option>
+                <option value="Fillings & Crowns">Fillings &amp; Crowns</option>
+                <option value="Dentures & Extractions">Dentures &amp; Extractions</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="formMessage">Message</label>
+              <textarea id="formMessage" name="message" placeholder="Tell us about your dental needs or any questions you have..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold form-submit">Send via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-hours">
+    <div class="container">
+      <div class="text-center">
+        <span class="eyebrow">Opening Hours</span>
+        <h2>When We Are Open</h2>
+      </div>
+      <div class="hours-grid mx-auto" style="margin-top:32px;">
+        <div class="hours-row" id="hours-mon">
+          <span class="hours-row-day">Monday</span>
+          <span class="hours-row-time">08:30 - 17:00</span>
+        </div>
+        <div class="hours-row" id="hours-tue">
+          <span class="hours-row-day">Tuesday</span>
+          <span class="hours-row-time">08:30 - 17:00</span>
+        </div>
+        <div class="hours-row" id="hours-wed">
+          <span class="hours-row-day">Wednesday</span>
+          <span class="hours-row-time">08:30 - 17:00</span>
+        </div>
+        <div class="hours-row" id="hours-thu">
+          <span class="hours-row-day">Thursday</span>
+          <span class="hours-row-time">08:30 - 17:00</span>
+        </div>
+        <div class="hours-row" id="hours-fri">
+          <span class="hours-row-day">Friday</span>
+          <span class="hours-row-time">08:30 - 17:00</span>
+        </div>
+        <div class="hours-row" id="hours-sat">
+          <span class="hours-row-day">Saturday</span>
+          <span class="hours-row-time">08:00 - 12:30</span>
+        </div>
+        <div class="hours-row" id="hours-sun">
+          <span class="hours-row-day">Sunday</span>
+          <span class="hours-row-time">Closed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.0!2d18.33!3d-34.13!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sOcean+View+Cape+Town!5e0!3m2!1sen!2sza!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Dr. Sonday Dentistry Location"></iframe>
+  </section>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" onclick="navTo('home');return false;" style="color:var(--white);margin-bottom:8px;">
+          <div class="nav-logo-icon">DS</div>
+          Dr. Sonday Dentistry
+        </a>
+        <p>Providing exceptional, compassionate dental care to Cape Town families for over 20 years. HPCSA registered. Your smile is our priority.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#" onclick="navTo('services');return false;">General &amp; Preventive</a></li>
+          <li><a href="#" onclick="navTo('services');return false;">Teeth Whitening</a></li>
+          <li><a href="#" onclick="navTo('services');return false;">Emergency Dentistry</a></li>
+          <li><a href="#" onclick="navTo('services');return false;">Children's Dentistry</a></li>
+          <li><a href="#" onclick="navTo('services');return false;">Fillings &amp; Crowns</a></li>
+          <li><a href="#" onclick="navTo('services');return false;">Dentures &amp; Extractions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="#" onclick="navTo('about');return false;">About Us</a></li>
+          <li><a href="#" onclick="navTo('about');return false;">Our Team</a></li>
+          <li><a href="https://maps.app.goo.gl/search/Dr+Sonday+Dentistry+Ocean+View" target="_blank" rel="noopener">Google Reviews</a></li>
+          <li><a href="#" onclick="navTo('contact');return false;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact &amp; Hours</h4>
+        <ul>
+          <li><a href="tel:+27217830024">021 783 0024</a></li>
+          <li><a href="https://wa.me/27649447759" target="_blank" rel="noopener">WhatsApp: 064 944 7759</a></li>
+          <li><a href="mailto:docsonday12@gmail.com">docsonday12@gmail.com</a></li>
+          <li style="margin-top:12px;color:rgba(255,255,255,0.4);font-size:0.85rem;">Mon-Fri: 08:30-17:00</li>
+          <li style="color:rgba(255,255,255,0.4);font-size:0.85rem;">Sat: 08:00-12:30</li>
+          <li style="color:rgba(255,255,255,0.4);font-size:0.85rem;">Sun: Closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="footerYear"></span> Dr. Sonday Dentistry. All rights reserved. | HPCSA Registered Practice | Ocean View, Cape Town
+    </div>
+  </div>
+</footer>
 
 <script>
-function showPage(name) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + name).classList.add('active');
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+  var target = document.getElementById('page-' + pageId);
+  if (target) target.classList.add('active');
+  document.querySelectorAll('.nav-links a[data-page]').forEach(function(a) {
+    a.classList.toggle('active', a.getAttribute('data-page') === pageId);
+  });
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(initAnimations, 100);
+}
+
+function navTo(pageId) {
+  showPage(pageId);
   closeMenu();
 }
 
 function toggleMenu() {
-  const menu = document.getElementById('mobile-menu');
-  const burger = document.getElementById('hamburger');
-  const isOpen = menu.classList.contains('open');
-  menu.classList.toggle('open');
-  burger.classList.toggle('open');
-  document.body.style.overflow = isOpen ? '' : 'hidden';
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
 }
 
 function closeMenu() {
-  document.getElementById('mobile-menu').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
   document.body.style.overflow = '';
 }
 
-function navTo(page) {
-  closeMenu();
-  setTimeout(() => showPage(page), 300);
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('navbar');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+}, { passive: true });
+
+function initAnimations() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(function(el) {
+    el.classList.remove('visible');
+    observer.observe(el);
+  });
 }
 
 function submitForm(e) {
   e.preventDefault();
-  const form = document.getElementById('form-content');
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-  // Build WhatsApp message from form data
-  const data = new FormData(form);
-  const msg = `Hi Dr. Sonday, I'd like to book an appointment.\n\nName: ${data.get('first_name')} ${data.get('last_name')}\nPhone: ${data.get('phone')}${data.get('email') ? '\nEmail: ' + data.get('email') : ''}\nService: ${data.get('service')}\nPreferred time: ${data.get('preferred_time')}${data.get('notes') ? '\nNotes: ' + data.get('notes') : ''}`;
-  // Open WhatsApp with pre-filled message
-  window.open('https://wa.me/27649447759?text=' + encodeURIComponent(msg), '_blank');
-  form.style.display = 'none';
-  document.getElementById('form-success').classList.add('show');
+  var name = document.getElementById('formName').value.trim();
+  var phone = document.getElementById('formPhone').value.trim();
+  var service = document.getElementById('formService').value;
+  var message = document.getElementById('formMessage').value.trim();
+  var text = 'Hi Dr. Sonday, I\'d like to schedule a consultation.\n\n';
+  text += 'Name: ' + name + '\n';
+  text += 'Phone: ' + phone + '\n';
+  if (service) text += 'Service: ' + service + '\n';
+  if (message) text += 'Message: ' + message + '\n';
+  window.open('https://wa.me/27649447759?text=' + encodeURIComponent(text), '_blank');
 }
 
-// Auto-update copyright year
-document.querySelectorAll('.footer-bottom, .footer-bottom span').forEach(el => {
-  el.innerHTML = el.innerHTML.replace(/© \d{4}/, '© ' + new Date().getFullYear());
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+(function() {
+  var days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+  var today = days[new Date().getDay()];
+  var el = document.getElementById('hours-' + today);
+  if (el) el.classList.add('today');
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+  initAnimations();
 });
 </script>
+
 </body>
 </html>
