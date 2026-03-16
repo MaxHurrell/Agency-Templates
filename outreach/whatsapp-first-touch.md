@@ -1,54 +1,74 @@
-# WhatsApp First Touch — Outcome-Framed Outreach
-*Doctrine: We sell outcomes, not websites.*
+# WhatsApp First Touch — Josh-Level Outreach
+*Doctrine: Lead with the problem. Quantify the cost. Show the proof. Remove all risk.*
 
-## How to Use
-Send screenshot of demo hero FIRST, then the text immediately after.
-Replace all `[PLACEHOLDERS]`. Send from Max's personal WhatsApp.
+## Rules
+- Screenshot of demo hero FIRST, then text
+- Never lead with what you do. Lead with what they're losing.
+- Include the one-number cost of their problem
+- Never mention pricing in first message
+- Next step: 5-minute call, not a text conversation
 
 ---
 
-## DENTAL (SA Market)
+## DENTAL — Cape Town (No Website)
 
-Hi [FIRST NAME], I'm Max. I noticed [BUSINESS NAME] has [RATING] stars on Google — that's incredible for a practice in [AREA].
+Dr [NAME], you have [RATING] stars from [COUNT] reviews on Google — your patients clearly rate you.
 
-I checked your site though, and I think it's costing you patients. People find your reviews, click through, and the site doesn't make it easy to book.
+But here's the thing: when someone in [AREA] Googles "dentist near me", finds your reviews, and clicks through — there's no website. They book somewhere else.
 
-So I built what it could look like:
+At R6,700 lifetime value per patient, even losing 3 patients a month to this costs your practice R20,000+.
+
+I went ahead and built what your site should look like:
 [DEMO URL]
 
-Your real reviews, services, and number are already on it. Two new patients from this site and it's paid for itself. Have a look — takes 30 seconds.
+Your real details, real reviews, real services. Takes 30 seconds to check on your phone. If you like it, I'd love a 5-minute call. If not — no hard feelings.
 
 ---
 
-## AESTHETICS (US Market)
+## DENTAL — Cape Town (Running Ads)
 
-Hi [FIRST NAME], I'm Max. I came across [BUSINESS NAME] — your patients clearly love you ([RATING] stars, [COUNT] reviews).
+Dr [NAME], I noticed you're running Google Ads for "[dentist + area]".
 
-But honestly? Your website doesn't show people the experience your reviews describe. I think you're losing bookings because of it.
+I checked your landing page — I think roughly 60% of those clicks are bouncing because the page doesn't make it easy to book. At R15-R30 per click, that's potentially R[X]/month in wasted ad spend.
 
-I went ahead and built what it could look like:
+I built a landing page designed to convert those clicks into bookings:
 [DEMO URL]
 
-Your real treatments, reviews, and booking details are already on it. Two new clients and it's more than paid for itself. Worth 30 seconds of your time.
+Your real details and reviews are already on it. This could pay for itself from ad savings alone in the first month. Worth a quick look?
 
 ---
 
-## LAW (US Market)
+## AESTHETICS — Miami
 
-Hi [FIRST NAME], I noticed [BUSINESS NAME] has strong reviews on Google — but your website isn't giving potential clients the confidence to pick up the phone.
+[FIRST NAME], you have [RATING] stars from [COUNT] reviews — your patients clearly love what you do.
 
-For a firm like yours, one missed case could be worth $10,000+. I built a site concept that's designed to convert visitors into consultations:
+But I checked your website, and honestly? It doesn't match the experience your reviews describe. When someone sees "[BUSINESS NAME] reviews" and clicks through, the site needs to close the deal. Right now I think it's losing you bookings.
+
+I built what it should look like:
 [DEMO URL]
 
-Your real practice areas, credentials, and reviews are already on it. One new case from this site and it's a rounding error. Take a look — 30 seconds.
+Your real treatments, team, and reviews are on it. Two new regular clients from this site and it pays for itself every year. Takes 30 seconds.
 
 ---
 
-## Rules (unchanged)
-- Screenshot FIRST, then text — image creates curiosity before the ask
-- Never send a voice note on first touch
-- Never mention pricing in this message
-- Never use "we" — Max is one person, keep it personal
-- If they reply positively, move to a call — don't sell over text
-- If they ask price: "It depends on what you need — can I give you a quick call? 5 minutes max."
-- During demo phase, all form submissions go to Max — if someone submits, use it as a Day 3 hook
+## LAW — Miami
+
+[FIRST NAME], I came across [FIRM NAME] — [RATING] stars, [AWARDS]. Strong credentials.
+
+But I'll be direct: your current website doesn't give someone in crisis the confidence to pick up the phone in the 3 seconds they're deciding. For a firm at your level, one missed consultation could be worth $10,000-$50,000.
+
+I built what it should look like:
+[DEMO URL]
+
+Your practice areas, credentials, and real reviews are already on it. One case from this site makes the investment invisible. Worth 30 seconds?
+
+---
+
+## IF THEY REPLY POSITIVELY
+"Great — can I call you for 5 minutes today? I'll walk you through it and answer any questions. What time works?"
+
+## IF THEY ASK ABOUT PRICE
+"The short answer: two new [patients/clients] and it pays for itself. But pricing depends on what you need — can I call you for 5 minutes? I'll give you the full picture."
+
+## IF NO REPLY AFTER 48 HOURS
+Send a screenshot of the mobile view with: "Just checking you saw this — built it specifically for [BUSINESS NAME]. Happy to jump on a quick call whenever suits you."

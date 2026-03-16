@@ -1,30 +1,35 @@
-# Email First Touch — Outcome-Framed Outreach
-*Doctrine: We sell outcomes, not websites.*
+# Email First Touch — Josh-Level Outreach
+*Doctrine: Subject line names the problem. Body quantifies the cost. Demo proves the fix. Risk removed.*
 
-## How to Use
-Send from maxhurrellsa@gmail.com. Replace all `[PLACEHOLDERS]`.
-Attach one screenshot of the mobile hero view. Plain text — no HTML formatting.
+## Rules
+- Subject line: name THEIR problem, not your solution
+- Under 200 words
+- One mobile screenshot attached
+- Plain text — reads more personal
+- Follow up via WhatsApp if no reply in 48 hours
 
 ---
 
-## DENTAL (SA Market)
+## DENTAL — Cape Town (No Website)
 
-**Subject:** [BUSINESS NAME] — you're losing patients to your website
+**Subject:** [BUSINESS NAME] — R20,000+/month walking past your practice
 
-Hi [FIRST NAME],
+Hi Dr [NAME],
 
-I found [BUSINESS NAME] on Google Maps — [RATING] stars from [COUNT] reviews. Your patients clearly trust you.
+You have [RATING] stars from [COUNT] reviews. Your patients clearly trust you.
 
-But your website is a different story. Someone finds your reviews, taps through to your site, and... it doesn't make it easy to book. On mobile especially, the experience doesn't match your reputation.
+But when someone in [AREA] searches "dentist near me" and finds those reviews, there's nowhere to go. No website. No way to book online. They call someone else.
 
-I went ahead and built what it could look like:
+At R6,700 lifetime value per patient, losing even 3 patients a month to this costs your practice over R20,000.
+
+I built what your site should look like:
 [DEMO URL]
 
-Your real services, reviews, hours, and phone number are already on it. It's designed to do one thing: turn the people who already find you into people who call you.
+Your real services, reviews, hours, and number are already on it. It's designed to do one thing: turn the people who already find you into people who call you.
 
-Two new patients from this site and it's paid for itself. Everything after that is profit.
+Two new patients and it's paid for itself. No cost to look. If you want it live, I can have it on your own domain within 5 days.
 
-No cost to look. If you like it, I'd love 5 minutes on the phone.
+5 minutes on the phone and I'll walk you through it.
 
 Max Hurrell
 7thsense | Cape Town
@@ -32,22 +37,45 @@ Max Hurrell
 
 ---
 
-## AESTHETICS (US Market)
+## DENTAL — Cape Town (Running Ads)
 
-**Subject:** [BUSINESS NAME] — your reviews deserve a better website
+**Subject:** [BUSINESS NAME] — your Google Ads may be wasting R[X]/month
+
+Hi Dr [NAME],
+
+I noticed you're running Google Ads for "[keyword]". That's a smart investment — but I checked your landing page, and I think roughly 60% of those clicks are bouncing.
+
+At R15-R30 per click, that's potentially R[X]/month in wasted ad spend on visitors who never book.
+
+I built a landing page designed to convert those clicks:
+[DEMO URL]
+
+Your real data is on it. If this page converts even 10% better than your current one, it pays for itself from ad savings alone in the first month.
+
+No cost to look. 5 minutes on the phone and I'll show you the difference.
+
+Max Hurrell
+7thsense | Cape Town
+[MAX PHONE]
+
+---
+
+## AESTHETICS — Miami
+
+**Subject:** [BUSINESS NAME] — your reviews deserve a website that converts
 
 Hi [FIRST NAME],
 
-I came across [BUSINESS NAME] — [RATING] stars on Google with [COUNT] reviews. Your patients clearly love what you do.
+[RATING] stars from [COUNT] reviews. Your patients clearly love what you do.
 
-But your website doesn't reflect that experience. When someone sees your reviews and clicks through, the site should make them feel the same warmth and professionalism they'd feel walking into your practice. Right now, I think it's losing you bookings.
+But your website doesn't reflect that experience. When someone sees your reviews and clicks through, the site needs to make them feel the same trust your patients describe. I checked yours — I think it's costing you bookings.
 
-I built what it could look like:
+I built what it should look like:
 [DEMO URL]
 
-Your real treatments, team, reviews, and booking details are all on it. Two new regular clients from this site and it's more than paid for itself.
+Your real treatments, team, reviews, and booking details are on it. Two new regular clients from this site pays for it every year, on repeat.
 
-No cost, no obligation. Worth 30 seconds to look. Let me know what you think.
+No cost, no obligation — worth 30 seconds. If you like it, 5 minutes on the phone to discuss getting it live.
 
 Max Hurrell
 7thsense
@@ -55,34 +83,23 @@ Max Hurrell
 
 ---
 
-## LAW (US Market)
+## LAW — Miami
 
-**Subject:** [BUSINESS NAME] — your site may be costing you cases
+**Subject:** [FIRM NAME] — your website may be costing you cases
 
 Hi [FIRST NAME],
 
-I came across [BUSINESS NAME] and noticed you have strong credentials and solid reviews. But I'll be direct — your current website doesn't instill the confidence a potential client needs to pick up the phone in a crisis moment.
+[AWARDS]. [RATING] stars on Google. Strong credentials.
 
-For a firm handling [PRACTICE AREA], one lost case could be worth $10,000–$50,000. Every week your site underperforms, that's revenue walking to a competitor.
+But your current website doesn't communicate that authority in the 3 seconds a potential client is deciding whether to call. For [PRACTICE AREA] cases worth $10,000-$50,000, every week your site underperforms is real money walking to a competitor.
 
-I built a concept site for your firm:
+I built what it should look like:
 [DEMO URL]
 
-Your real practice areas, credentials, reviews, and contact details are already on it. It's designed to convert visitors into consultations.
+Your practice areas, credentials, reviews, and contact details are on it. It's designed to convert visitors into consultations.
 
-One new case from this site and it's a rounding error on your ROI. No cost to look.
+One case from this site makes the investment a rounding error. No cost to look.
 
 Max Hurrell
 7thsense
 [MAX PHONE]
-
----
-
-## Rules
-- Subject line names the PROBLEM, not the solution
-- Under 200 words
-- One mobile screenshot attached
-- Plain text — reads more personal
-- Use their first name or don't send
-- Follow up via WhatsApp if no reply in 48 hours
-- Never mention pricing in the email — save for the call
