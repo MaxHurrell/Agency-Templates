@@ -119,6 +119,8 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 24. **FAVICON:** Favicons use an SVG data URI with the brand primary colour background and two-letter business initials in white. Never use emoji favicons (tooth, house, etc.) — they look unprofessional in browser tabs.
 25. **DATA VERIFICATION:** Before deploying any demo, cross-check phone number, address, operating hours, and Google review count against the business's Google Maps listing. If any data cannot be verified, mark it in the niche config as `"verified": false` and flag to Max before sending the demo.
 26. **IMAGE FILE VERIFICATION:** Before deploying, verify every `<img src="...">` in the HTML points to a file that exists in the project directory. Never deploy a site with broken image references.
+27. **TEAM SECTION:** If real team photos cannot be extracted via Firecrawl, generate professional headshots via Gemini/Imagen with section-specific prompts. Never leave a team card without an image.
+28. **REVIEW SOURCING:** Before building any demo, search Google for the business name + 'reviews' to find their Google rating and review count. If reviews exist — the Google reviews component is mandatory. Never omit reviews because Firecrawl failed — use web search as fallback to find review data.
 
 ---
 

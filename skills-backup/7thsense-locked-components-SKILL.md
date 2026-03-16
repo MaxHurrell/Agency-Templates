@@ -535,6 +535,9 @@ Before completing any build, verify:
 
 ### Conditional: ONLY include if business has real Google reviews. Never show empty or placeholder review cards.
 
+### REVIEW SOURCING RULE:
+If Firecrawl cannot extract reviews — use web search: '[business name] Google reviews rating'. Reviews from web search are acceptable for verified count and rating. Never omit the reviews component for a business that has real Google reviews.
+
 ---
 
 ## Pre-Build Module Checklist
