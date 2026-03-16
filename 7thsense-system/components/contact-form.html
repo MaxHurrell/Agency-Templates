@@ -1,0 +1,177 @@
+<!--
+  7thsense Contact Form Component
+  ================================
+  Replace FORMSPREE_ID with client's Formspree endpoint.
+  Free tier: 50 submissions/month (enough for demos, upgrade for production).
+  Setup: https://formspree.io → create form → copy endpoint ID.
+
+  The form:
+  - Submits via fetch (no page reload)
+  - Shows inline validation errors
+  - Shows success state with checkmark
+  - Resets after 4 seconds
+  - Honeypot field blocks bots
+  - All fields use correct input types
+-->
+
+<!-- FORM HTML — paste into contact section -->
+<form id="contact-form" class="contact-form-inner" novalidate>
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+  <div class="fg">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required minlength="2">
+    <span class="field-error">Please enter your name</span>
+  </div>
+  <div class="fg">
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="e.g. 021 555 1234" required pattern="[0-9+\s\-()]{7,}">
+    <span class="field-error">Please enter a valid phone number</span>
+  </div>
+  <div class="fg">
+    <label for="email">Email (optional)</label>
+    <input type="email" id="email" name="email" placeholder="your@email.co.za">
+    <span class="field-error">Please enter a valid email</span>
+  </div>
+  <div class="fg">
+    <label for="service">Service Needed</label>
+    <select id="service" name="service" required>
+      <option value="">Select a service</option>
+      <!-- Populate per niche from config -->
+    </select>
+    <span class="field-error">Please select a service</span>
+  </div>
+  <div class="fg">
+    <label for="message">Message (optional)</label>
+    <textarea id="message" name="message" rows="3" placeholder="Tell us how we can help..."></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary form-submit">
+    <span class="btn-text">Request Appointment</span>
+    <span class="btn-loading" style="display:none">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-dasharray="31.4 31.4" stroke-dashoffset="0"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.8s" repeatCount="indefinite"/></circle></svg>
+      Sending...
+    </span>
+    <span class="btn-success" style="display:none">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Sent! We'll be in touch.
+    </span>
+  </button>
+</form>
+
+<!-- FORM CSS — add to <style> block -->
+<style>
+.field-error {
+  display: none;
+  color: #dc2626;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  font-weight: 500;
+}
+.fg.error input,
+.fg.error select,
+.fg.error textarea {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+.fg.error .field-error {
+  display: block;
+}
+.fg.success input,
+.fg.success select {
+  border-color: #16a34a;
+}
+.btn-loading svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.form-submit[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+</style>
+
+<!-- FORM JS — add before closing </body> -->
+<script>
+(function() {
+  const FORMSPREE_ID = '__FORMSPREE_ID__'; // Replace per client
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Clear previous errors
+    form.querySelectorAll('.fg').forEach(fg => fg.classList.remove('error', 'success'));
+
+    // Validate
+    let valid = true;
+    form.querySelectorAll('[required]').forEach(field => {
+      const fg = field.closest('.fg');
+      if (!field.value.trim() || !field.checkValidity()) {
+        fg.classList.add('error');
+        valid = false;
+      } else {
+        fg.classList.add('success');
+      }
+    });
+
+    // Email field (optional but validate format if filled)
+    const emailField = form.querySelector('#email');
+    if (emailField && emailField.value && !emailField.checkValidity()) {
+      emailField.closest('.fg').classList.add('error');
+      valid = false;
+    }
+
+    if (!valid) {
+      form.querySelector('.fg.error input, .fg.error select')?.focus();
+      return;
+    }
+
+    // Submit
+    const btn = form.querySelector('.form-submit');
+    const btnText = btn.querySelector('.btn-text');
+    const btnLoading = btn.querySelector('.btn-loading');
+    const btnSuccess = btn.querySelector('.btn-success');
+
+    btn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline-flex';
+
+    try {
+      const data = new FormData(form);
+      const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      btnLoading.style.display = 'none';
+
+      if (res.ok) {
+        btnSuccess.style.display = 'inline-flex';
+        btn.style.background = '#16a34a';
+        setTimeout(() => {
+          form.reset();
+          form.querySelectorAll('.fg').forEach(fg => fg.classList.remove('error', 'success'));
+          btnSuccess.style.display = 'none';
+          btnText.style.display = 'inline-flex';
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        throw new Error('Submit failed');
+      }
+    } catch (err) {
+      btnLoading.style.display = 'none';
+      btnText.textContent = 'Error — try again';
+      btnText.style.display = 'inline-flex';
+      btn.style.background = '#dc2626';
+      btn.disabled = false;
+      setTimeout(() => {
+        btnText.textContent = 'Request Appointment';
+        btn.style.background = '';
+      }, 3000);
+    }
+  });
+})();
+</script>

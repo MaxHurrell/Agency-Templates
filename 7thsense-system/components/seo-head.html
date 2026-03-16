@@ -1,0 +1,57 @@
+<!--
+  7thsense SEO Head Component
+  ============================
+  Copy into <head> of every build. Replace all __PLACEHOLDERS__.
+
+  Generates from niche config:
+  - client.business_name → __BUSINESS_NAME__
+  - client.city → __CITY__
+  - client.niche → informs __PAGE_TITLE__ and __META_DESCRIPTION__
+  - cta_config.primary_action_url → __CANONICAL_URL__ (deployed Vercel URL)
+  - images.hero_image_prompt result → __OG_IMAGE_URL__ (use hero screenshot or generated image)
+-->
+
+<!-- ═══ BASIC META ═══ -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>__PAGE_TITLE__</title>
+<meta name="description" content="__META_DESCRIPTION__">
+<link rel="canonical" href="__CANONICAL_URL__">
+<meta name="robots" content="index, follow">
+
+<!-- ═══ OPEN GRAPH (Facebook, WhatsApp, LinkedIn, iMessage) ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="__PAGE_TITLE__">
+<meta property="og:description" content="__META_DESCRIPTION__">
+<meta property="og:url" content="__CANONICAL_URL__">
+<meta property="og:image" content="__OG_IMAGE_URL__">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:site_name" content="__BUSINESS_NAME__">
+
+<!-- ═══ TWITTER / X ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="__PAGE_TITLE__">
+<meta name="twitter:description" content="__META_DESCRIPTION__">
+<meta name="twitter:image" content="__OG_IMAGE_URL__">
+
+<!-- ═══ FAVICON ═══ -->
+<!--
+  Generate per client:
+  1. Create a 32x32 SVG with the brand primary colour and first letter(s)
+  2. Or use https://favicon.io/favicon-generator/ with brand colours
+  3. Save as favicon.svg and favicon.ico in project root
+-->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- ═══ PERFORMANCE ═══ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preload hero image for LCP — replace with actual hero image path -->
+<link rel="preload" as="image" href="__HERO_IMAGE_PATH__">
+
+<!-- ═══ THEME COLOUR (mobile browser chrome) ═══ -->
+<meta name="theme-color" content="__PRIMARY_COLOUR__">

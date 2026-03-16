@@ -169,6 +169,93 @@ else
   fail "No CSS variables found — should define :root block"
 fi
 
+# ─── SEO & SOCIAL META ───
+echo ""
+echo "--- SEO & Social Meta ---"
+
+if grep -q 'og:title' "$HTML"; then
+  pass "Open Graph title present"
+else
+  fail "Missing og:title — shared links will show blank on WhatsApp/Facebook"
+fi
+
+if grep -q 'og:image' "$HTML"; then
+  pass "Open Graph image present"
+else
+  fail "Missing og:image — shared links will have no preview image"
+fi
+
+if grep -q 'rel="canonical"' "$HTML"; then
+  pass "Canonical URL present"
+else
+  warn "Missing canonical URL"
+fi
+
+if grep -q 'rel="icon"\|favicon' "$HTML"; then
+  pass "Favicon reference present"
+else
+  fail "Missing favicon — browser tab shows generic icon"
+fi
+
+if grep -q 'theme-color' "$HTML"; then
+  pass "Theme colour set for mobile browser chrome"
+else
+  warn "Missing theme-color meta tag"
+fi
+
+# ─── FORM VALIDATION ───
+echo ""
+echo "--- Form Functionality ---"
+
+if grep -q '<form' "$HTML"; then
+  if grep -q 'formspree\|netlify\|action="https\|fetch(' "$HTML"; then
+    pass "Form has real submission endpoint"
+  else
+    fail "Form has no real submission — leads go nowhere (use Formspree or similar)"
+  fi
+
+  if grep -q 'field-error\|error-message\|invalid' "$HTML"; then
+    pass "Form has inline validation/error states"
+  else
+    warn "Form may lack visible validation error states"
+  fi
+else
+  warn "No form found in HTML"
+fi
+
+# ─── HERO CONTRAST (Rule 15) ───
+echo ""
+echo "--- Hero Contrast (Rule 15) ---"
+
+if grep -q 'text-shadow' "$HTML"; then
+  pass "text-shadow found (hero/nav text contrast)"
+else
+  fail "No text-shadow found — Rule 15 requires text-shadow on hero headings"
+fi
+
+if grep -qE 'rgba\(0,\s*0,\s*0,\s*0\.7' "$HTML"; then
+  pass "Directional gradient overlay detected (0.7+ opacity)"
+else
+  warn "Could not confirm directional gradient overlay — verify hero contrast manually"
+fi
+
+# ─── PERFORMANCE ───
+echo ""
+echo "--- Performance ---"
+
+if grep -q 'rel="preload"' "$HTML"; then
+  pass "Preload hint found (likely hero image)"
+else
+  warn "No preload hints — consider preloading hero image for LCP"
+fi
+
+LAZY_COUNT=$(grep -c 'loading="lazy"' "$HTML" 2>/dev/null || echo "0")
+if [ "$LAZY_COUNT" -gt 0 ]; then
+  pass "Lazy loading on $LAZY_COUNT images"
+else
+  warn "No lazy loading found on images"
+fi
+
 # ─── SECTION ORDER MATCH ───
 echo ""
 echo "--- Section Order ---"
