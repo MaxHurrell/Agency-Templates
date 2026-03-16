@@ -207,7 +207,15 @@ fi
 echo ""
 echo "--- Form Functionality ---"
 
-if grep -q '<form' "$HTML"; then
+if grep -q 'tally\.so' "$HTML"; then
+  pass "Tally.so contact form component detected (Rule 16)"
+  # Check source attribution parameter
+  if grep -q 'source=' "$HTML"; then
+    pass "Tally form has source attribution parameter"
+  else
+    fail "Tally form missing &source= parameter for lead attribution"
+  fi
+elif grep -q '<form' "$HTML"; then
   if grep -q 'formspree\|netlify\|action="https\|fetch(' "$HTML"; then
     pass "Form has real submission endpoint"
   else
@@ -220,7 +228,7 @@ if grep -q '<form' "$HTML"; then
     warn "Form may lack visible validation error states"
   fi
 else
-  warn "No form found in HTML"
+  fail "No contact form found — must use Tally component (Rule 16) or <form> with real endpoint"
 fi
 
 # ─── HERO CONTRAST (Rule 15) ───
