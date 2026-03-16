@@ -540,7 +540,28 @@ If Firecrawl cannot extract reviews — use web search: '[business name] Google 
 
 ---
 
-## LOCKED COMPONENT 16: See More Collapse
+## LOCKED COMPONENT 16: Faith Identity Display
+
+When a law firm (or any business) identifies as faith-based on their existing site — this must be prominently displayed in the demo. Never bury faith identity in the bio only.
+
+### Implementation:
+1. **Top announcement bar** above the nav — first thing a visitor sees on any device
+   - Background: slightly lighter than nav (e.g. #1B2B4B for navy sites)
+   - Text: 12px, white, centred, with cross symbol
+   - Example: "✝ A Christian Civil Litigation Firm — Serving All People with Faith, Strategy & Excellence"
+2. **Hero bible verse** (desktop only) — below hero subtitle
+   - Italic, 14px, subdued white (rgba 0.7)
+3. **Attorney bio** — natural sentence about faith values
+4. **Trust badge** — cross icon with "Faith-Based Firm" label
+
+### When to apply:
+- Only when the business explicitly identifies as faith-based on their real website
+- Never assume or add faith identity that doesn't exist on the client's actual site
+- Always frame as inclusive: "serving all people"
+
+---
+
+## LOCKED COMPONENT 17: See More Collapse
 
 Any card grid section with more than 4 cards must implement show/hide with a See More button.
 
