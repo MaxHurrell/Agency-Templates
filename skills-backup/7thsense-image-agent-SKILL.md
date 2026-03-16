@@ -42,10 +42,10 @@ Use GEMINI_API_KEY from environment. Every generation call MUST use a locked bri
 
 #### Working Gemini Models (verified 2026-03-16):
 
-**Primary — Native multimodal (recommended):**
+**Primary — Multimodal (recommended, confirmed working 2026-03-16):**
 ```
-Model: gemini-2.5-flash-image
-Endpoint: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent?key=$GEMINI_API_KEY
+Model: gemini-2.5-flash
+Endpoint: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=$GEMINI_API_KEY
 Method: POST
 Body: {"contents":[{"parts":[{"text":"[PROMPT]"}]}],"generationConfig":{"responseModalities":["IMAGE","TEXT"]}}
 Response: candidates[0].content.parts[] → find part with inlineData.data (base64 PNG)
@@ -67,14 +67,16 @@ Same endpoint pattern as above, swap model name.
 ```
 
 **DEPRECATED — Do NOT use these (404):**
+- gemini-2.5-flash-image (use gemini-2.5-flash instead)
 - gemini-2.0-flash-preview-image-generation
 - gemini-2.0-flash-exp-image-generation
+- gemini-1.5-flash
 - imagen-3.0-generate-002
 
 #### Save generated image:
 ```python
 import base64
-# For gemini-2.5-flash-image response:
+# For gemini-2.5-flash response:
 for part in response['candidates'][0]['content']['parts']:
     if 'inlineData' in part:
         img_data = base64.b64decode(part['inlineData']['data'])
