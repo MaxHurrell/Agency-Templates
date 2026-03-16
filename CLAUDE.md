@@ -89,7 +89,7 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 
 ---
 
-## 11 HARD RULES — NEVER VIOLATE
+## 14 HARD RULES — NEVER VIOLATE
 
 1. Never use brand colour as full section background outside the hero
 2. Never use Playfair Display or ornate serif fonts
@@ -102,6 +102,9 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 9. Never use lorem ipsum — always use realistic dummy content
 10. Never skip the pre-build checklist — even for small changes
 11. **SECURITY: Never expose API keys or tokens in any output.** Never echo, print, log, or include the value of VERCEL_TOKEN, GEMINI_API_KEY, ANTHROPIC_API_KEY, or any secret in terminal output, command strings, commit messages, or any displayed text. Read all secrets silently from environment variables. Sanitize all command output to redact any accidentally leaked values before display.
+12. **DESIGN UNIQUENESS:** Before every build, niche research must drive structural decisions. Never copy the layout or section order from a previous build. Niche research determines structure.
+13. **IMAGE GENERATION:** Every generated image must be specifically prompted for the exact section it appears in — hero images show the practice environment, service images show the specific service being performed, team images show professional portraits. Never generate a generic "lounge" or unrelated scene.
+14. **IMAGE EXTRACTION:** Always attempt Firecrawl image extraction first. If images return empty src attributes (JavaScript-rendered site), flag this and fall back to Gemini generation with precise section-specific prompts.
 
 ---
 
