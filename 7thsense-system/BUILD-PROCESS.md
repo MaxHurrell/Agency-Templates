@@ -55,7 +55,16 @@ Build the HTML using:
 
 **The config is the spec. Don't improvise.**
 
-### Step 5: QA
+### Step 5: Embed Contact Form
+
+Use the master Tally contact form from `~/agency-templates/7thsense-system/components/contact-form.html`.
+
+1. Copy the iframe into the contact section
+2. Set `&source=[client-name]` (e.g. `&source=dr-sonday`, `&source=team24`)
+3. Copy the Tally loader script before `</body>`
+4. **Never build a custom contact form** — always use this component
+
+### Step 6: QA
 
 ```bash
 bash ~/7thsense-system/scripts/qa-pre-deploy.sh ./index.html ./niche-config.json
@@ -63,7 +72,7 @@ bash ~/7thsense-system/scripts/qa-pre-deploy.sh ./index.html ./niche-config.json
 
 Do not deploy until this passes with 0 errors.
 
-### Step 6: Deploy
+### Step 7: Deploy
 
 Deploy to its own Vercel project. Confirm 200 response.
 

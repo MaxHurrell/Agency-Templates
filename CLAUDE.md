@@ -89,7 +89,7 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 
 ---
 
-## 15 HARD RULES — NEVER VIOLATE
+## 16 HARD RULES — NEVER VIOLATE
 
 1. Never use brand colour as full section background outside the hero
 2. Never use Playfair Display or ornate serif fonts
@@ -106,6 +106,7 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 13. **IMAGE GENERATION:** Every generated image must be specifically prompted for the exact section it appears in — hero images show the practice environment, service images show the specific service being performed, team images show professional portraits. Never generate a generic "lounge" or unrelated scene.
 14. **IMAGE EXTRACTION:** Always attempt Firecrawl image extraction first. If images return empty src attributes (JavaScript-rendered site), flag this and fall back to Gemini generation with precise section-specific prompts.
 15. **HERO TEXT CONTRAST:** Desktop hero images must use the hero overlay component from `~/agency-templates/7thsense-system/components/hero-overlay.css`. This includes: directional gradient overlay (0.75 opacity where text sits, 0.2 where image shows), text-shadow on all hero text elements, and text-shadow on transparent nav elements (removed on scroll). Every new build must copy these exact rules. Never rely on image darkness alone for text readability.
+16. **CONTACT FORM:** Every site must use the master Tally contact form component from `~/agency-templates/7thsense-system/components/contact-form.html`. Never build a custom contact form. Set the `&source=` parameter to the client name (e.g. `source=dr-sonday`, `source=team24`) for lead attribution on every deployment.
 
 ---
 
