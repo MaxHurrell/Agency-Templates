@@ -40,6 +40,48 @@ Only sections marked GAP proceed to generation. Never generate an image for a se
 ### Step 3 — Generate via Gemini (ONLY for genuine gaps)
 Use GEMINI_API_KEY from environment. Every generation call MUST use a locked brief (see Locked Brief Format below). No Gemini call is made without a complete brief with every field populated from the niche config.
 
+#### Working Gemini Models (verified 2026-03-16):
+
+**Primary — Native multimodal (recommended):**
+```
+Model: gemini-2.5-flash-image
+Endpoint: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent?key=$GEMINI_API_KEY
+Method: POST
+Body: {"contents":[{"parts":[{"text":"[PROMPT]"}]}],"generationConfig":{"responseModalities":["IMAGE","TEXT"]}}
+Response: candidates[0].content.parts[] → find part with inlineData.data (base64 PNG)
+```
+
+**Alternative — Dedicated image gen (higher quality, slower):**
+```
+Model: imagen-4.0-generate-001
+Endpoint: https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=$GEMINI_API_KEY
+Method: POST
+Body: {"instances":[{"prompt":"[PROMPT]"}],"parameters":{"sampleCount":1,"aspectRatio":"16:9"}}
+Response: predictions[0].bytesBase64Encoded (base64 PNG)
+```
+
+**Fast fallback (lower quality, fastest):**
+```
+Model: imagen-4.0-fast-generate-001
+Same endpoint pattern as above, swap model name.
+```
+
+**DEPRECATED — Do NOT use these (404):**
+- gemini-2.0-flash-preview-image-generation
+- gemini-2.0-flash-exp-image-generation
+- imagen-3.0-generate-002
+
+#### Save generated image:
+```python
+import base64
+# For gemini-2.5-flash-image response:
+for part in response['candidates'][0]['content']['parts']:
+    if 'inlineData' in part:
+        img_data = base64.b64decode(part['inlineData']['data'])
+        with open('output.png', 'wb') as f:
+            f.write(img_data)
+```
+
 ### Step 4 — Retry or fallback (if Gemini fails)
 If Gemini generation fails or produces wrong output:
 1. Retry ONCE with a tightened brief (add more specific exclusions, narrow the scene)
@@ -73,13 +115,23 @@ No Gemini generation call is made without a complete brief. Every field must be 
 - Plumbing: `brief: "plumber repairing copper pipes under kitchen sink"`, `must_include: ["copper pipes", "tools in hand"]`, `brand_mood: "#1e3a5f blue tone"`
 - Legal: `brief: "law office with dark wood desk and city view through window"`, `must_include: ["desk", "window view"]`, `brand_mood: "#1a1a2e charcoal and gold tone"`
 
-## Icon Generation Rule
+## Icon Sourcing Hierarchy
 
-Icons are ALWAYS AI-generated or sourced from SVG icon libraries — never extracted from client sites.
+DO NOT use Gemini for standard icons. Follow this hierarchy:
+
+1. **UI icons** (arrows, phone, email, star, check, menu etc): Use **Lucide** (lucide.dev) — inline SVG, free, no API call needed
+2. **Brand icons** (WhatsApp, Google, Facebook, Instagram etc): Use **Simple Icons** (simpleicons.org) — free SVG
+3. **Niche icons** (tooth, shield, wrench, stethoscope etc): Check **Lucide** and **Phosphor Icons** (phosphoricons.com) first
+4. **Only use Gemini** for truly custom illustrative assets that cannot be found in any of the above libraries
+
+Never generate an icon with Gemini if it exists in Lucide, Simple Icons, or Phosphor. This preserves Gemini credits for photography only.
+
+### Icon Style Rules
 - Style: flat, single colour matching brand primary, transparent background
 - Must be niche-specific (dental icon for dental service, not a generic checkmark)
-- Never use emoji as production icons (CLAUDE.md Rule — no emoji icons)
-- Preferred: inline SVG for performance and colour control
+- Never use emoji as production icons
+- Always inline SVG for performance and colour control
+- Never extract icons from client sites
 
 ## Image Requirements per Page Section
 
