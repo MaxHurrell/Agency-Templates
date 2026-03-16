@@ -1,0 +1,108 @@
+{
+  "_NOTE": "Example: Cape Town dental practice — trust-first, clinical-clean",
+
+  "client": {
+    "business_name": "Dr. Sonday Dental",
+    "niche": "dentist",
+    "tagline": "Gentle Dentistry for the Whole Family",
+    "city": "Cape Town",
+    "phone": "021 555 1234",
+    "phone_type": "landline",
+    "email": "info@drsonday.co.za",
+    "address": "12 Main Road, Claremont, Cape Town",
+    "google_place_id": "ChIJ__________placeholder",
+    "google_rating": "4.9",
+    "google_review_count": "187",
+    "website": "https://drsonday.co.za",
+    "operating_hours": "Mon-Fri 8:00-17:00, Sat 8:00-13:00"
+  },
+
+  "brand": {
+    "primary": "#1B6B93",
+    "primary_light": "#E8F4F8",
+    "primary_dark": "#134B68",
+    "accent": "#2EC4B6",
+    "neutral_bg": "#FFFFFF",
+    "alt_bg": "#F8FBFC",
+    "text_dark": "#111827",
+    "text_muted": "#6B7280",
+    "footer_bg": "#1F2937",
+    "extraction_method": "firecrawl_css"
+  },
+
+  "typography": {
+    "heading_font": "DM Sans",
+    "body_font": "Inter",
+    "heading_weight": "700",
+    "heading_style": "sentence_case_relaxed",
+    "personality": "clinical_clean"
+  },
+
+  "hero": {
+    "layout": "image_right",
+    "height": "90vh",
+    "overlay_style": "none",
+    "cta_text": "Book Your Appointment",
+    "cta_style": "rounded_md",
+    "subtitle_max_chars": 120
+  },
+
+  "sections": {
+    "order": ["hero", "trust_bar", "services", "about", "social_proof", "team", "process", "faq", "contact"],
+    "trust_bar_style": "rating_highlight",
+    "services_layout": "grid_3col",
+    "social_proof_style": "card_grid",
+    "process_style": "numbered_vertical",
+    "team_layout": "grid_cards",
+    "faq_style": "accordion",
+    "gallery_style": "grid_uniform"
+  },
+
+  "visual_personality": {
+    "border_radius": "12px",
+    "shadow_style": "subtle",
+    "divider_style": "none",
+    "card_style": "elevated",
+    "icon_style": "duotone",
+    "accent_pattern": "top_border",
+    "image_treatment": "rounded_lg",
+    "animation": "fade_up"
+  },
+
+  "cta_config": {
+    "primary_action": "Book Your Appointment",
+    "primary_action_url": "#contact",
+    "secondary_action": "Call Us",
+    "secondary_action_url": "tel:0215551234",
+    "floating_bar_text": "Book Appointment",
+    "floating_bar_icon": "calendar",
+    "whatsapp_enabled": false,
+    "whatsapp_text": "",
+    "whatsapp_number": ""
+  },
+
+  "copy_register": {
+    "emotional_tone": "reassuring",
+    "formality": "professional",
+    "power_words": ["gentle", "comfortable", "trusted", "experienced", "caring", "modern"],
+    "avoid_words": ["pain", "drill", "needle", "cheap", "discount"],
+    "headline_formula": "outcome_focused",
+    "social_proof_emphasis": "google_reviews"
+  },
+
+  "images": {
+    "source": "firecrawl",
+    "hero_image_prompt": "Modern dental practice reception area, warm lighting, Cape Town, clean minimalist interior, calming blue accents, photorealistic, no text, no logos",
+    "service_image_prompts": [
+      "Dentist performing teeth whitening on patient, modern equipment, bright clinical setting, photorealistic",
+      "Dental implant consultation, dentist showing x-ray to patient, warm professional atmosphere",
+      "Invisalign clear aligners on dental model, clean clinical photography"
+    ],
+    "team_image_prompts": [
+      "Professional headshot of male dentist in white coat, friendly smile, clinical background, South African"
+    ],
+    "gallery_image_prompts": [],
+    "color_mood": "calming blue, clinical white, warm accents",
+    "style_notes": "Clean, medical-grade trust. Nothing flashy."
+  }
+}

@@ -1,0 +1,206 @@
+#!/usr/bin/env bash
+# qa-pre-deploy.sh — Run AFTER building, BEFORE committing/deploying.
+# Enforces every CLAUDE.md hard rule automatically.
+# Usage: ./qa-pre-deploy.sh path/to/index.html path/to/niche-config.json
+
+set -eu
+
+HTML="$1"
+CONFIG="$2"
+ERRORS=0
+WARNINGS=0
+
+if [ ! -f "$HTML" ]; then echo "ERROR: HTML file not found: $HTML"; exit 1; fi
+if [ ! -f "$CONFIG" ]; then echo "ERROR: Config file not found: $CONFIG"; exit 1; fi
+
+echo "==========================================="
+echo "  7thsense Pre-Deploy QA Check"
+echo "==========================================="
+echo "  HTML:   $HTML"
+echo "  Config: $CONFIG"
+echo ""
+
+fail() { echo "  FAIL: $1"; ERRORS=$((ERRORS + 1)); }
+pass() { echo "  OK:   $1"; }
+warn() { echo "  WARN: $1"; WARNINGS=$((WARNINGS + 1)); }
+
+# ─── COLOUR RULES ───
+echo "--- Colour Rules ---"
+
+PRIMARY=$(python3 -c "import json; print(json.load(open('$CONFIG'))['brand']['primary'])" 2>/dev/null)
+
+# Check brand colour not used as section background outside hero
+# Count occurrences of primary colour as background-color (rough heuristic)
+BG_USES=$(grep -c "background-color: *${PRIMARY}" "$HTML" 2>/dev/null || echo "0")
+# It should appear in hero and maybe buttons, but not >3 times as bg
+if [ "$BG_USES" -gt 5 ]; then
+  fail "Brand primary ($PRIMARY) used as background $BG_USES times — likely overused outside hero"
+else
+  pass "Brand primary background usage looks reasonable ($BG_USES occurrences)"
+fi
+
+# Footer should use dark colour, not brand primary
+FOOTER_BG=$(python3 -c "import json; print(json.load(open('$CONFIG'))['brand']['footer_bg'])" 2>/dev/null)
+if grep -q "footer" "$HTML" && ! grep -q "$FOOTER_BG" "$HTML"; then
+  warn "Footer may not be using the configured dark background ($FOOTER_BG)"
+fi
+
+# ─── TYPOGRAPHY RULES ───
+echo ""
+echo "--- Typography Rules ---"
+
+if grep -qi "playfair" "$HTML"; then
+  fail "Playfair Display detected — HARD RULE VIOLATION"
+else
+  pass "No Playfair Display"
+fi
+
+# Check serif fonts (common offenders)
+for font in "Georgia" "Times New Roman" "Merriweather" "Lora" "Cormorant"; do
+  if grep -qi "$font" "$HTML"; then
+    fail "Ornate serif font detected: $font"
+  fi
+done
+
+if grep -q "display=swap" "$HTML"; then
+  pass "Font loaded with display=swap"
+else
+  fail "Missing display=swap on font import"
+fi
+
+HEADING_FONT=$(python3 -c "import json; print(json.load(open('$CONFIG'))['typography']['heading_font'])" 2>/dev/null)
+if grep -q "$HEADING_FONT" "$HTML"; then
+  pass "Configured heading font ($HEADING_FONT) found in HTML"
+else
+  fail "Configured heading font ($HEADING_FONT) not found in HTML"
+fi
+
+# ─── MOBILE RULES ───
+echo ""
+echo "--- Mobile / Floating Bar Rules ---"
+
+PHONE_TYPE=$(python3 -c "import json; print(json.load(open('$CONFIG'))['client']['phone_type'])" 2>/dev/null)
+WA_ENABLED=$(python3 -c "import json; print(json.load(open('$CONFIG'))['cta_config']['whatsapp_enabled'])" 2>/dev/null)
+FLOAT_TEXT=$(python3 -c "import json; print(json.load(open('$CONFIG'))['cta_config']['floating_bar_text'])" 2>/dev/null)
+
+if [ "$PHONE_TYPE" = "landline" ] && grep -qi "whatsapp" "$HTML"; then
+  fail "WhatsApp found in HTML but phone is landline — HARD RULE VIOLATION"
+else
+  pass "WhatsApp/landline rule OK"
+fi
+
+if grep -q "$FLOAT_TEXT" "$HTML"; then
+  pass "Floating bar text matches config: '$FLOAT_TEXT'"
+else
+  warn "Configured floating bar text ('$FLOAT_TEXT') not found in HTML"
+fi
+
+# Check tap target sizes (look for min-height: 48px or similar)
+if grep -q "min-height: *48px\|min-height: *3rem\|padding: *12px\|padding: *14px\|padding: *16px" "$HTML"; then
+  pass "Tap target sizing appears present"
+else
+  warn "Could not confirm 48px minimum tap targets — verify manually"
+fi
+
+# ─── CONTENT RULES ───
+echo ""
+echo "--- Content Rules ---"
+
+if grep -qi "lorem ipsum" "$HTML"; then
+  fail "Lorem ipsum detected — HARD RULE VIOLATION"
+else
+  pass "No lorem ipsum"
+fi
+
+# Check for placeholder patterns
+for placeholder in "XXX" "TODO" "PLACEHOLDER" "TBD" "[INSERT"; do
+  if grep -qi "$placeholder" "$HTML"; then
+    fail "Placeholder text detected: $placeholder"
+  fi
+done
+
+# ─── SPACING RULES ───
+echo ""
+echo "--- Spacing Rules ---"
+
+# Check for excessive padding (>96px desktop, >64px mobile)
+if grep -qE "padding: *1(2[89]|[3-9][0-9]|[0-9]{3,})px" "$HTML"; then
+  warn "Possible excessive padding detected (>120px) — check manually"
+fi
+
+# ─── TECHNICAL RULES ───
+echo ""
+echo "--- Technical Rules ---"
+
+if grep -q "<meta.*description" "$HTML"; then
+  pass "Meta description present"
+else
+  fail "Missing meta description"
+fi
+
+if grep -q "<title>" "$HTML"; then
+  pass "Title tag present"
+else
+  fail "Missing title tag"
+fi
+
+if grep -qi "LocalBusiness\|schema.org" "$HTML"; then
+  pass "Schema markup detected"
+else
+  fail "Missing LocalBusiness schema"
+fi
+
+if grep -q 'alt="' "$HTML"; then
+  pass "Image alt text present"
+  # Count images without alt
+  IMG_COUNT=$(grep -c "<img" "$HTML" 2>/dev/null || echo "0")
+  ALT_COUNT=$(grep -c 'alt="[^"]\+"' "$HTML" 2>/dev/null || echo "0")
+  if [ "$IMG_COUNT" -gt "$ALT_COUNT" ]; then
+    warn "$((IMG_COUNT - ALT_COUNT)) images may be missing alt text"
+  fi
+else
+  fail "No alt text found on any images"
+fi
+
+# Check CSS variables defined
+if grep -q "\-\-primary\|:root" "$HTML"; then
+  pass "CSS variables / :root block detected"
+else
+  fail "No CSS variables found — should define :root block"
+fi
+
+# ─── SECTION ORDER MATCH ───
+echo ""
+echo "--- Section Order ---"
+
+CONFIGURED_ORDER=$(python3 -c "import json; print(','.join(json.load(open('$CONFIG'))['sections']['order']))" 2>/dev/null)
+echo "  Configured: $CONFIGURED_ORDER"
+echo "  (Manual verification: check HTML section IDs match this order)"
+
+# ─── DIFFERENTIATION CHECK ───
+echo ""
+echo "--- Visual Differentiation ---"
+
+HERO_LAYOUT=$(python3 -c "import json; print(json.load(open('$CONFIG'))['hero']['layout'])" 2>/dev/null)
+BORDER_RADIUS=$(python3 -c "import json; print(json.load(open('$CONFIG'))['visual_personality']['border_radius'])" 2>/dev/null)
+CARD_STYLE=$(python3 -c "import json; print(json.load(open('$CONFIG'))['visual_personality']['card_style'])" 2>/dev/null)
+PERSONALITY=$(python3 -c "import json; print(json.load(open('$CONFIG'))['typography']['personality'])" 2>/dev/null)
+
+echo "  Hero layout:  $HERO_LAYOUT"
+echo "  Border radius: $BORDER_RADIUS"
+echo "  Card style:   $CARD_STYLE"
+echo "  Personality:  $PERSONALITY"
+echo "  (Compare against previous builds to confirm differentiation)"
+
+# ─── RESULT ───
+echo ""
+echo "==========================================="
+if [ "$ERRORS" -gt 0 ]; then
+  echo "  RESULT: FAILED — $ERRORS errors, $WARNINGS warnings"
+  echo "  DO NOT DEPLOY. Fix all errors first."
+  exit 1
+else
+  echo "  RESULT: PASSED — 0 errors, $WARNINGS warnings"
+  echo "  Ready to deploy."
+  exit 0
+fi

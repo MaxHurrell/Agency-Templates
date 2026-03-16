@@ -1,0 +1,108 @@
+{
+  "_NOTE": "Example: Cape Town insurance broker — logic-first, bold-confident",
+
+  "client": {
+    "business_name": "Team24 Insurance",
+    "niche": "insurance_broker",
+    "tagline": "Cover That Actually Covers You",
+    "city": "Cape Town",
+    "phone": "083 555 9876",
+    "phone_type": "mobile",
+    "email": "quotes@team24.co.za",
+    "address": "45 Bree Street, Cape Town CBD",
+    "google_place_id": "ChIJ__________placeholder",
+    "google_rating": "4.7",
+    "google_review_count": "312",
+    "website": "https://team24.co.za",
+    "operating_hours": "Mon-Fri 8:00-17:00"
+  },
+
+  "brand": {
+    "primary": "#16A34A",
+    "primary_light": "#ECFDF5",
+    "primary_dark": "#15803D",
+    "accent": "#F59E0B",
+    "neutral_bg": "#FFFFFF",
+    "alt_bg": "#F9FAFB",
+    "text_dark": "#0D0D0D",
+    "text_muted": "#525252",
+    "footer_bg": "#18181B",
+    "extraction_method": "gemini_vision"
+  },
+
+  "typography": {
+    "heading_font": "Syne",
+    "body_font": "DM Sans",
+    "heading_weight": "800",
+    "heading_style": "uppercase_tight",
+    "personality": "bold_confident"
+  },
+
+  "hero": {
+    "layout": "full_bleed_overlay",
+    "height": "100vh",
+    "overlay_style": "dark_gradient",
+    "cta_text": "Get Your Free Quote",
+    "cta_style": "pill_rounded",
+    "subtitle_max_chars": 100
+  },
+
+  "sections": {
+    "order": ["hero", "process", "services", "social_proof", "pricing", "faq", "about", "contact"],
+    "trust_bar_style": "stats_bar",
+    "services_layout": "icon_list",
+    "social_proof_style": "single_spotlight",
+    "process_style": "horizontal_timeline",
+    "team_layout": "single_featured",
+    "faq_style": "two_column",
+    "gallery_style": "masonry"
+  },
+
+  "visual_personality": {
+    "border_radius": "9999px",
+    "shadow_style": "none",
+    "divider_style": "angle_cut",
+    "card_style": "bordered",
+    "icon_style": "filled",
+    "accent_pattern": "background_highlight",
+    "image_treatment": "overlay_tint",
+    "animation": "slide_in"
+  },
+
+  "cta_config": {
+    "primary_action": "Get a Free Quote",
+    "primary_action_url": "#contact",
+    "secondary_action": "WhatsApp Us",
+    "secondary_action_url": "https://wa.me/27835559876",
+    "floating_bar_text": "Get Free Quote",
+    "floating_bar_icon": "quote",
+    "whatsapp_enabled": true,
+    "whatsapp_text": "Hi Team24, I'd like a quote for insurance.",
+    "whatsapp_number": "+27835559876"
+  },
+
+  "copy_register": {
+    "emotional_tone": "authoritative",
+    "formality": "conversational",
+    "power_words": ["protect", "covered", "save", "guaranteed", "hassle-free", "instant"],
+    "avoid_words": ["complicated", "fine print", "maybe", "possibly"],
+    "headline_formula": "stat_lead",
+    "social_proof_emphasis": "client_count"
+  },
+
+  "images": {
+    "source": "gemini",
+    "hero_image_prompt": "Diverse South African family looking confident and protected, Cape Town Table Mountain background, warm golden hour lighting, photorealistic, no text, no logos",
+    "service_image_prompts": [
+      "Modern car on Cape Town highway, insurance protection concept, dramatic lighting, photorealistic",
+      "Beautiful South African home exterior, suburban Cape Town, security and protection feel",
+      "Professional woman in Cape Town office, business insurance concept, confident pose"
+    ],
+    "team_image_prompts": [
+      "Professional insurance broker headshot, confident smile, modern office background, South African male"
+    ],
+    "gallery_image_prompts": [],
+    "color_mood": "confident green, warm amber accents, dark dramatic backgrounds",
+    "style_notes": "Bold, punchy, no-nonsense. This is not a soft brand."
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "_README": "Fill this config BEFORE writing any code. Every visual decision lives here.",
+  "_VERSION": "1.0",
+
+  "client": {
+    "business_name": "",
+    "niche": "",
+    "tagline": "",
+    "city": "",
+    "phone": "",
+    "phone_type": "landline | mobile",
+    "email": "",
+    "address": "",
+    "google_place_id": "",
+    "google_rating": "",
+    "google_review_count": "",
+    "website": "",
+    "operating_hours": ""
+  },
+
+  "brand": {
+    "primary": "#______",
+    "primary_light": "#______",
+    "primary_dark": "#______",
+    "accent": "#______",
+    "neutral_bg": "#FAFAFA | #F5F5F0 | #FFFFFF",
+    "alt_bg": "#F0F0F0 | #F5F0EB | #F8F9FA",
+    "text_dark": "#1A1A1A | #111827 | #0D0D0D",
+    "text_muted": "#6B7280 | #71717A | #525252",
+    "footer_bg": "#1F2937 | #18181B | #111827",
+    "extraction_method": "firecrawl_css | gemini_vision | manual"
+  },
+
+  "typography": {
+    "heading_font": "DM Sans | Syne | Outfit | Plus Jakarta Sans | Urbanist | Satoshi | Cabinet Grotesk | General Sans",
+    "body_font": "Inter | DM Sans | Plus Jakarta Sans | Outfit",
+    "heading_weight": "700 | 800 | 900",
+    "heading_style": "uppercase_tight | sentence_case_relaxed | lowercase_modern",
+    "personality": "clinical_clean | warm_approachable | bold_confident | elegant_restrained | modern_minimal"
+  },
+
+  "hero": {
+    "layout": "image_right | image_left | full_bleed_overlay | split_diagonal | gradient_only | video_bg",
+    "height": "85vh | 90vh | 100vh",
+    "overlay_style": "dark_gradient | brand_gradient | none | light_frost",
+    "cta_text": "",
+    "cta_style": "pill_rounded | sharp_square | rounded_md",
+    "subtitle_max_chars": 120
+  },
+
+  "sections": {
+    "order": [],
+    "trust_bar_style": "logo_strip | badge_row | stats_bar | rating_highlight",
+    "services_layout": "grid_3col | card_carousel | icon_list | alternating_rows",
+    "social_proof_style": "card_grid | single_spotlight | slider | video_testimonials",
+    "process_style": "numbered_vertical | horizontal_timeline | icon_steps | connector_line",
+    "team_layout": "grid_cards | single_featured | carousel",
+    "faq_style": "accordion | two_column | tabbed",
+    "gallery_style": "masonry | grid_uniform | before_after | lightbox"
+  },
+
+  "visual_personality": {
+    "border_radius": "0px | 4px | 8px | 12px | 16px | 9999px",
+    "shadow_style": "none | subtle | medium | dramatic",
+    "divider_style": "none | thin_line | gradient_fade | wave_svg | angle_cut",
+    "card_style": "flat | elevated | bordered | glass",
+    "icon_style": "outlined | filled | duotone | none",
+    "accent_pattern": "top_border | left_border | underline | background_highlight | badge",
+    "image_treatment": "rounded_lg | sharp | circle_crop | overlay_tint",
+    "animation": "none | fade_up | slide_in | scale_reveal"
+  },
+
+  "cta_config": {
+    "primary_action": "",
+    "primary_action_url": "",
+    "secondary_action": "",
+    "secondary_action_url": "",
+    "floating_bar_text": "",
+    "floating_bar_icon": "phone | calendar | message | quote",
+    "whatsapp_enabled": false,
+    "whatsapp_text": "",
+    "whatsapp_number": ""
+  },
+
+  "copy_register": {
+    "emotional_tone": "reassuring | authoritative | urgent | aspirational | friendly",
+    "formality": "professional | conversational | clinical | casual",
+    "power_words": [],
+    "avoid_words": [],
+    "headline_formula": "outcome_focused | question_hook | stat_lead | social_proof_lead | direct_command",
+    "social_proof_emphasis": "google_reviews | case_studies | certifications | years_experience | client_count"
+  },
+
+  "images": {
+    "source": "firecrawl | gemini | unsplash",
+    "hero_image_prompt": "",
+    "service_image_prompts": [],
+    "team_image_prompts": [],
+    "gallery_image_prompts": [],
+    "color_mood": "",
+    "style_notes": ""
+  }
+}
