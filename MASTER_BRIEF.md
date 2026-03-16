@@ -1,340 +1,364 @@
-# 7thsense — Master Brief v2
+# 7thsense — Master Brief v3
 ## AI Website Agency System — Full Context Document
-*Last updated: March 15, 2026*
-*Purpose: Paste this into any new Claude chat to instantly resume the full system with zero context loss*
+*Last updated: March 16, 2026*
+*Purpose: Paste this into any new Claude chat to instantly resume with full context*
 
 ---
 
 ## HOW TO USE THIS DOCUMENT
 
-Paste this entire document as your first message in any new chat with:
+Paste this entire document as your first message in any new chat:
 *"This is the full context for my AI agency 7thsense. Read everything before we continue. We are currently working on: [describe what you need]."*
 
 ---
 
 ## 1. WHO WE ARE
 
-**Agency name:** 7thsense
-**Owner:** Max Hurrell
-**Email:** maxhurrellsa@gmail.com
+**Agency:** 7thsense
+**Owner:** Max Hurrell (maxhurrellsa@gmail.com)
 **Location:** Cape Town, South Africa
-**Goal:** Semi-autonomous AI-powered website agency generating revenue within 3 weeks
-
-**The business model:**
-1. Find service businesses with good Google reviews but poor or no websites
-2. Build a demo website proactively (without being asked)
-3. Contact them and show them the demo
-4. If they like it, sell the full site (R7,500–R18,500)
-5. Deliver the final site (refined version of the demo)
-6. Retain them with ongoing services (WhatsApp automation, chatbot, reviews, missed call capture, analytics)
-
-**First goal:** One paying client before next Claude subscription renewal (~3 weeks from March 15)
+**Model:** Find service businesses with poor/no websites → build demo proactively → show demo → sell full site → retain with ongoing services
+**First client:** Team24 (insurance broker, Kommetjie) — site live, feedback implemented, awaiting payment confirmation
 
 ---
 
-## 2. CORE PRINCIPLES
+## 2. LIVE DEMOS
 
-- Businesses don't care about AI — they care about more calls, leads, bookings, revenue
-- Demos sell themselves — the contrast between their current site and ours closes the deal
-- Mobile-first always — 80-90% of target market views on mobile
-- Templates over custom — build once, deploy many times
-- Brand colours come from the CLIENT's existing brand, never assumed by niche
-- Real information only — reviews, ratings, contact details, services must all be real and verifiable. Stock photos are the only acceptable placeholder.
-- Low friction — solutions that plug into existing workflows
-- Bounded autonomy — agents improve things within defined objectives, human approval on all client-facing actions
-- WhatsApp is the primary communication channel in SA — every site must have direct WhatsApp integration
+| Client | Niche | URL | Status |
+|--------|-------|-----|--------|
+| Dr. Sonday Dentistry | Dental | dentist-pi-eight.vercel.app | ✅ Live |
+| Team24 | Insurance Broker | team24-nine.vercel.app | ✅ Live — first potential client |
 
 ---
 
-## 3. SYSTEM ARCHITECTURE
+## 3. FULL INFRASTRUCTURE
 
-### Current State (V1 — Live Today)
+### GitHub Repos
+- `MaxHurrell/Agency-Templates` — master templates, skills, system files
+- `MaxHurrell/client-sites` — individual client demos
+
+### Vercel
+- Each client gets own Vercel project with unique URL
+- Automated via `deploy-client.sh` using VERCEL_TOKEN
+- Deploy command: `cd ~/client-sites && ./deploy-client.sh [client-name]`
+
+### Local Machine (MacBook Air M4)
+- Claude Code v2.1.76
+- Two terminal tab workflow:
+  - Tab 1: Building tab — executes builds, deploys
+  - Tab 2: Strategic council tab — strategy, planning, QA oversight
+
+### API Keys (all in ~/.zshrc)
+- GEMINI_API_KEY — Gemini image generation ($300 free credit, expires June 14 2026)
+- VERCEL_TOKEN — Vercel deployments (rotate regularly, never expose in output)
+- ANTHROPIC_API_KEY — Claude API
+
+### MCP Servers Connected
+- 21st.dev Magic MCP — premium UI components
+- Firecrawl MCP — web scraping, brand extraction
+
+---
+
+## 4. THE BUILD SYSTEM (fully upgraded March 16)
+
+### New Build Pipeline (mandatory for every build)
 ```
-Max
-  → Claude chat (strategy, design, code generation)
-    → Claude Code in Terminal (executes on MacBook Air M4)
-      → GitHub repo: MaxHurrell/Agency-Templates (templates)
-      → GitHub repo: MaxHurrell/client-sites (client demos)
-        → Vercel (auto-deploys on every push)
-          → Live URLs per client
+1. Fill niche config (~10 mins)
+   cp ~/agency-templates/7thsense-system/niche-config-template.json ./[client]-config.json
+   
+2. Validate config (instant)
+   bash ~/agency-templates/7thsense-system/scripts/validate-niche-config.sh ./[client]-config.json
+
+3. Build from config (15-20 mins)
+   Claude Code reads config + all skills + builds site
+
+4. QA check (instant)
+   bash ~/agency-templates/7thsense-system/scripts/qa-pre-deploy.sh ./index.html ./[client]-config.json
+
+5. Deploy (2 mins)
+   ./deploy-client.sh [client-name]
+   curl confirm 200
 ```
 
-### V2 (Target: Tuesday/Wednesday)
-- Claude Code runs longer autonomous loops without babysitting
-- Make.com wired to handle form submissions → email notifications
-- Tally.so forms live on all demo sites
-- Unique Vercel project per client demo
-- Master brief in GitHub
+### System Files Location
+```
+~/agency-templates/7thsense-system/
+├── niche-config-template.json    # Blank config — copy for every new build
+├── BUILD-PROCESS.md              # Step-by-step build workflow
+├── examples/
+│   ├── niche-config-dentist.json
+│   └── niche-config-insurance.json
+├── scripts/
+│   ├── validate-niche-config.sh  # Pre-build validator
+│   └── qa-pre-deploy.sh          # Pre-deploy QA (207 lines, 7 categories)
+└── components/
+    └── hero-overlay.css          # Mandatory hero text contrast component
+```
 
-### V3 (Target: ~4 weeks)
-- Railway (~$5/mo) hosts orchestration loop in cloud
-- Agents run autonomously in background while Mac is off
-- Milestone summaries surfaced to Max
-- Full agent system running without manual triggering
-
-### V4 (Target: ~6 weeks)
-- Custom dashboard at dashboard.7thsense.app
-- Individual agent chat interfaces
-- Morning briefing agent (Vapi.ai for voice)
-
----
-
-## 4. AGENT SYSTEM
-
-### The 8 Agents
-
-**Scout Agent**
-- Finds and scores potential targets via Google Maps
-- Scoring (100pts total):
-  - 4.0+ rating, 20+ reviews = 25pts
-  - Poor/outdated website = 25pts
-  - NO website = 35pts (scores higher — easier pitch, no ego attachment)
-  - Service business type = 20pts
-  - Missing lead capture = 20pts
-  - Weak Maps presence = 10pts
-- Thresholds: 70-100 = hot, 40-69 = warm, below 40 = skip
-
-**Research Agent**
-- Scrapes target business using Firecrawl
-- Extracts: name, phone, WhatsApp, email, address, hours, services, reviews, brand colours
-- For no-website businesses: uses Google Maps + reviews + competitor sites
-
-**Outreach Agent**
-- Drafts personalised outreach using cold-email + copywriting skills
-- Two pitch paths:
-  - Bad site: "Here's what your site could look like" — side by side
-  - No site: "Here's what you're missing every day" — demo + lost leads calculation
-- Requires Approval Gate 1 before sending
-
-**Demo Builder Agent**
-- Builds conversion-focused demo websites
-- Uses: ui-ux-pro-max, page-cro, copywriting, bencium-innovative-ux-designer, 21st.dev MCP, Firecrawl
-- Quality benchmark: padentalimplants.com
-- Must read reference site before building each niche
-- Output: Multi-page HTML site deployed to Vercel
-
-**QA Agent**
-- Checks: mobile layout, load speed, all CTAs, no placeholder text, real links working, form submission, WhatsApp links
-
-**Closer Agent**
-- Two modes:
-  1. LIVE MODE — drafts real follow-up messages for actual prospects
-  2. TRAINING MODE — role-plays difficult prospect, coaches Max on objection handling
-- Key objections: "price too high", "already have a website", "send info I'll think about it", "too busy"
-- Uses sales-enable + mktg-psych (Cialdini) skills
-
-**Delivery Agent**
-- Refines demo into final site after sale
-- Connects real domain, wires Tally.so forms, adds analytics, runs full SEO pass
-- Target: under 2 hours from sale to live site
-- Requires Approval Gate 2
-
-**Retention Agent**
-- Upsells ongoing services post-delivery
-- WhatsApp automation, missed call SMS, review generation, analytics reporting
-- Uses Make.com for automation
-
-**Summary Agent**
-- Weekly report: leads, demos sent, conversions, revenue, pipeline
-- Eventually feeds morning voice briefing via Vapi.ai
-
-### Two Approval Gates (non-negotiable)
-- Gate 1: Before any outreach goes to a client
-- Gate 2: Before any demo is shown to a client
+### Hero Overlay Component (mandatory on every desktop hero)
+```css
+.hero {
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.75) 0%,
+    rgba(0,0,0,0.75) 45%,
+    rgba(0,0,0,0.20) 100%
+  ), url('hero.png') center/cover no-repeat;
+}
+.hero h1, .hero-sub { text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+```
 
 ---
 
-## 5. TOOL STACK
+## 5. SKILLS INSTALLED (~115+ in ~/.claude/skills/)
 
-### Live and Connected
-| Tool | Purpose | Cost |
-|------|---------|------|
-| Claude Pro | Strategy, architecture, code | $20/mo |
-| Claude Code | Executes on Mac, manages files, pushes to GitHub | Included |
-| GitHub — Agency-Templates | Master niche templates | Free |
-| GitHub — client-sites | Individual client demos | Free |
-| Vercel (7sense.vercel.app) | Auto-deployment, live URLs | Free |
-| Anthropic API | Powers agents programmatically | ~$0.01/run |
-| Make.com | Automation glue | Free tier |
-| Tally.so | Client lead capture forms | Free |
-| 21st.dev Magic MCP | Premium UI components | Free tier |
-| Firecrawl MCP | Deep website scraping, brand extraction | Free tier |
+### Custom 7thsense Skills (5)
+- `7thsense-systems-architect` — technical blueprint before any build
+- `7thsense-visual-system` — CSS variables, font decisions, 4-step colour extraction
+- `7thsense-copy-architect` — conversion copy, 6-word headlines, SA market rules
+- `7thsense-image-agent` — image sourcing priority: Firecrawl → Gemini → Unsplash
+- `7thsense-niche-intelligence` — niche research, design decisions document, uniqueness guarantee
 
-### Coming Soon
-| Tool | Purpose | Cost |
-|------|---------|------|
-| Railway | Cloud orchestration V3 | ~$5/mo |
-| Vapi.ai | Voice morning briefing | ~$0.05/min |
-| Nano Banana | AI image generation | TBD |
-
-### Skills Installed (~110+ in ~/.claude/skills/)
-**Design:** ui-ux-pro-max, ui-styling, design, design-system, brand, banner-design, bencium-innovative-ux-designer, bencium-controlled-ux-designer
-**Marketing/CRO:** page-cro, signup-cro, form-cro, popup-cro, copywriting, copy-edit, cold-email, email-seq, social, ad-creative, paid-ads, mktg-psych, mktg-ideas, ab-test, analytics-tracking, referral, churn-prevent, pricing, competitor, launch, sales-enable, revops, onboard, free-tool
-**SEO:** seo-audit, seo-content, seo-geo, seo-schema, seo-technical, seo-images, seo-page, seo-plan, seo-programmatic, seo-sitemap, seo-competitor-pages, seo-hreflang, geo-audit, geo-citability, geo-crawlers, geo-schema, geo-technical, geo-content
-**Market audit suite:** market-audit, market-copy, market-emails, market-social, market-ads, market-funnel, market-competitors, market-landing, market-launch, market-proposal, market-report, market-seo, market-brand
+### Skill Reading Order (every new build)
+1. 7thsense-niche-intelligence — research + design decisions document FIRST
+2. 7thsense-systems-architect — technical blueprint
+3. 7thsense-visual-system — design tokens before code
+4. 7thsense-copy-architect — copy before layout
+5. 7thsense-image-agent — images before final build
+6. ui-ux-pro-max — international UX standards
+7. bencium-innovative-ux-designer — distinctive design
+8. page-cro — conversion pass
+9. seo-technical — SEO pass
 
 ### Agents Installed (11 in ~/.claude/agents/)
-business-growth, c-level, engineering, engineering-team, finance, marketing, personas, product, project-management, ra-qm-team, CLAUDE.md
+business-growth, c-level, engineering, engineering-team, finance, marketing, personas, product, project-management, ra-qm-team
 
----
-
-## 6. GITHUB REPO STRUCTURE
-
+### Strategic Council Activation
+For strategy sessions, open Tab 2 and run:
 ```
-MaxHurrell/Agency-Templates/     ← master niche templates
-├── index.html                    ← redirects to dentist demo
-├── dentist/
-│   └── dr-sonday-demo-v3-mobile-first.html
-├── [future niches]/
-└── MASTER_BRIEF.md
-
-MaxHurrell/client-sites/         ← one folder per client
-├── client-index.md               ← tracks all clients, status, URLs
-└── [client-name]/
-    └── index.html
+Activate the c-level, business-growth, and marketing agent personas. Read ~/.claude/agents/c-level.md, ~/.claude/agents/business-growth.md, ~/.claude/agents/marketing.md. Act as unified strategic council for 7thsense.
 ```
 
 ---
 
-## 7. TEMPLATE LIBRARY
+## 6. CLAUDE.md OPERATING CONTRACT
 
-### Design Rules (apply to ALL niches)
-- Brand colours from CLIENT's existing brand — never assumed
-- Mobile-first — design mobile first, scale to desktop
-- Real Unsplash photography (contextually relevant)
-- SVG icons only — absolutely no emojis as icons
-- Google Reviews: real Google logo, links to actual reviews page
-- WhatsApp: use `whatsapp://` protocol on mobile
-- Contact form: Tally.so embed, sends to client email, success state
-- Floating mobile bottom bar: two buttons max (Call = navy, WhatsApp = green)
-- Hamburger menu: clean minimal slide-in, reference padentalimplants.com style
-- About page: in both desktop nav and mobile menu
-- Font: modern, clean, premium — NO Playfair Display, NO serif ornate fonts
-- SEO: meta titles, descriptions, local schema, alt text, canonical tags
-- Quality benchmark: padentalimplants.com
-- Real info only: all reviews, ratings, contact details must be verified real data
+Location: `~/.claude/CLAUDE.md` (global) and `~/agency-templates/CLAUDE.md` (GitHub)
 
-### Niche Intelligence Approach
-For each new niche Claude Code must:
-1. Identify niche automatically from business type
-2. Research best converting websites globally in that niche
-3. Extract design patterns, copy style, trust signals, CTA approach
-4. Build in that image — not generic, not dentist-for-a-landscaper
-5. Apply niche-specific trust signals (dentist = qualifications, plumber = emergency response, lawyer = case wins)
+### 15 Hard Rules (never violate)
+1. Never use brand colour as full section background outside the hero
+2. Never use Playfair Display or ornate serif fonts
+3. Never include WhatsApp for a landline number
+4. Never commit invented statistics or unverified claims
+5. Never have more than one primary CTA above fold on mobile
+6. Never commit without running pre-commit QA checklist
+7. Never use Unsplash without checking for real client images first via Firecrawl
+8. Never use niche default colours without first trying Firecrawl CSS AND Gemini Vision extraction
+9. Never use lorem ipsum — always realistic dummy content
+10. Never skip the pre-build checklist
+11. Never expose API keys or tokens in any output or command echo
+12. Design uniqueness: niche research must drive structural decisions, never copy previous build layout
+13. Image generation: every image specifically prompted for exact section — never generic "lounge" or unrelated scene
+14. Image extraction: always attempt Firecrawl first, flag if JavaScript-rendered, fall back to Gemini with precise prompts
+15. Hero text contrast: directional gradient overlay on desktop, text-shadow on all hero elements, use hero-overlay.css component
 
-### Current Templates
-**Dentist (SA market)**
-- File: `~/agency-templates/dentist/dr-sonday-demo-v3-mobile-first.html`
-- URL: `7sense.vercel.app`
-- Status: Active development — being refined
-- Real Google Reviews URL: `https://search.google.com/local/reviews?placeid=ChIJZ61zaEFrzB0RqVIYufiLzY8`
-- Known issues being fixed: heading font, mobile menu, mobile CTA bar
+### Build Checklist (mandatory before coding)
+- [ ] Fill niche config JSON
+- [ ] Run validate-niche-config.sh
+- [ ] Read all 9 skills in order
+- [ ] Produce Design Decisions Document
+- [ ] Extract brand colours via 4-step cascade
 
-### Next Templates to Build
-1. GP / Medical practice
-2. Plumber / Trades
-3. Lawyer / Legal
-4. Beauty / Salon
-5. Cleaning services
+### Pre-Commit QA (mandatory before every commit)
+- [ ] Run qa-pre-deploy.sh — zero errors required
+- [ ] Colour rules pass
+- [ ] Typography rules pass
+- [ ] Mobile rules pass
+- [ ] Content verified — zero invented facts
+- [ ] Spacing rules pass
+- [ ] Technical rules pass
+- [ ] Hero overlay component applied
+- [ ] Curl confirm 200 after deploy
 
 ---
 
-## 8. CLIENT DEMO → FINAL SITE PIPELINE
+## 7. DESIGN RULES
 
-```
-Demo exists on Vercel (unique URL per client)
-  → Client pays
-    → Delivery Agent:
-      1. Swap placeholders for real content
-      2. Replace stock photos with client's real photos
-      3. Connect real domain (client buys ~R150-200/yr)
-      4. Wire Tally.so form → client's email
-      5. Add Google Analytics / PostHog
-      6. Full SEO pass (local schema, meta, page speed)
-      7. QA check
-      8. Go live
-Target: under 2 hours from sale to live
-Demo time target: 5-15 minutes (template population, not from scratch)
-```
+### Colour Usage
+- Brand primary: hero background, buttons, badges, accents, icons ONLY
+- All content sections: white, cream, or light grey backgrounds
+- Footer: dark charcoal — never brand primary
+- WhatsApp button: always #25D366
 
----
+### Typography
+- Approved fonts: DM Sans, Syne, Outfit, Plus Jakarta Sans, Urbanist, Satoshi, Cabinet Grotesk, General Sans
+- BANNED: Playfair Display, all ornate serifs
+- Max 2 font families per site
 
-## 9. UPSELL SERVICES
+### Mobile
+- Floating bar: max 2 buttons
+- WhatsApp only if mobile number confirmed
+- One CTA above fold only
+- All tap targets min 48px
 
-| Service | How it works | Integration |
-|---------|-------------|-------------|
-| WhatsApp automation | Auto-reply, nurture sequences, appointment reminders | WhatsApp Business + Make.com |
-| Missed call SMS | Someone calls, no answer → auto WhatsApp sent | Twilio + Make.com |
-| Review generation | Post-appointment WhatsApp asking for Google review | Make.com automation |
-| Chatbot | Answers questions, captures leads 24/7 | Tidio/Crisp embed |
-| Monthly analytics | Visitor counts, form submissions, lead reports | PostHog + Summary Agent |
-| Google Maps optimisation | Improve local ranking | Manual + tools |
+### Spacing
+- Desktop sections: max 96px padding
+- Mobile sections: max 64px padding
+- Zero dead space between sections
+- Hero content within 60px of navbar desktop, 40px mobile
 
-**Key sales framing:** "Your website now has a WhatsApp button. Every person who clicks it is a warm lead. We can set up an automated system that follows up with every single one of them, reminds them about appointments, and asks for reviews — all on WhatsApp, all automatically. That's the difference between a website and a customer capture system."
+### Images
+Priority: Firecrawl real images → Gemini API generated → Unsplash last resort
+- Gemini prompts must include: niche + specific service + SA/Cape Town context + brand colour mood
+- Hero: practice/business environment, never a random lounge
+- Services: show the actual service being performed
+- Team: professional headshots, SA-specific context
 
----
-
-## 10. PRICING STRATEGY
-
-| Package | What's included | Price |
-|---------|----------------|-------|
-| Starter site | 3-page site, contact form, mobile optimised | R7,500 (~$400) |
-| Growth site | Starter + chatbot + Google review system | R12,500 (~$650) |
-| Full system | Growth + missed call + analytics + monthly report | R18,500 (~$1000) |
-| Monthly retainer | Updates, reporting, optimisation, WhatsApp automation | R2,500/mo |
+### Google Reviews
+- Always use real Google SVG logo (G:#4285F4, o:#EA4335, o:#FBBC05, g:#4285F4, l:#34A853, e:#EA4335)
+- Never plain text "Google"
+- Link format: https://search.google.com/local/reviews?placeid=[REAL_PLACE_ID]
 
 ---
 
-## 11. SCOUT SCORING — SPECIAL CASES
+## 8. CLIENT FEEDBACK INTERPRETATION RULES
 
-### Business with NO website (scores HIGHER)
-- No website = 35pts vs 25pts for bad website
-- Pitch: "Here's what you're missing" not "Here's an upgrade"
-- Research: Google Maps + reviews + 2-3 competitors
-- Easier close: no defensiveness, purely an opportunity conversation
-
----
-
-## 12. HOSTING & DOMAIN STRATEGY
-
-**Demo phase:**
-- Hosted on 7thsense Vercel account
-- Each client gets unique Vercel project: `[clientname]-demo.vercel.app`
-- Free, no client action needed
-
-**After sale:**
-- Client buys domain (~R150-200/yr from Domains.co.za)
-- Point to Vercel (5 min setup)
-- Vercel hosts free
-- Client owns domain, 7thsense manages hosting
-
-**Long term:**
-- Keep all client sites on 7thsense Vercel account for control
-- Only transfer if client specifically requests it
+When receiving client feedback:
+1. Interpret intent not just literal request — scan entire site for all related instances
+2. Scan before changing — read full file first
+3. Consistency check — apply change everywhere it logically applies
+4. Never break what works — copy changes only touch text, never CSS/HTML structure
+5. Report all changes including ones not explicitly requested
 
 ---
 
-## 13. SOLVED PROBLEMS (never re-solve these)
+## 9. NICHE DIFFERENTIATION SYSTEM
+
+### 8 Differentiation Levers
+No two consecutive builds may share the same value on more than 2 of these 8:
+1. Heading font
+2. Hero layout
+3. Border radius
+4. Card style
+5. Section order
+6. Divider style
+7. Accent pattern
+8. CTA shape + text
+
+### Niche Emotional Registers
+- Dental: safe, comfortable, cared for, trust in expertise
+- Insurance: secure, protected, understood, trusted
+- Legal: confident, protected, authoritative
+- Plumbing: relieved, urgent problem solved, reliable, local
+- Medical/GP: reassured, caring, professional, accessible
+- Beauty/Salon: excited, pampered, aspirational
+- Cleaning: fresh, organised, stress-free
+
+### CTA Text by Niche
+- Dental: "Book Appointment"
+- Insurance: "Get a Free Quote"
+- Plumbing: "Call Now" or "Get Emergency Help"
+- Legal: "Free Consultation"
+- Medical: "Book Appointment"
+- Beauty: "Book Now"
+- Cleaning: "Get a Free Quote"
+
+---
+
+## 10. PRICING
+
+| Package | Price |
+|---------|-------|
+| Starter site | R7,500 |
+| Growth site | R12,500 |
+| Full system | R18,500 |
+| Monthly retainer | R2,500/mo |
+
+---
+
+## 11. VERIFIED CLIENT DATA
+
+### Dr. Sonday Dentistry
+- Phone: 021 783 0024
+- WhatsApp: 064 944 7759 (mobile — WhatsApp applicable)
+- Email: docsonday12@gmail.com
+- Address: Flat 1, 18 Gemini Way, Ocean View, Cape Town, 7975
+- Hours: Mon-Fri 08:30-17:00, Sat 08:00-12:30
+- Google Place ID: ChIJZ61zaEFrzB0RqVIYufiLzY8
+- Reviews URL: https://search.google.com/local/reviews?placeid=ChIJZ61zaEFrzB0RqVIYufiLzY8
+- Real reviews: Clare Bowen, Savannah Finlay, Fatima Rawoot, Shelley Bright, Patsy Hamilton
+- Medical aids: Discovery, Gems, Bonitas, Medihelp, Keyhealth, Medshield, Momentum, Fedhealth
+- Team: Dr. Shabier Sonday, Harriet Lamb, Lungelwa, Zee
+
+### Team24 Insurance
+- Phone: 021 782 1208 (landline — no WhatsApp on this number)
+- WhatsApp: +27 84 666 7143 (separate mobile number)
+- Email: info@team24.co.za
+- Address: 5 Teubes Road, Kommetjie, 7976
+- Legal entity: Etienne & Anthea de Villiers CC t/a Team24
+- FSP: 2180, Registration: CK97/65398/23, PI Certificate: CN1083
+- Member: Anthea M de Villiers
+- Established: 1997, Combined experience: 88 years
+- Brand colours: Primary #2D7D5F, Accent #3DAA85, Background #F5F0E8
+
+---
+
+## 12. SOLVED PROBLEMS (never re-solve)
 
 | Problem | Solution |
 |---------|----------|
-| npm permission denied | Use `sudo npm install -g` |
-| Terminal not finding npm after install | Close Terminal fully (Cmd+Q) and reopen |
-| Claude Code permission prompts | Already set to allow all Bash(*) in ~/.claude/settings.json |
-| Vercel 404 on root URL | index.html at root redirects to demo file |
-| file:// URL only works locally | Always use Vercel URL for sharing |
-| GitHub Pages makes site searchable | Disabled — Vercel only |
-| wa.me WhatsApp creates browser interstitial | Use whatsapp:// protocol on mobile |
-| npm cache permissions | Run `sudo chown -R $(whoami) ~/.npm` in regular Terminal |
-| Claude Code sudo needs terminal password | Run sudo commands in regular Terminal not Claude Code |
-| Ctrl+C vs Cmd+C | Ctrl+C stops processes, Cmd+C is copy |
-| API keys visible in chat | Never paste API keys here — type directly in Terminal |
-| Skills not activating | Restart Claude Code after installing new skills |
-| New skills need fresh session | Type `exit` then `claude` to restart |
-| Files go to Documents not Downloads | Max's files save to Documents folder |
-| Playfair Display keeps returning | Explicitly tell Claude Code to read ui-ux-pro-max skill first and ban Playfair Display |
-| Google Reviews dynamic link error | Use: https://search.google.com/local/reviews?placeid=[PLACE_ID] |
-| Dr. Sonday Google Place ID | ChIJZ61zaEFrzB0RqVIYufiLzY8 |
+| npm permission denied | `sudo npm install -g` |
+| Terminal not finding npm | Close Terminal (Cmd+Q) and reopen |
+| Vercel 404 on subfolder | Each client gets own Vercel project via deploy-client.sh |
+| Token invalid/expired | Check prefix starts with vcp_ — regenerate at vercel.com/account/tokens |
+| Token exposed in output | Never paste tokens here — rule 11 in CLAUDE.md |
+| Skills not activating | Restart Claude Code after installing |
+| Playfair Display returning | Explicitly banned in CLAUDE.md rule 2 |
+| Green section backgrounds | Rule 1 in CLAUDE.md — accent only outside hero |
+| Hero text unreadable | Use hero-overlay.css component — rule 15 |
+| Too many CTAs above fold | Rule 5 — one primary CTA on mobile |
+| WhatsApp on landline | Rule 3 — mobile numbers only |
+| Cache not clearing | Open in private/incognito tab OR force deploy with --force flag |
+| Site123 images empty | JavaScript-rendered — Firecrawl can't extract, use Gemini generation |
+| Vercel changes not showing | Run `vercel --prod --force` then curl confirm 200 |
+| Files go to Documents | Max's downloads save to Documents not Downloads folder |
+| Google Reviews broken link | Use: https://search.google.com/local/reviews?placeid=[ID] |
+| Dr. Sonday Place ID | ChIJZ61zaEFrzB0RqVIYufiLzY8 |
+| Scroll bounce animation | Remove parallax — use IntersectionObserver opacity only |
+| 4 buttons above fold | Max 2 in floating bar + 1 in hero on mobile |
+
+---
+
+## 13. IMMEDIATE TO-DO LIST
+
+### 🔴 Critical — Fix Before More Demos
+- [ ] Wire Tally.so contact forms — demos currently have non-functional forms
+- [ ] Fix Google rating accuracy — dentist shows 5.0/47 reviews, real count is 13
+- [ ] AI image SA diversity — Gemini defaults to Western imagery, need explicit SA context in all prompts
+- [ ] Verify all review counts match real Google data before any demo goes live
+
+### 🟡 Important — This Week
+- [ ] Test full new build pipeline on plumber niche (first fully system-governed build)
+- [ ] Add Google Analytics/PostHog to all demo sites
+- [ ] Add sitemap.xml and robots.txt generation to build process
+- [ ] Add unique meta descriptions verified per site
+- [ ] Performance check — Lighthouse 90+ mobile before deploy
+- [ ] Build GP/Medical template
+- [ ] Wire Make.com to handle form submissions
+
+### 🟢 Next Phase — V2
+- [ ] Unique Vercel project automation fully tested
+- [ ] Client onboarding process documented
+- [ ] Outreach message templates written
+- [ ] First paying client confirmed (Team24 pending)
+- [ ] Railway cloud deployment setup
+- [ ] Nano Banana integration for automated image generation
+
+### 🔵 Ongoing
+- [ ] Update master brief after every major session
+- [ ] Commit all skill updates to GitHub
+- [ ] Rotate Vercel token regularly
+- [ ] Keep client-index.md updated with all demos
 
 ---
 
@@ -342,79 +366,72 @@ Demo time target: 5-15 minutes (template population, not from scratch)
 
 | Item | Cost |
 |------|------|
-| Claude Pro | $20/mo |
-| Anthropic API | ~$10-20/mo at scale |
+| Claude Max | $100/mo |
+| Gemini API | ~$0.15/site ($300 free until June 14 2026) |
 | Vercel | Free |
 | GitHub | Free |
 | Make.com | Free tier |
 | Tally.so | Free |
-| Railway (when needed) | ~$5/mo |
-| **Total** | **~$35-45/mo** |
+| Railway (V3) | ~$5/mo |
+| **Total now** | **~$100/mo** |
 
 ---
 
-## 15. VOICE AGENT PLAN (V4)
+## 15. ROADMAP
 
-- Platform: Vapi.ai
-- Use: Morning briefing, strategy questions, pipeline updates
-- No app build required — uses Vapi.ai interface
-- Feeds from: Summary Agent daily report
-- Timeline: After V3 stable
+### V1 (Current)
+- Manual triggering via Claude Code on Mac
+- Two terminal workflow — build + strategy
+- All core skills and rules active
 
----
+### V2 (Target: This Week)
+- Make.com + Tally.so fully wired
+- Unique Vercel URL per client automated
+- Full offer defined and outreach ready
+- First paying client
 
-## 16. AUTONOMOUS ITERATION LOOP
+### V3 (Target: ~4 weeks)
+- Railway cloud orchestration
+- Agents run while Mac is off
+- Milestone summaries to Max
 
-```
-Define objective
-  → Orchestrator assigns tasks
-    → Frontend Agent (layout, mobile)
-    → CRO Agent (CTAs, trust signals)
-    → Copy Agent (headlines, CTAs)
-    → QA Agent (broken elements, mobile)
-  → Code updates → Vercel deploys
-  → Loop repeats until objective met
-  → Surface milestone to Max
-```
-- V1: Max triggers manually via Claude Code
-- V2: Claude Code runs multi-iteration loops on Mac
-- V3: Railway runs in cloud background
-- Cost per loop: ~$0.20-0.50 API
+### V4 (Target: ~6 weeks)
+- Custom dashboard
+- Voice morning briefing (Vapi.ai)
+- Full separation of agent roles
 
 ---
 
-## 17. WHATSAPP AS LEAD NURTURE SYSTEM
+## 16. WHATSAPP AS LEAD NURTURE
 
-WhatsApp is the primary communication channel in SA. Every demo site has a direct WhatsApp link. This enables:
-- Instant first contact with no form friction
-- WhatsApp Business auto-reply for after hours
-- Make.com monitoring incoming messages → follow-up sequences
-- Appointment reminders day before
+Every demo site has WhatsApp integration. This enables:
+- Instant first contact, no form friction
+- Auto-reply for after hours
+- Make.com follow-up sequences
+- Appointment reminders
 - Post-appointment review requests
-- Missed call → automatic WhatsApp response
-- Monthly check-in messages to past patients
+- Missed call → auto WhatsApp response
 
-This is the core upsell that moves clients from one-time payment to monthly retainer.
+**Sales framing:** "Your website now has a WhatsApp button. Every person who clicks it is a warm lead. We can set up automated follow-ups, appointment reminders, and review requests — all on WhatsApp automatically. That's the difference between a website and a customer capture system."
 
 ---
 
-## 18. IMMEDIATE NEXT STEPS
+## 17. STARTING A NEW SESSION
 
-### Active Right Now
-- Dentist template font fix (running in Claude Code)
-- Mobile menu redesign to match padentalimplants.com
-- Mobile CTA bar refinement
-- Google Reviews link fix
+### For building:
+Open Claude Code, navigate to project directory, paste relevant command.
 
-### Next Session Priorities
-1. Review updated dentist site on mobile — compare to padentalimplants.com
-2. Set up unique Vercel project per client demo system
-3. Lock dentist master template
-4. Build GP/Medical template (second niche)
-5. Wire Make.com to Tally.so forms
-6. Begin building client-index.md tracking system
+### For strategy:
+Open second Terminal tab (Cmd+T), type `claude`, activate strategic council:
+```
+Activate the c-level, business-growth, and marketing agent personas. Read ~/.claude/agents/c-level.md, ~/.claude/agents/business-growth.md, ~/.claude/agents/marketing.md. Act as unified strategic council for 7thsense.
+```
 
-### First Client Goal
-- Target: 1 paying client within 3 weeks
-- Profile: 4.2+ Google rating, 20+ reviews, poor or no website, Cape Town area
-- Price point: R7,500-R12,500 for first sale
+### For a new client build:
+```
+Read CLAUDE.md. Read skills in order: 7thsense-niche-intelligence, 7thsense-systems-architect, 7thsense-visual-system, 7thsense-copy-architect, 7thsense-image-agent, ui-ux-pro-max, page-cro, seo-technical.
+
+Fill niche config: cp ~/agency-templates/7thsense-system/niche-config-template.json ./[client]-config.json
+Validate: bash ~/agency-templates/7thsense-system/scripts/validate-niche-config.sh ./[client]-config.json
+Then build.
+```
