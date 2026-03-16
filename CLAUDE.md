@@ -122,6 +122,7 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 27. **TEAM SECTION:** If real team photos cannot be extracted via Firecrawl, generate professional headshots via Gemini/Imagen with section-specific prompts. Never leave a team card without an image.
 28. **REVIEW SOURCING:** Before building any demo, search Google for the business name + 'reviews' to find their Google rating and review count. If reviews exist — the Google reviews component is mandatory. Never omit reviews because Firecrawl failed — use web search as fallback to find review data.
 29. **NICHE INTELLIGENCE REQUIRED:** Before building any new niche, a niche intelligence skill must exist for that niche at `~/.claude/skills/7thsense-niche-[niche-name]/SKILL.md`. This skill must define: visitor psychology and emotional state, must-have sections in order, trust strip stat rules, CTA rules, copy rules, what to avoid, and reference sites (good and bad). If the skill does not exist — create it before building. Never build a new niche from generic assumptions.
+    - **Existing niche skills:** `7thsense-niche-law` (law firms/attorneys), `7thsense-niche-aesthetics` (medspas/aesthetics clinics/beauty clinics).
 
 ---
 
