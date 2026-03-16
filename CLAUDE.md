@@ -147,6 +147,18 @@ Gemini prompts must include: niche + specific service + SA/Cape Town context + b
 
 ---
 
+## CLIENT FEEDBACK INTERPRETATION RULES
+
+When receiving client feedback, always:
+
+1. **INTERPRET INTENT not just the literal request** — if a client says "change X on the home page", scan the entire site for all instances of X or similar phrasing and fix them all unless there's a reason not to
+2. **SCAN BEFORE CHANGING** — before making any change, read the entire file and identify every place the feedback could apply
+3. **CONSISTENCY CHECK** — after making changes, scan the full file to ensure the change is consistent throughout. If "Cape Town families" is changed to "South African families", check for "Cape Town clients", "Cape Town homes", "local Cape Town" and apply the same logic
+4. **NEVER BREAK WHAT WORKS** — when making copy changes, only touch the specific text. Never restructure HTML, modify CSS, or change layout while making copy edits
+5. **REPORT ALL CHANGES** — list every single change made, not just the ones explicitly requested
+
+---
+
 ## DEFINITION OF DONE
 
 A build is only done when:
