@@ -1,0 +1,94 @@
+{
+  "_README": "Dr. Sonday Dentistry niche config",
+  "_VERSION": "1.0",
+  "client": {
+    "business_name": "Dr. Sonday Dentistry",
+    "niche": "dental",
+    "tagline": "Gentle Care, Brighter Smiles",
+    "city": "Ocean View, Cape Town",
+    "phone": "021 783 0024",
+    "phone_type": "mobile",
+    "email": "docsonday12@gmail.com",
+    "address": "Flat 1, 18 Gemini Way, Ocean View, Cape Town, 7975",
+    "google_place_id": "ChIJZ61zaEFrzB0RqVIYufiLzY8",
+    "google_rating": "5.0",
+    "google_review_count": "13",
+    "website": "https://616ac20304791.site123.me/",
+    "operating_hours": "Mon-Fri 08:30-17:00, Sat 08:00-12:30"
+  },
+  "brand": {
+    "primary": "#4a9bb0",
+    "primary_light": "#63aabc",
+    "primary_dark": "#3a8298",
+    "accent": "#e8a84c",
+    "neutral_bg": "#f7f9fa",
+    "alt_bg": "#f0f6f8",
+    "text_dark": "#1a2a30",
+    "text_muted": "#4a5e68",
+    "footer_bg": "#0e1c20",
+    "extraction_method": "firecrawl_css"
+  },
+  "typography": {
+    "heading_font": "Plus Jakarta Sans",
+    "body_font": "Inter",
+    "heading_weight": "700",
+    "heading_style": "sentence_case_relaxed",
+    "personality": "warm_approachable"
+  },
+  "hero": {
+    "layout": "full_bleed_overlay",
+    "height": "100vh",
+    "overlay_style": "dark_gradient",
+    "cta_text": "Book an Appointment",
+    "cta_style": "pill_rounded",
+    "subtitle_max_chars": 120
+  },
+  "sections": {
+    "order": ["hero", "trust_bar", "team", "services", "reviews", "medical_aids", "cta", "contact", "hours", "footer"],
+    "trust_bar_style": "stats_bar",
+    "services_layout": "grid_3col",
+    "social_proof_style": "card_grid",
+    "process_style": "numbered_vertical",
+    "team_layout": "grid_cards",
+    "faq_style": "accordion",
+    "gallery_style": "grid_uniform"
+  },
+  "visual_personality": {
+    "border_radius": "12px",
+    "shadow_style": "subtle",
+    "divider_style": "none",
+    "card_style": "elevated",
+    "icon_style": "outlined",
+    "accent_pattern": "left_border",
+    "image_treatment": "rounded_lg",
+    "animation": "fade_up"
+  },
+  "cta_config": {
+    "primary_action": "Book an Appointment",
+    "primary_action_url": "whatsapp://send?phone=27649447759",
+    "secondary_action": "Call 021 783 0024",
+    "secondary_action_url": "tel:+27217830024",
+    "floating_bar_text": "Call",
+    "floating_bar_icon": "phone",
+    "whatsapp_enabled": true,
+    "whatsapp_text": "WhatsApp",
+    "whatsapp_number": "27649447759"
+  },
+  "copy_register": {
+    "emotional_tone": "reassuring",
+    "formality": "conversational",
+    "power_words": ["gentle", "affordable", "trusted", "comfortable"],
+    "avoid_words": ["innovative", "leverage", "streamline"],
+    "headline_formula": "outcome_focused",
+    "social_proof_emphasis": "google_reviews"
+  },
+  "images": {
+    "source": "gemini",
+    "hero_image_prompt": "premium dental practice reception area Cape Town, navy blue and teal, photorealistic, no text",
+    "service_image_prompts": ["gum health exam", "teeth whitening", "dental filling", "dentures"],
+    "team_image_prompts": ["SA male dentist headshot", "SA female receptionist", "SA female dental assistant"],
+    "gallery_image_prompts": [],
+    "color_mood": "teal and navy, warm clinical",
+    "style_notes": "Healthcare warm, not sterile"
+  }
+}
