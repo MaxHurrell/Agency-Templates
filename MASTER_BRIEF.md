@@ -118,7 +118,7 @@ Paste this entire document as your first message in any new chat:
 - `7thsense-systems-architect` — technical blueprint before any build
 - `7thsense-visual-system` — CSS variables, font decisions, 4-step colour extraction
 - `7thsense-copy-architect` — conversion copy, 6-word headlines, SA market rules
-- `7thsense-image-agent` — image sourcing priority: Firecrawl → Gemini → Unsplash
+- `7thsense-image-agent` — image sourcing priority: Firecrawl extract → audit gaps → Gemini for gaps only (locked brief format) → no Unsplash
 - `7thsense-niche-intelligence` — niche research, design decisions document, uniqueness guarantee
 
 ### Skill Reading Order (every new build)
@@ -147,7 +147,7 @@ Activate the c-level, business-growth, and marketing agent personas. Read ~/.cla
 
 Location: `~/.claude/CLAUDE.md` (global) and `~/agency-templates/CLAUDE.md` (GitHub)
 
-### 15 Hard Rules (never violate)
+### 16 Hard Rules (never violate)
 1. Never use brand colour as full section background outside the hero
 2. Never use Playfair Display or ornate serif fonts
 3. Never include WhatsApp for a landline number
@@ -163,6 +163,7 @@ Location: `~/.claude/CLAUDE.md` (global) and `~/agency-templates/CLAUDE.md` (Git
 13. Image generation: every image specifically prompted for exact section — never generic "lounge" or unrelated scene
 14. Image extraction: always attempt Firecrawl first, flag if JavaScript-rendered, fall back to Gemini with precise prompts
 15. Hero text contrast: directional gradient overlay on desktop, text-shadow on all hero elements, use hero-overlay.css component
+16. Contact form: every site must use master Tally contact form component — never build custom forms — set &source= parameter for lead attribution
 
 ### Build Checklist (mandatory before coding)
 - [ ] Fill niche config JSON
@@ -210,7 +211,7 @@ Location: `~/.claude/CLAUDE.md` (global) and `~/agency-templates/CLAUDE.md` (Git
 - Hero content within 60px of navbar desktop, 40px mobile
 
 ### Images
-Priority: Firecrawl real images → Gemini API generated → Unsplash last resort
+Priority: Firecrawl extract → audit gaps → Gemini for gaps only (locked brief) → retry/crop fallback → never Unsplash
 - Gemini prompts must include: niche + specific service + SA/Cape Town context + brand colour mood
 - Hero: practice/business environment, never a random lounge
 - Services: show the actual service being performed
