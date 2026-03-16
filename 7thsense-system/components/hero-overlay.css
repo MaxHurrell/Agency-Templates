@@ -1,0 +1,80 @@
+/* ============================================================
+   7thsense Hero Overlay Component
+   ============================================================
+
+   PURPOSE: Ensures hero text is always readable over background
+   images on desktop. Uses a directional gradient that is darker
+   where text sits (left) and lighter where the image shows (right).
+   Combined with text-shadow on all text elements for contrast.
+
+   USAGE: Copy these rules into every build's desktop media query
+   (min-width: 1024px). Replace 'hero.png' with the actual hero
+   image filename. This is MANDATORY per CLAUDE.md Rule 15.
+
+   MOBILE: Not needed on mobile — mobile hero uses a solid/cream
+   background with dark text, no image overlay.
+
+   ============================================================ */
+
+
+/* ── DESKTOP HERO OVERLAY ── */
+/* Apply inside @media (min-width: 1024px) { ... } */
+
+.hero {
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.75) 0%,    /* Dark left side — where text sits */
+      rgba(0, 0, 0, 0.75) 45%,   /* Stays dark through text area */
+      rgba(0, 0, 0, 0.20) 100%   /* Fades light — image visible on right */
+    ),
+    url('hero.png') center/cover no-repeat;
+}
+
+
+/* ── HERO TEXT SHADOWS ── */
+/* Apply inside @media (min-width: 1024px) { ... } */
+
+/* Primary heading — strongest shadow */
+.hero h1 {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Subheadline — same strength as heading */
+.hero-sub {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Badges, ratings, trust elements — lighter shadow */
+.hero-badge,
+.hero-rating,
+.hero-trust {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ── TRANSPARENT NAV TEXT SHADOWS ── */
+/* Apply at BASE level (not inside media query) — these are the
+   default transparent nav styles before scrolling */
+
+.nav-logo {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links a {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.nav-phone {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ── SCROLLED NAV — REMOVE SHADOWS ── */
+/* When nav transitions to solid white, remove all text-shadow */
+
+.nav.scrolled .nav-logo,
+.nav.scrolled .nav-links a,
+.nav.scrolled .nav-phone {
+  text-shadow: none;
+}

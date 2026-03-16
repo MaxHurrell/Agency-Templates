@@ -51,6 +51,7 @@ Build the HTML using:
 - CTA text from `config.cta_config`
 - Hero layout from `config.hero`
 - Font pairing from `config.typography`
+- **Hero overlay from `~/agency-templates/7thsense-system/components/hero-overlay.css`** — copy the directional gradient overlay, text-shadow rules, and transparent nav shadow rules into the desktop media query. This is mandatory for every build with an image hero. Replace `hero.png` with the actual filename.
 
 **The config is the spec. Don't improvise.**
 

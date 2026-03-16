@@ -105,7 +105,7 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 12. **DESIGN UNIQUENESS:** Before every build, niche research must drive structural decisions. Never copy the layout or section order from a previous build. Niche research determines structure.
 13. **IMAGE GENERATION:** Every generated image must be specifically prompted for the exact section it appears in — hero images show the practice environment, service images show the specific service being performed, team images show professional portraits. Never generate a generic "lounge" or unrelated scene.
 14. **IMAGE EXTRACTION:** Always attempt Firecrawl image extraction first. If images return empty src attributes (JavaScript-rendered site), flag this and fall back to Gemini generation with precise section-specific prompts.
-15. **HERO TEXT CONTRAST:** Desktop hero images must have sufficient overlay to ensure all text passes WCAG AA contrast. Use directional gradient overlay — darker where text sits, lighter where image shows. Always add text-shadow to hero headings. Never rely on image darkness alone for text readability.
+15. **HERO TEXT CONTRAST:** Desktop hero images must use the hero overlay component from `~/agency-templates/7thsense-system/components/hero-overlay.css`. This includes: directional gradient overlay (0.75 opacity where text sits, 0.2 where image shows), text-shadow on all hero text elements, and text-shadow on transparent nav elements (removed on scroll). Every new build must copy these exact rules. Never rely on image darkness alone for text readability.
 
 ---
 
