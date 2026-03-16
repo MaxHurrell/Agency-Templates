@@ -441,3 +441,107 @@ Before completing any build, verify:
 - [ ] Footer is dark charcoal (never brand primary)
 - [ ] Schema markup uses LocalBusiness JSON-LD
 - [ ] WhatsApp button is `#25D366`, uses `whatsapp://` protocol
+
+---
+
+## LOCKED MODULE A: Hero Section
+
+### Locked CSS (mobile-first):
+```css
+.hero{position:relative;display:flex;align-items:flex-start;background:var(--cream);padding:96px 0 48px;overflow:hidden}
+.hero-content{position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(74,155,176,0.1);border:1px solid rgba(74,155,176,0.2);padding:7px 18px;border-radius:50px;color:var(--primary);font-size:0.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
+.hero h1{margin-bottom:18px;max-width:620px;font-weight:800}
+.hero-sub{color:var(--text-mid);font-size:1rem;max-width:500px;margin-bottom:24px;line-height:1.8}
+.hero-trust{display:flex;flex-wrap:wrap;gap:14px;color:var(--text-mid);font-size:0.78rem;font-weight:500}
+```
+
+### Locked CSS (desktop >=1024px):
+```css
+.hero{min-height:100vh;align-items:center;padding:120px 0 64px;background:linear-gradient(to right,rgba(0,0,0,0.75) 0%,rgba(0,0,0,0.75) 45%,rgba(0,0,0,0.2) 100%),url('hero.png') center/cover no-repeat}
+.hero h1{color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.5)}
+.hero-sub{color:rgba(255,255,255,0.85);text-shadow:0 2px 8px rgba(0,0,0,0.5)}
+.hero-badge{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.95)}
+.hero-rating{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.15);color:#fff}
+.hero-trust{color:rgba(255,255,255,0.65);text-shadow:0 1px 4px rgba(0,0,0,0.4)}
+```
+
+### Locked HTML:
+- Location badge above headline (e.g. "OCEAN VIEW, CAPE TOWN")
+- H1 headline
+- Subtitle paragraph
+- Clickable Google rating `<a>` tag with stars + "5.0 Google Rating"
+- One primary CTA button (pill shape)
+- Ghost CTA button (desktop only: Call number)
+- Trust indicators: "All Medical Aids | Open Saturdays | 5.0 Google Rating"
+
+### Conditional: Hero image MUST exist. Gradient-only hero is not acceptable.
+
+---
+
+## LOCKED MODULE B: Trust Strip
+
+### Locked CSS:
+```css
+.trust-strip{background:var(--text-dark);padding:36px 0}
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:center}
+.trust-num{font-family:var(--font-heading);font-size:1.6rem;font-weight:800;color:var(--primary-light);line-height:1;margin-bottom:4px}
+.trust-label{font-size:0.72rem;color:rgba(255,255,255,0.5);font-weight:500;letter-spacing:0.5px}
+@media(min-width:768px){.trust-grid{grid-template-columns:repeat(4,1fr)}}
+```
+
+### Locked structure: Dark background, 4 stats, 2x2 on mobile, 4-col on desktop. Never single column.
+
+---
+
+## LOCKED MODULE C: Services (Image Cards)
+
+### Locked CSS:
+```css
+.svc-card{background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.04);transition:all var(--transition)}
+.svc-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.svc-card img{width:100%;height:120px;object-fit:cover}
+.svc-card-body{padding:14px 12px}
+```
+
+### Grid: 2-col mobile, 3-col tablet (768px+), 4-col desktop (1024px+)
+### Each card MUST have: image top + service name + description. Never icon-only cards.
+### Images sourced in order: Firecrawl real → stock → Gemini → brand-colour placeholder. Never blank.
+
+---
+
+## LOCKED MODULE D: Team Section
+
+### Locked CSS:
+```css
+.team-card{background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.04);text-align:center}
+.team-card img{width:100%;height:180px;object-fit:cover;object-position:top}
+.team-card-body{padding:14px 10px}
+.team-card .team-role{color:var(--primary);font-size:0.7rem;font-weight:600;letter-spacing:0.5px}
+```
+
+### Grid: 2-col mobile, 4-col tablet/desktop
+### Conditional: ONLY include if real team photos exist. Never generate AI faces. Never include with placeholder/empty cards.
+
+---
+
+## LOCKED MODULE E: Reviews Section
+
+### Structure:
+1. Google badge (272x92 wordmark) centered above heading — linked to Google reviews page
+2. Eyebrow + H2 heading
+3. Review cards grid: 1-col mobile, 2-col tablet, 3-col desktop
+4. "Read all N reviews on Google" link below grid
+
+### Conditional: ONLY include if business has real Google reviews. Never show empty or placeholder review cards.
+
+---
+
+## Pre-Build Module Checklist
+
+Before completing any build, verify each module:
+- [ ] Hero: image present? Gradient overlay applied? Text left desktop, centred mobile? Google badge linked?
+- [ ] Trust strip: 4-col desktop? 2x2 mobile grid? Never wrapping? Dark background?
+- [ ] Services: image cards not icon-only? All real services listed? 4-col desktop grid?
+- [ ] Team: real photos available? If not, section omitted entirely?
+- [ ] Reviews: real reviews available? Google wordmark present and linked? Two-letter avatars?
