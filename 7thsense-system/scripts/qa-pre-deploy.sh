@@ -119,6 +119,13 @@ for placeholder in "XXX" "TODO" "PLACEHOLDER" "TBD" "[INSERT"; do
   fi
 done
 
+# Check for VERIFY/DEMO placeholder comments in reviews (Rule 30)
+if grep -q '<!-- DEMO:' "$HTML" || grep -q '<!-- VERIFY' "$HTML"; then
+  fail "Placeholder review text found — replace with real verbatim quotes before deploying"
+else
+  pass "No DEMO/VERIFY placeholder comments"
+fi
+
 # ─── SPACING RULES ───
 echo ""
 echo "--- Spacing Rules ---"
