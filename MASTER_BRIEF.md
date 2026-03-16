@@ -26,8 +26,10 @@ Paste this entire document as your first message in any new chat:
 
 | Client | Niche | URL | Status |
 |--------|-------|-----|--------|
-| Dr. Sonday Dentistry | Dental | dentist-pi-eight.vercel.app | ✅ Live |
-| Team24 | Insurance Broker | team24-nine.vercel.app | ✅ Live — first potential client |
+| Dr. Sonday Dentistry | Dental | drsonday.vercel.app | ✅ Live |
+| Team24 | Insurance Broker | team24insurance.vercel.app | ✅ Live — first potential client |
+
+*URLs confirmed 200 on 2026-03-16. Old auto-generated aliases (dentist-pi-eight, team24-nine) still resolve but are not used in client-facing comms.*
 
 ---
 
