@@ -349,6 +349,60 @@ if [ "$MISSING_IMAGES" -eq 0 ]; then
   pass "All local image files exist"
 fi
 
+# ─── FONT RULES (Rule 33) ───
+echo ""
+echo "--- Font Rules (Rule 33) ---"
+
+if grep -qiE "font-family.*syne|font-family.*bebas|font-family.*oswald|family=Syne|family=Bebas|family=Oswald" "$HTML" 2>/dev/null; then
+  fail "Banned font detected (Syne/Bebas/Oswald) — replace with approved font per Rule 33"
+else
+  pass "No banned fonts detected"
+fi
+
+if grep -qiE "font-family.*raleway|family=Raleway" "$HTML" 2>/dev/null; then
+  warn "Raleway detected — condensed display font, consider replacing per Rule 33"
+fi
+
+# ─── HERO CONTRAST (Rule 34) ───
+echo ""
+echo "--- Hero Text Contrast (Rule 34) ---"
+
+DARK_HERO_TEXT=$(grep -A5 '\.hero h1\|\.hero-title' "$HTML" 2>/dev/null | grep -c 'color.*#[0-3]' || echo "0")
+if [ "$DARK_HERO_TEXT" -gt 0 ]; then
+  warn "Possible dark text colour on hero — verify contrast per Rule 34"
+else
+  pass "Hero text colour appears light/white"
+fi
+
+# ─── GOOGLE LOGO IN HERO (Rule 35) ───
+echo ""
+echo "--- Google Logo in Hero (Rule 35) ---"
+
+if grep -qi 'hero-rating\|hero.*google\|google.*hero' "$HTML" 2>/dev/null; then
+  if grep -q '4285F4' "$HTML" 2>/dev/null && grep -q 'EA4335' "$HTML" 2>/dev/null; then
+    pass "Google brand colours found — logo likely present"
+  else
+    fail "Google reviews mentioned in hero but Google brand colours not found — Google logo missing per Rule 35"
+  fi
+else
+  pass "No hero Google rating badge found (may be intentional if no reviews)"
+fi
+
+# ─── IMAGE PATH VERIFICATION (Rule 36) ───
+echo ""
+echo "--- Image Path Verification (Rule 36) ---"
+
+MISSING_RULE36=0
+for img_src in $(grep -oE 'src="[^"]+\.(jpg|jpeg|png|webp|svg)"' "$HTML" | sed 's/src="//;s/"$//' | grep -v '^http' | grep -v '^data:'); do
+  if [ ! -f "$HTML_DIR/$img_src" ]; then
+    fail "Missing image: $img_src — fix path before deploying (Rule 36)"
+    MISSING_RULE36=$((MISSING_RULE36 + 1))
+  fi
+done
+if [ "$MISSING_RULE36" -eq 0 ]; then
+  pass "All image paths resolve to existing files"
+fi
+
 # ─── RESULT ───
 echo ""
 echo "==========================================="
