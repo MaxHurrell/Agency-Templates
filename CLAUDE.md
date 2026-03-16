@@ -20,6 +20,7 @@ If the answer is no — do not commit. Fix it first.
 
 Before writing a single line of code, complete ALL of these:
 
+- [ ] Read 7thsense-locked-components skill — locked structural components first
 - [ ] Read 7thsense-systems-architect skill — produce full blueprint
 - [ ] Read 7thsense-visual-system skill — extract brand colours, generate all CSS variables
 - [ ] Read 7thsense-copy-architect skill — write all copy before building
@@ -89,7 +90,7 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 
 ---
 
-## 16 HARD RULES — NEVER VIOLATE
+## 26 HARD RULES — NEVER VIOLATE
 
 1. Never use brand colour as full section background outside the hero
 2. Never use Playfair Display or ornate serif fonts
@@ -97,7 +98,7 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 4. Never commit invented statistics or unverified claims
 5. Never have more than one primary CTA above the fold on mobile
 6. Never commit without running the pre-commit QA checklist
-7. Never use Unsplash without checking for real client images first via Firecrawl
+7. **Never use Unsplash.** Image pipeline is: Firecrawl extraction → Gemini generation with locked briefs → cropped/recoloured client image fallback. Stock photos are permanently removed from the pipeline.
 8. Never use niche default colours without first trying Firecrawl CSS AND Gemini Vision extraction
 9. Never use lorem ipsum — always use realistic dummy content
 10. Never skip the pre-build checklist — even for small changes
@@ -107,19 +108,30 @@ Before every git commit, check ALL of these. Fix any failures before committing:
 14. **IMAGE EXTRACTION:** Always attempt Firecrawl image extraction first. If images return empty src attributes (JavaScript-rendered site), flag this and fall back to Gemini generation with precise section-specific prompts.
 15. **HERO TEXT CONTRAST:** Desktop hero images must use the hero overlay component from `~/agency-templates/7thsense-system/components/hero-overlay.css`. This includes: directional gradient overlay (0.75 opacity where text sits, 0.2 where image shows), text-shadow on all hero text elements, and text-shadow on transparent nav elements (removed on scroll). Every new build must copy these exact rules. Never rely on image darkness alone for text readability.
 16. **CONTACT FORM:** Every site must use the master Tally contact form component from `~/agency-templates/7thsense-system/components/contact-form.html`. Never build a custom contact form. Set the `&source=` parameter to the client name (e.g. `source=dr-sonday`, `source=team24`) for lead attribution on every deployment.
+17. **LOCKED COMPONENTS:** Read the `7thsense-locked-components` skill FIRST before any build. Locked components (Google badge, star rendering, review cards, hero overlay, floating bar, Tally form, favicon, animations, nav, footer, schema) define structure that never changes. Flexible design tokens (fonts, colours, radii) apply on top — they cannot restructure locked components. If a differentiation decision would modify a locked component, the locked component wins.
+18. **GOOGLE BADGE:** The Google reviews badge must use the full 272x92 Google wordmark SVG with correct 6-colour rendering. Never use a small "G" icon or plain text "Google." The badge structure (score + stars + count + wordmark) is a locked component.
+19. **STAR RENDERING:** Stars are always rendered as HTML entities (`&#9733;`) — never as inline SVG elements. This applies to hero badges, trust bars, review cards, and Google badges. Five SVGs per star row is unnecessary code bloat.
+20. **REVIEW TEXT:** Review card text must be real verbatim quotes copied from Google Reviews. Never paraphrase. Never invent. If real review text cannot be obtained, add an HTML comment `<!-- VERIFY: Replace with actual review text -->` but never ship generic placeholder text ("Excellent service..." etc.) to a prospect.
+21. **REVIEW AVATARS:** Review card avatars always show TWO-LETTER initials (e.g. "CB", "SF") — never single letters. Two initials match Google's own convention and feel more personal.
+22. **HERO RATING LINK:** The hero section must contain a clickable `<a>` tag linking to the real Google Reviews page (`https://search.google.com/local/reviews?placeid=[ID]`). Never render the rating as a non-clickable `<div>`. The link turns social proof into a verifiable trust signal.
+23. **TRUST BAR STATS:** Trust bar statistics must show numbers or short values that answer "how much?" or "how many?" — never location names. "5.0", "13", "Sat", "88" are good. "Ocean View", "Cape Town" are bad — they waste a trust slot on information that communicates nothing about quality.
+24. **FAVICON:** Favicons use an SVG data URI with the brand primary colour background and two-letter business initials in white. Never use emoji favicons (tooth, house, etc.) — they look unprofessional in browser tabs.
+25. **DATA VERIFICATION:** Before deploying any demo, cross-check phone number, address, operating hours, and Google review count against the business's Google Maps listing. If any data cannot be verified, mark it in the niche config as `"verified": false` and flag to Max before sending the demo.
+26. **IMAGE FILE VERIFICATION:** Before deploying, verify every `<img src="...">` in the HTML points to a file that exists in the project directory. Never deploy a site with broken image references.
 
 ---
 
 ## SKILL READING ORDER (every new build)
 
-1. 7thsense-systems-architect — plan first
-2. 7thsense-visual-system — design tokens before code
-3. 7thsense-copy-architect — copy before layout
-4. 7thsense-image-agent — images before final build
-5. ui-ux-pro-max — international UX standards
-6. bencium-innovative-ux-designer — distinctive design
-7. page-cro — conversion pass before commit
-8. seo-technical — SEO pass before commit
+1. 7thsense-locked-components — locked structural components (NEW — read FIRST)
+2. 7thsense-niche-intelligence — research + design decisions
+3. 7thsense-systems-architect — technical blueprint
+4. 7thsense-visual-system — design tokens before code
+5. 7thsense-copy-architect — copy before layout
+6. 7thsense-image-agent — images before final build
+7. ui-ux-pro-max — international UX standards
+8. page-cro — conversion pass before commit
+9. seo-technical — SEO pass before commit
 
 ---
 

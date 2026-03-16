@@ -287,6 +287,61 @@ echo "  Card style:   $CARD_STYLE"
 echo "  Personality:  $PERSONALITY"
 echo "  (Compare against previous builds to confirm differentiation)"
 
+# ─── LOCKED COMPONENTS (Rules 17-26) ───
+echo ""
+echo "--- Locked Components ---"
+
+# Rule 18: Google badge must use full wordmark SVG
+if grep -q 'viewBox="0 0 272 92"' "$HTML"; then
+  pass "Google wordmark SVG (272x92) present"
+else
+  if grep -qi 'google' "$HTML" && grep -qi 'review\|rating' "$HTML"; then
+    fail "Google reviews present but full wordmark SVG (272x92) missing — use locked component"
+  fi
+fi
+
+# Rule 19: Stars as HTML entities, not SVGs
+STAR_SVGS=$(grep -c 'polygon.*points="12 2 15.09' "$HTML" 2>/dev/null || echo "0")
+if [ "$STAR_SVGS" -gt 0 ]; then
+  fail "Star SVGs detected ($STAR_SVGS instances) — use HTML entities &#9733; instead (Rule 19)"
+else
+  pass "No star SVG bloat detected"
+fi
+
+# Rule 20: No generic review placeholders
+for generic in "Excellent service" "always a pleasant experience" "Best dentist in the area" "wonderful and caring" "highly professional team"; do
+  if grep -qi "$generic" "$HTML"; then
+    warn "Possible generic review text detected: '$generic' — verify this is a real verbatim Google quote"
+  fi
+done
+
+# Rule 21: Review avatars — two-letter initials
+SINGLE_INITIAL=$(grep -cE 'avatar">[A-Z]</' "$HTML" 2>/dev/null || echo "0")
+DOUBLE_INITIAL=$(grep -cE 'avatar">[A-Z][A-Z]</' "$HTML" 2>/dev/null || echo "0")
+if [ "$SINGLE_INITIAL" -gt 0 ] && [ "$DOUBLE_INITIAL" -eq 0 ]; then
+  fail "Review avatars use single-letter initials — must be two letters (Rule 21)"
+fi
+
+# Rule 24: No emoji favicons
+if grep -q "favicon.*emoji\|'🦷'\|'🏠'\|'⚖'\|'🔧'\|'💈'" "$HTML"; then
+  fail "Emoji favicon detected — use SVG with brand colour + initials (Rule 24)"
+fi
+
+# ─── IMAGE FILE VERIFICATION (Rule 26) ───
+echo ""
+echo "--- Image File Verification ---"
+HTML_DIR=$(dirname "$HTML")
+MISSING_IMAGES=0
+for img_src in $(grep -oE 'src="[^"]+\.(png|jpg|jpeg|webp|svg)"' "$HTML" | sed 's/src="//;s/"$//' | grep -v '^http' | grep -v '^data:'); do
+  if [ ! -f "$HTML_DIR/$img_src" ]; then
+    fail "Missing image file: $img_src"
+    MISSING_IMAGES=$((MISSING_IMAGES + 1))
+  fi
+done
+if [ "$MISSING_IMAGES" -eq 0 ]; then
+  pass "All local image files exist"
+fi
+
 # ─── RESULT ───
 echo ""
 echo "==========================================="

@@ -114,21 +114,22 @@ Paste this entire document as your first message in any new chat:
 
 ## 5. SKILLS INSTALLED (~115+ in ~/.claude/skills/)
 
-### Custom 7thsense Skills (5)
+### Custom 7thsense Skills (6)
 - `7thsense-systems-architect` — technical blueprint before any build
 - `7thsense-visual-system` — CSS variables, font decisions, 4-step colour extraction
 - `7thsense-copy-architect` — conversion copy, 6-word headlines, SA market rules
 - `7thsense-image-agent` — image sourcing priority: Firecrawl extract → audit gaps → Gemini for gaps only (locked brief format) → no Unsplash
 - `7thsense-niche-intelligence` — niche research, design decisions document, uniqueness guarantee
+- `7thsense-locked-components` — locked structural components that never change between builds
 
 ### Skill Reading Order (every new build)
-1. 7thsense-niche-intelligence — research + design decisions document FIRST
-2. 7thsense-systems-architect — technical blueprint
-3. 7thsense-visual-system — design tokens before code
-4. 7thsense-copy-architect — copy before layout
-5. 7thsense-image-agent — images before final build
-6. ui-ux-pro-max — international UX standards
-7. bencium-innovative-ux-designer — distinctive design
+1. 7thsense-locked-components — locked structural components (NEW — read FIRST)
+2. 7thsense-niche-intelligence — research + design decisions document
+3. 7thsense-systems-architect — technical blueprint
+4. 7thsense-visual-system — design tokens before code
+5. 7thsense-copy-architect — copy before layout
+6. 7thsense-image-agent — images before final build
+7. ui-ux-pro-max — international UX standards
 8. page-cro — conversion pass
 9. seo-technical — SEO pass
 
@@ -147,7 +148,7 @@ Activate the c-level, business-growth, and marketing agent personas. Read ~/.cla
 
 Location: `~/.claude/CLAUDE.md` (global) and `~/agency-templates/CLAUDE.md` (GitHub)
 
-### 16 Hard Rules (never violate)
+### 26 Hard Rules (never violate)
 1. Never use brand colour as full section background outside the hero
 2. Never use Playfair Display or ornate serif fonts
 3. Never include WhatsApp for a landline number
@@ -432,7 +433,7 @@ Activate the c-level, business-growth, and marketing agent personas. Read ~/.cla
 
 ### For a new client build:
 ```
-Read CLAUDE.md. Read skills in order: 7thsense-niche-intelligence, 7thsense-systems-architect, 7thsense-visual-system, 7thsense-copy-architect, 7thsense-image-agent, ui-ux-pro-max, page-cro, seo-technical.
+Read CLAUDE.md. Read skills in order: 7thsense-locked-components, 7thsense-niche-intelligence, 7thsense-systems-architect, 7thsense-visual-system, 7thsense-copy-architect, 7thsense-image-agent, ui-ux-pro-max, page-cro, seo-technical.
 
 Fill niche config: cp ~/agency-templates/7thsense-system/niche-config-template.json ./[client]-config.json
 Validate: bash ~/agency-templates/7thsense-system/scripts/validate-niche-config.sh ./[client]-config.json
