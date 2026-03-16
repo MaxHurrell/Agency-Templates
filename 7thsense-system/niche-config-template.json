@@ -99,5 +99,48 @@
     "gallery_image_prompts": [],
     "color_mood": "",
     "style_notes": ""
+  },
+
+  "brand_identity": {
+    "_note": "Auto-extracted from client site via Firecrawl. Fill every field found. Leave null if not detected.",
+    "faith_identity": {
+      "detected": false,
+      "religion": null,
+      "verse": null,
+      "positioning": null,
+      "display": null
+    },
+    "founding_story": {
+      "detected": false,
+      "narrative": null,
+      "year": null,
+      "founder": null
+    },
+    "signature_tagline": {
+      "detected": false,
+      "text": null,
+      "trademarked": false
+    },
+    "notable_clients": {
+      "detected": false,
+      "names": [],
+      "categories": []
+    },
+    "personal_philosophy": {
+      "detected": false,
+      "text": null
+    },
+    "unique_positioning": {
+      "detected": false,
+      "text": null
+    },
+    "community_identity": {
+      "detected": false,
+      "text": null
+    },
+    "awards_with_personality": {
+      "detected": false,
+      "items": []
+    }
   }
 }

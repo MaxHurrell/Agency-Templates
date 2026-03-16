@@ -403,6 +403,47 @@ if [ "$MISSING_RULE36" -eq 0 ]; then
   pass "All image paths resolve to existing files"
 fi
 
+# ─── HERO IMAGE QUALITY ───
+echo ""
+echo "--- Hero Image Quality ---"
+
+HERO_SIZE=$(wc -c < "$HTML_DIR/hero.jpg" 2>/dev/null || echo "0")
+if [ "$HERO_SIZE" -lt 100000 ]; then
+  fail "Hero image too small (${HERO_SIZE} bytes) — likely a thumbnail, not a full image. Must be >100KB. Regenerate via Gemini."
+else
+  pass "Hero image size OK (${HERO_SIZE} bytes)"
+fi
+
+# ─── BRAND IDENTITY CHECK ───
+echo ""
+echo "--- Brand Identity Check ---"
+
+if python3 -c "import json,sys; d=json.load(open('$CONFIG')); sys.exit(0 if 'brand_identity' in d else 1)" 2>/dev/null; then
+  pass "brand_identity field present in config"
+else
+  warn "No brand_identity field in config — brand signals may have been missed. Run brand identity extraction before deploying."
+fi
+
+# ─── GOOGLE WORDMARK IN HERO (Rule 35 reinforcement) ───
+echo ""
+echo "--- Google Wordmark in Hero (Rule 35) ---"
+
+if grep -qi 'hero-rating' "$HTML" 2>/dev/null; then
+  if grep -qi '272 92\|0 0 272' "$HTML" 2>/dev/null; then
+    pass "Hero rating badge has Google wordmark SVG (272x92)"
+  else
+    fail "Hero rating badge exists but Google wordmark SVG (272x92) not found — Rule 35 violated"
+  fi
+fi
+
+# ─── HERO TEXT CONTRAST CHECK ───
+echo ""
+echo "--- Contrast Check ---"
+
+if grep -qiE 'hero.*color.*#[0-2][0-9a-f]{5}|\.hero h1.*color.*#1|\.hero h1.*color.*rgb\(1[0-9]' "$HTML" 2>/dev/null; then
+  warn "Possible dark text colour on hero — verify contrast per Rule 34. Hero text must be #ffffff"
+fi
+
 # ─── RESULT ───
 echo ""
 echo "==========================================="

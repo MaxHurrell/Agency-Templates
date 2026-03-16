@@ -594,6 +594,30 @@ function toggleCards(gridClass, btnId, label) {
 
 ---
 
+## Two-Pass Build Process
+
+Every new site build must use two passes:
+
+### Pass 1 — Write the HTML
+Build the complete site HTML. Focus on content, structure, and niche intelligence application.
+
+### Pass 2 — Locked Component Verification
+After writing the HTML, run these grep checks before QA:
+
+```bash
+grep -c '&#9733;' index.html          # Stars as entities — must be >0
+grep -c 'viewBox="0 0 272 92"' index.html  # Google wordmark — must be >0 if reviews exist
+grep -c 'source=' index.html          # Tally source param — must be >0
+grep -c 'data:image/svg' index.html   # SVG favicon — must be >0
+grep -c 'hero-rating' index.html      # Clickable Google badge — must be >0 if reviews
+grep -c 'floating-bar' index.html     # Mobile floating bar — must be >0
+grep -c 'brand_identity' index.html   # Brand identity applied — must be >0
+```
+
+If any check returns 0 when it should be >0 — fix before running QA script.
+
+---
+
 ## Pre-Build Module Checklist
 
 Before completing any build, verify each module:
