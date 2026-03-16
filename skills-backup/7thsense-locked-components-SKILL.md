@@ -540,6 +540,39 @@ If Firecrawl cannot extract reviews — use web search: '[business name] Google 
 
 ---
 
+## LOCKED COMPONENT 16: See More Collapse
+
+Any card grid section with more than 4 cards must implement show/hide with a See More button.
+
+### Rules:
+- First 4 cards always visible
+- Cards 5+ get class `hidden-card` (display: none)
+- "See More [Label] ↓" button below grid, pill shape, brand outline style
+- On click: toggle `.show` class on hidden cards, change button text to "See Less ↑"
+- Applies to: services, practice areas, and any other card grid exceeding 4 items
+- Does NOT apply to: reviews (max 5 cards), team (max 4 cards), trust badges (small items)
+
+### CSS (locked):
+```css
+.hidden-card { display: none; }
+.hidden-card.show { display: block; }
+.see-more-btn { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 28px auto 0; padding: 12px 28px; border-radius: var(--radius-pill, 50px); border: 1.5px solid var(--primary); background: transparent; color: var(--primary); font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.25s ease; }
+.see-more-btn:hover { background: var(--primary); color: #fff; }
+```
+
+### JS (locked):
+```javascript
+function toggleCards(gridClass, btnId, label) {
+  var cards = document.querySelectorAll('.' + gridClass + ' .hidden-card');
+  var btn = document.getElementById(btnId);
+  var showing = cards[0] && cards[0].classList.contains('show');
+  cards.forEach(function(c) { if (showing) c.classList.remove('show'); else c.classList.add('show'); });
+  btn.textContent = showing ? 'See More ' + label + ' ↓' : 'See Less ↑';
+}
+```
+
+---
+
 ## Pre-Build Module Checklist
 
 Before completing any build, verify each module:
