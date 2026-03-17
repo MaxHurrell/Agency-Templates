@@ -10,9 +10,12 @@
 **Agency:** 7thsense
 **Owner:** Max Hurrell (maxhurrellsa@gmail.com)
 **Location:** Cape Town, South Africa
-**Model:** Find service businesses with poor/no websites → build demo proactively → show demo → sell full site → retain with ongoing services
-**Status:** Pipeline fully built. System hardened with locked components. Rules 1-42 active. Ready to send demos once visual QA confirmed.
+**What we sell:** A customer acquisition system for service businesses — not websites. The website is the entry point. The full system includes: conversion-optimised website, Google Reviews growth automation, missed call text-back, AI chat widget, WhatsApp automation suite, and monthly reporting.
+**Model:** Find service businesses provably losing money online → quantify the loss → build demo proactively → show proof + math → close → retain with ongoing system
+**Status:** Website component operational (3 niches, locked components, QA automated). Reviews, automation, and chat components designed but not built (V2-V3). Rules 1-49 active. First prospect package written (Werner Joubert Dental).
 **System version:** V1 (manual triggering via Claude Code on Mac, two-terminal workflow)
+**Revenue target:** 5 demos/week → 1 client/week → R50K/month recurring in 5-6 months
+**Full strategy:** See ~/agency-templates/7thsense-system/STRATEGY-V1.md
 
 ---
 
