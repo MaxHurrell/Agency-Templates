@@ -71,8 +71,9 @@ Paste this entire document as your first message in any new chat:
 5. `7thsense-copy-architect` — copy before layout
 6. `7thsense-image-agent` — images before final build
 7. `ui-ux-pro-max` — international UX standards
-8. `page-cro` — conversion pass
-9. `seo-technical` — SEO pass
+8. `7thsense-visual-design` — brand design critique and visual quality
+9. `page-cro` — conversion pass
+10. `seo-technical` — SEO pass
 
 ### Build Pipeline (mandatory for every new site)
 ```
@@ -443,12 +444,12 @@ All built and committed to `~/agency-templates/`:
 ### For strategy (Tab 1 — Pipeline):
 ```
 Activate agents: c-level, business-growth, marketing, engineering, product, project-management
-Read skills: 7thsense-niche-intelligence, 7thsense-systems-architect, 7thsense-visual-system, 7thsense-copy-architect, 7thsense-image-agent, page-cro, seo-technical, ui-ux-pro-max
+Read skills: 7thsense-niche-intelligence, 7thsense-systems-architect, 7thsense-visual-system, 7thsense-copy-architect, 7thsense-image-agent, page-cro, seo-technical, ui-ux-pro-max, 7thsense-visual-design
 ```
 
 ### For a new client build (Tab 2 — Execution):
 ```
-Read CLAUDE.md. Read skills in order: 7thsense-locked-components, 7thsense-niche-intelligence, 7thsense-systems-architect, 7thsense-visual-system, 7thsense-copy-architect, 7thsense-image-agent, ui-ux-pro-max, page-cro, seo-technical.
+Read CLAUDE.md. Read skills in order: 7thsense-locked-components, 7thsense-niche-intelligence, 7thsense-systems-architect, 7thsense-visual-system, 7thsense-copy-architect, 7thsense-image-agent, ui-ux-pro-max, 7thsense-visual-design, page-cro, seo-technical.
 
 Fill niche config: cp ~/agency-templates/7thsense-system/niche-config-template.json ./[client]-config.json
 Validate: bash ~/agency-templates/7thsense-system/scripts/validate-niche-config.sh
