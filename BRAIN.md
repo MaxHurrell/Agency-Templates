@@ -44,6 +44,9 @@
 |--------|-------|-----|--------|
 | Dr. Sonday Dentistry | Dental | drsonday.vercel.app | Live — undergoing final visual QA |
 | Team24 Insurance | Insurance Broker | team24insurance.vercel.app | Live — first potential client, awaiting payment |
+| Miami Beach Laser & Aesthetics | Aesthetics | miami-beach-laser.vercel.app | Live — US demo |
+| The Lions' Den, Attorneys at Law | Law | lions-den-alpha.vercel.app | Live — US demo |
+| Werner Joubert Dental | Dental | werner-joubert.vercel.app | Live — V1 proof build, first real prospect demo |
 
 *Old auto-generated aliases (dentist-pi-eight.vercel.app, team24-nine.vercel.app) still resolve but not used in client-facing comms.*
 
@@ -417,4 +420,4 @@ These are the 15 rules most frequently violated or most damaging when violated:
 
 **2026-03-16:** Full build session day 1. Accomplished: locked components skill created (15 components defined), three demos built (Dr. Sonday dental, Team24 insurance), regression audit completed (8 regressions identified and rules created to prevent), Rules 1-42 established across sessions, strategic upgrade to Josh framework (outcome-framed offers, signal detection playbook, undeniable offer structures), 6 new strategic skills installed (opportunity-scanner, signal-detection, roi-calculator, offer-architect, hormozi-offer, undeniable-offer), niche research agent created, council restructured from 9 to 7 roles, QA script expanded to 294+ lines with 7 categories + 6 locked component checks, MASTER_BRIEF updated to v4, all outreach documents written, PACKAGES.md with full pricing, scored system at 7.5/10.
 
-**2026-03-17:** BRAIN.md created — comprehensive cross-agent memory layer. Rule 43 added. V1 completion session in progress.
+**2026-03-17:** BRAIN.md created — comprehensive cross-agent memory layer. Rules 43-50 added across session. Skills audit: 23 redundant skills removed. Visual polish pass on all 3 existing sites (peach palette Miami Beach, gradient balance, bible verse Lions Den, mobile hero niche colours). STRATEGY-V1.md written (5,155 words — full business model, client profile, pricing logic, growth model). First Josh-level prospect package written (Werner Joubert Dental, Bellville). Google Maps API key configured and Place IDs auto-retrieved for all sites. Werner Joubert Dental proof build completed — first fully system-built demo. Real logo downloaded, real doctor photo, real Place ID auto-retrieved (ChIJV9t8n75QzB0R-3svvo5aMUI), 6 real reviews, 8 Gemini-generated service images, hero image generated. QA passed 0 errors. One auto-fixed QA catch (decorative star SVG). Tally placeholder form ID corrected. Site live at werner-joubert.vercel.app. Gemini image generation confirmed working (gemini-2.5-flash-image model) — resolves long-standing 404 issue. V1 proof build score pending visual audit. Tools confirmed: WiserReview ($9-19/mo) recommended for reviews automation at scale, GoHighLevel ($97/mo) as all-in-one upgrade at 5+ clients.
