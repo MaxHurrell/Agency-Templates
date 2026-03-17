@@ -3,7 +3,7 @@
 # Enforces every CLAUDE.md hard rule automatically.
 # Usage: ./qa-pre-deploy.sh path/to/index.html path/to/niche-config.json
 
-set -eu
+set -e
 
 HTML="$1"
 CONFIG="$2"
@@ -31,7 +31,8 @@ PRIMARY=$(python3 -c "import json; print(json.load(open('$CONFIG'))['brand']['pr
 
 # Check brand colour not used as section background outside hero
 # Count occurrences of primary colour as background-color (rough heuristic)
-BG_USES=$(grep -c "background-color: *${PRIMARY}" "$HTML" 2>/dev/null || echo "0")
+BG_USES=$(grep -c "background-color: *${PRIMARY}" "$HTML" 2>/dev/null || true)
+BG_USES=${BG_USES:-0}
 # It should appear in hero and maybe buttons, but not >3 times as bg
 if [ "$BG_USES" -gt 5 ]; then
   fail "Brand primary ($PRIMARY) used as background $BG_USES times — likely overused outside hero"
@@ -68,23 +69,26 @@ else
   fail "Missing display=swap on font import"
 fi
 
-HEADING_FONT=$(python3 -c "import json; print(json.load(open('$CONFIG'))['typography']['heading_font'])" 2>/dev/null)
-if grep -q "$HEADING_FONT" "$HTML"; then
+HEADING_FONT=$(python3 -c "import json; d=json.load(open('$CONFIG')); print(d.get('typography',{}).get('heading_font','') or d.get('brand',{}).get('font_heading',''))" 2>/dev/null || true)
+if [ -n "$HEADING_FONT" ] && grep -q "$HEADING_FONT" "$HTML"; then
   pass "Configured heading font ($HEADING_FONT) found in HTML"
-else
+elif [ -n "$HEADING_FONT" ]; then
   fail "Configured heading font ($HEADING_FONT) not found in HTML"
+else
+  warn "Could not determine heading font from config"
 fi
 
 # ─── MOBILE RULES ───
 echo ""
 echo "--- Mobile / Floating Bar Rules ---"
 
-PHONE_TYPE=$(python3 -c "import json; print(json.load(open('$CONFIG'))['client']['phone_type'])" 2>/dev/null)
-WA_ENABLED=$(python3 -c "import json; print(json.load(open('$CONFIG'))['cta_config']['whatsapp_enabled'])" 2>/dev/null)
-FLOAT_TEXT=$(python3 -c "import json; print(json.load(open('$CONFIG'))['cta_config']['floating_bar_text'])" 2>/dev/null)
+PHONE_TYPE=$(python3 -c "import json; d=json.load(open('$CONFIG')); print(d.get('client',{}).get('phone_type','unknown'))" 2>/dev/null || echo "unknown")
+WA_ENABLED=$(python3 -c "import json; d=json.load(open('$CONFIG')); print(d.get('cta_config',{}).get('whatsapp_enabled',''))" 2>/dev/null || echo "")
+FLOAT_TEXT=$(python3 -c "import json; d=json.load(open('$CONFIG')); print(d.get('cta_config',{}).get('floating_bar_text',''))" 2>/dev/null || echo "")
 
-if [ "$PHONE_TYPE" = "landline" ] && grep -qi "whatsapp" "$HTML"; then
-  fail "WhatsApp found in HTML but phone is landline — HARD RULE VIOLATION"
+WA_NUMBER=$(python3 -c "import json; d=json.load(open('$CONFIG')); print(d.get('client',{}).get('whatsapp','') or d.get('client',{}).get('whatsapp_number',''))" 2>/dev/null || echo "")
+if [ "$PHONE_TYPE" = "landline" ] && grep -qi "whatsapp" "$HTML" && [ -z "$WA_NUMBER" ]; then
+  fail "WhatsApp found in HTML but phone is landline and no separate WhatsApp number configured — HARD RULE VIOLATION"
 else
   pass "WhatsApp/landline rule OK"
 fi
@@ -160,8 +164,8 @@ fi
 if grep -q 'alt="' "$HTML"; then
   pass "Image alt text present"
   # Count images without alt
-  IMG_COUNT=$(grep -c "<img" "$HTML" 2>/dev/null || echo "0")
-  ALT_COUNT=$(grep -c 'alt="[^"]\+"' "$HTML" 2>/dev/null || echo "0")
+  IMG_COUNT=$(grep -c "<img" "$HTML" 2>/dev/null || true)
+  ALT_COUNT=$(grep -c 'alt="[^"]\+"' "$HTML" 2>/dev/null || true)
   if [ "$IMG_COUNT" -gt "$ALT_COUNT" ]; then
     warn "$((IMG_COUNT - ALT_COUNT)) images may be missing alt text"
   fi
@@ -264,7 +268,7 @@ else
   warn "No preload hints — consider preloading hero image for LCP"
 fi
 
-LAZY_COUNT=$(grep -c 'loading="lazy"' "$HTML" 2>/dev/null || echo "0")
+LAZY_COUNT=$(grep -c 'loading="lazy"' "$HTML" 2>/dev/null || true)
 if [ "$LAZY_COUNT" -gt 0 ]; then
   pass "Lazy loading on $LAZY_COUNT images"
 else
@@ -275,18 +279,18 @@ fi
 echo ""
 echo "--- Section Order ---"
 
-CONFIGURED_ORDER=$(python3 -c "import json; print(','.join(json.load(open('$CONFIG'))['sections']['order']))" 2>/dev/null)
-echo "  Configured: $CONFIGURED_ORDER"
+CONFIGURED_ORDER=$(python3 -c "import json; d=json.load(open('$CONFIG')); print(','.join(d.get('sections',{}).get('order',[])))" 2>/dev/null || echo "N/A")
+echo "  Configured: ${CONFIGURED_ORDER:-N/A}"
 echo "  (Manual verification: check HTML section IDs match this order)"
 
 # ─── DIFFERENTIATION CHECK ───
 echo ""
 echo "--- Visual Differentiation ---"
 
-HERO_LAYOUT=$(python3 -c "import json; print(json.load(open('$CONFIG'))['hero']['layout'])" 2>/dev/null)
-BORDER_RADIUS=$(python3 -c "import json; print(json.load(open('$CONFIG'))['visual_personality']['border_radius'])" 2>/dev/null)
-CARD_STYLE=$(python3 -c "import json; print(json.load(open('$CONFIG'))['visual_personality']['card_style'])" 2>/dev/null)
-PERSONALITY=$(python3 -c "import json; print(json.load(open('$CONFIG'))['typography']['personality'])" 2>/dev/null)
+HERO_LAYOUT=$(python3 -c "import json; d=json.load(open('$CONFIG')); print(d.get('hero',{}).get('layout','N/A'))" 2>/dev/null || echo "N/A")
+BORDER_RADIUS=$(python3 -c "import json; d=json.load(open('$CONFIG')); print(d.get('visual_personality',{}).get('border_radius','N/A'))" 2>/dev/null || echo "N/A")
+CARD_STYLE=$(python3 -c "import json; d=json.load(open('$CONFIG')); print(d.get('visual_personality',{}).get('card_style','N/A'))" 2>/dev/null || echo "N/A")
+PERSONALITY=$(python3 -c "import json; d=json.load(open('$CONFIG')); print(d.get('typography',{}).get('personality','N/A'))" 2>/dev/null || echo "N/A")
 
 echo "  Hero layout:  $HERO_LAYOUT"
 echo "  Border radius: $BORDER_RADIUS"
@@ -308,7 +312,7 @@ else
 fi
 
 # Rule 19: Stars as HTML entities, not SVGs
-STAR_SVGS=$(grep -c 'polygon.*points="12 2 15.09' "$HTML" 2>/dev/null || echo "0")
+STAR_SVGS=$(grep -c 'polygon.*points="12 2 15.09' "$HTML" 2>/dev/null || true)
 if [ "$STAR_SVGS" -gt 0 ]; then
   fail "Star SVGs detected ($STAR_SVGS instances) — use HTML entities &#9733; instead (Rule 19)"
 else
@@ -323,8 +327,8 @@ for generic in "Excellent service" "always a pleasant experience" "Best dentist 
 done
 
 # Rule 21: Review avatars — two-letter initials
-SINGLE_INITIAL=$(grep -cE 'avatar">[A-Z]</' "$HTML" 2>/dev/null || echo "0")
-DOUBLE_INITIAL=$(grep -cE 'avatar">[A-Z][A-Z]</' "$HTML" 2>/dev/null || echo "0")
+SINGLE_INITIAL=$(grep -cE 'avatar">[A-Z]</' "$HTML" 2>/dev/null || true)
+DOUBLE_INITIAL=$(grep -cE 'avatar">[A-Z][A-Z]</' "$HTML" 2>/dev/null || true)
 if [ "$SINGLE_INITIAL" -gt 0 ] && [ "$DOUBLE_INITIAL" -eq 0 ]; then
   fail "Review avatars use single-letter initials — must be two letters (Rule 21)"
 fi
@@ -367,7 +371,7 @@ fi
 echo ""
 echo "--- Hero Text Contrast (Rule 34) ---"
 
-DARK_HERO_TEXT=$(grep -A5 '\.hero h1\|\.hero-title' "$HTML" 2>/dev/null | grep -c 'color.*#[0-3]' || echo "0")
+DARK_HERO_TEXT=$(grep -A5 '\.hero h1\|\.hero-title' "$HTML" 2>/dev/null | grep -c 'color.*#[0-3]' || true)
 if [ "$DARK_HERO_TEXT" -gt 0 ]; then
   warn "Possible dark text colour on hero — verify contrast per Rule 34"
 else
@@ -407,7 +411,7 @@ fi
 echo ""
 echo "--- Hero Image Quality ---"
 
-HERO_SIZE=$(wc -c < "$HTML_DIR/hero.jpg" 2>/dev/null || echo "0")
+HERO_SIZE=$(wc -c < "$HTML_DIR/hero.jpg" 2>/dev/null || true)
 if [ "$HERO_SIZE" -lt 100000 ]; then
   fail "Hero image too small (${HERO_SIZE} bytes) — likely a thumbnail, not a full image. Must be >100KB. Regenerate via Gemini."
 else
@@ -442,6 +446,28 @@ echo "--- Contrast Check ---"
 
 if grep -qiE 'hero.*color.*#[0-2][0-9a-f]{5}|\.hero h1.*color.*#1|\.hero h1.*color.*rgb\(1[0-9]' "$HTML" 2>/dev/null; then
   warn "Possible dark text colour on hero — verify contrast per Rule 34. Hero text must be #ffffff"
+fi
+
+# ─── MOBILE HERO CONTRAST (Rule 44) ───
+echo ""
+echo "--- Mobile Hero Contrast (Rule 44) ---"
+
+if grep -q "hero" "$HTML" 2>/dev/null; then
+  if grep -qE "\.hero\s*\{[^}]*background.*#f[ef][ef]|\.hero\s*\{[^}]*background.*var\(--cream\)" "$HTML" 2>/dev/null; then
+    warn "Possible light hero background detected — verify mobile hero has dark background per Rule 44"
+  else
+    pass "Hero background does not appear to be light-only"
+  fi
+fi
+
+# ─── HERO GRADIENT BALANCE (Rule 46) ───
+echo ""
+echo "--- Hero Gradient Balance (Rule 46) ---"
+
+if grep -qE "rgba\(0,0,0,0\.[5-9][0-9]*\).*100%" "$HTML" 2>/dev/null; then
+  warn "Hero gradient may be too dark at 100% — right side should be rgba(0,0,0,0.15) max per Rule 46"
+else
+  pass "Hero gradient balance appears OK"
 fi
 
 # ─── RESULT ───
