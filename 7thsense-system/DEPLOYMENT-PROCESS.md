@@ -10,7 +10,9 @@
 
 ### QUESTION 1 — DOMAINS
 
-**Decision: Option A — Max buys domain on client's behalf.**
+> **For complex domain scenarios (existing domains, agency transfers, email protection, builder unlocks), see the full [DOMAIN-PLAYBOOK.md](DOMAIN-PLAYBOOK.md) which covers 8 scenarios with step-by-step resolution, client communication templates, and technical reference.**
+
+**Decision: Option A — Max buys domain on client's behalf (new domain scenario).**
 
 Max registers the domain on Namecheap (international clients) or Domains.co.za (.co.za clients) at the time of 50% deposit receipt. Domain cost is included in the package price — the client never sees a separate domain bill. Domain ownership is registered in the client's name with Max as the technical contact. After 12 months of active retainer (or on cancellation), Max transfers full registrar access to the client.
 
