@@ -470,6 +470,17 @@ else
   pass "Hero gradient balance appears OK"
 fi
 
+# ─── GOOGLE REVIEWS URL FORMAT (Rule 22) ───
+echo ""
+echo "--- Google Reviews URL Format (Rule 22) ---"
+if grep -q "place_id_needed" "$(dirname "$HTML")/"*-config.json 2>/dev/null; then
+  warn "Config has place_id_needed: true — obtain Place ID and update to search.google.com/local/reviews?placeid= format"
+elif grep -qE 'href="https://(www\.)?google\.com/search\?' "$HTML" 2>/dev/null; then
+  fail "Google Search review URL found — must use search.google.com/local/reviews?placeid= or Maps data URL with reviews tab (Rule 22)"
+else
+  pass "Google Reviews URL format acceptable"
+fi
+
 # ─── RESULT ───
 echo ""
 echo "==========================================="
