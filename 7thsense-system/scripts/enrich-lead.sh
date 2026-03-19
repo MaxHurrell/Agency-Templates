@@ -92,13 +92,8 @@ echo "  Place ID lookup:"
 echo "  https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder"
 echo ""
 
-# Google Places API lookup if key available — key loaded silently
-GOOGLE_MAPS_API_KEY="${GOOGLE_MAPS_API_KEY:-}"
-if [ -z "$GOOGLE_MAPS_API_KEY" ] && [ -f ~/.zshrc ]; then
-  GOOGLE_MAPS_API_KEY=$(grep -oP 'GOOGLE_MAPS_API_KEY=\K[^\s"]+' ~/.zshrc 2>/dev/null || true)
-fi
-
-if [ ! -z "$GOOGLE_MAPS_API_KEY" ]; then
+# Google Places API lookup if key available
+if [ -n "${GOOGLE_MAPS_API_KEY:-}" ]; then
   echo "  ▶ Auto-fetching Google Places data..."
   PLACES=$(curl -s "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=$(echo "$BUSINESS" | sed 's/ /%20/g')&inputtype=textquery&fields=name,formatted_phone_number,website,rating,user_ratings_total,place_id&key=$GOOGLE_MAPS_API_KEY")
   PLACE_PHONE=$(echo "$PLACES" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('candidates',[{}])[0].get('formatted_phone_number','Not found'))" 2>/dev/null)
