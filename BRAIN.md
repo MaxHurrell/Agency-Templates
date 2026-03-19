@@ -1,5 +1,5 @@
 # 7thsense BRAIN.md
-*Last updated: March 17, 2026*
+*Last updated: March 19, 2026 (Day 4)*
 *Read this before anything else. Every agent reads this. Update at the end of every session.*
 *Source of truth: MASTER_BRIEF.md + session transcripts + CLAUDE.md. Never written from memory.*
 
@@ -12,9 +12,11 @@
 **Location:** Cape Town, South Africa
 **What we sell:** A customer acquisition system for service businesses — not websites. The website is the entry point. The full system includes: conversion-optimised website, Google Reviews growth automation, missed call text-back, AI chat widget, WhatsApp automation suite, and monthly reporting.
 **Model:** Find service businesses provably losing money online → quantify the loss → build demo proactively → show proof + math → close → retain with ongoing system
-**Status:** Website component operational (3 niches, locked components, QA automated). Reviews, automation, and chat components designed but not built (V2-V3). Rules 1-49 active. First prospect package written (Werner Joubert Dental).
-**System version:** V1 (manual triggering via Claude Code on Mac, two-terminal workflow)
-**Revenue target:** 5 demos/week → 1 client/week → R50K/month recurring in 5-6 months
+**Status:** V1 COMPLETE. V2 IN PROGRESS. First outreach SENT (Werner Joubert — awaiting response). Automated prospect pipeline built. 26 custom skills installed. Mobile terminal access working.
+**System version:** V1 COMPLETE → V2 in progress (automated pipeline, expanded niches)
+**Revenue target:** R10-15K/month within 90 days. 5 demos/week → 1 client/week → R50K/month in 5-6 months
+**Outreach team:** Tristan handles WhatsApp/email/LinkedIn/Instagram outreach. Max handles builds and strategy.
+**WhatsApp:** +27791613001
 **Full strategy:** See ~/agency-templates/7thsense-system/STRATEGY-V1.md
 
 ---
@@ -23,20 +25,24 @@
 
 | Metric | Score | Source |
 |--------|-------|--------|
-| System score | 9.4/10 | V1 complete — all core systems operational |
+| System score | 9.6/10 | V1 complete, pipeline automated, 26 custom skills |
+| Days completed | 4 | Day 1: Mar 16, Day 2: Mar 17, Day 3: Mar 18, Day 4: Mar 19 |
 | V1 status | COMPLETE | Locked components proven, Gemini working, 7 demos live |
-| GTM readiness | READY FOR OUTREACH | Werner Joubert package ready, qualify-prospect.sh working |
+| V2 status | IN PROGRESS | Automated pipeline, expanded scoring, niche expansion |
+| First outreach | SENT | Werner Joubert — Tristan sent, awaiting response |
+| Pipeline | AUTOMATED | prospect-pipeline.sh — one command, full scored CSV |
+| Mobile access | WORKING | Tailscale + Termius (Mac IP: 100.124.236.67) |
 | Dashboard | v5 live | dashboard-two-chi-28.vercel.app — Jarvis intelligence terminal |
-| ElevenLabs | Configured | Jarvis voice ready (ID: wDsJlOXPqcvIUKdLXjDs) |
-| System version | V1 COMPLETE — V2 begins with first paying client | MASTER_BRIEF.md §16 |
+| ElevenLabs | Configured ($5/mo) | Jarvis voice (ID: wDsJlOXPqcvIUKdLXjDs) |
+| Skills | 26 custom + 90+ supporting | See SKILLS INSTALLED section |
 
-**V1 is COMPLETE.** Gemini image generation working (gemini-2.5-flash-image). Locked components proven across 5 niches. QA automated. Prospect pre-qualification script operational. Werner Joubert demo built and outreach package ready.
+**V1 is COMPLETE.** V2 is in progress — automated prospect pipeline built, 25-point scoring, AI message generation, CSV output for Tristan.
 
 **Remaining gaps to 10/10:**
-- No analytics on demo sites (-0.25)
+- No analytics on demo sites (-0.15)
 - No Make.com automation wired yet (-0.1)
 - Invoice template not yet created (-0.1)
-- No prospect-tracker.md yet (-0.1)
+- Zoho email not set up yet (-0.05)
 
 ---
 
@@ -44,13 +50,14 @@
 
 | Client | Niche | URL | Status |
 |--------|-------|-----|--------|
-| Dr. Sonday Dentistry | Dental | drsonday.vercel.app | Live — undergoing final visual QA |
-| Team24 Insurance | Insurance Broker | team24insurance.vercel.app | Live — first potential client, awaiting payment |
+| Dr. Sonday Dentistry | Dental | drsonday.vercel.app | Live |
+| Werner Joubert Dental | Dental | werner-joubert.vercel.app | Live — first prospect, outreach SENT |
 | Miami Beach Laser & Aesthetics | Aesthetics | miami-beach-laser.vercel.app | Live — US demo |
 | The Lions' Den, Attorneys at Law | Law | lions-den-alpha.vercel.app | Live — US demo |
-| Werner Joubert Dental | Dental | werner-joubert.vercel.app | Live — V1 proof build, first real prospect demo |
 | Property deCoded | Real Estate | property-decoded.vercel.app | Live — friend demo |
-| 7thsense Dashboard | Internal | dashboard-two-chi-28.vercel.app | Live — Jarvis operations HUD |
+| 7thsense Agency Website | Agency | 7thsense-website.vercel.app | Live — public-facing site |
+| 7thsense Dashboard | Internal | dashboard-two-chi-28.vercel.app | Live — Jarvis HUD |
+| Objection Handler | Internal | objection-handler-rho.vercel.app | Live — Max + Tristan tool |
 
 *Old auto-generated aliases (dentist-pi-eight.vercel.app, team24-nine.vercel.app) still resolve but not used in client-facing comms.*
 
@@ -122,7 +129,7 @@
 ### Offer A — Risk Reversal (cold outreach, first client, proving model)
 **Name:** The New Patient System (dental) / The Consultation Engine (law) / The Booked-Out Practice Programme (aesthetics)
 **Pitch:** "I built your practice a site that's designed to make your phone ring more — have a look and tell me what you think."
-**Price:** R7,500. Pay nothing until you've seen the finished demo.
+**Price:** R5,000. Pay nothing until you've seen the finished demo.
 **Buyer risk:** ZERO
 
 ### Offer B — 90-Day Growth Guarantee (warm prospects who hesitate)
@@ -194,21 +201,46 @@
 - `7thsense-hormozi-offer` — $100M Offers framework applied to 7thsense
 - `7thsense-undeniable-offer` — zero-risk, results-based, mathematically impossible to refuse
 
+### Operations Skills (Day 3-4)
+- `7thsense-lead-enricher` — auto-find phone, email, WhatsApp, social for any prospect
+- `7thsense-debugger` — full-spectrum debug check on any 7thsense site
+- `7thsense-self-healing` — auto-detect and fix errors in sites
+- `7thsense-webapp-tester` — end-to-end functional testing
+- `7thsense-researcher` — deep research for prospects, niches, competitors
+- `7thsense-cost-reducer` — optimise Claude Code token usage
+- `7thsense-superpowers` — orchestrate multiple skills for end-to-end tasks
+
 ### Quality Skills
 - `ui-ux-pro-max` — international UX standards (read before font selection)
 - `7thsense-visual-design` — brand design critique and visual quality evaluation
 - `page-cro` — conversion pass before commit
 - `seo-technical` — SEO pass before commit
 
-### System Documents (new this session)
-- `~/agency-templates/7thsense-system/STRATEGY-V2-INNOVATIONS.md` — GBP playbook, automation stack, revised packages
-- `~/agency-templates/7thsense-system/SEO-TRANSITION-PROTOCOL.md` — domain migration, 301s, GSC change of address
-- `~/agency-templates/7thsense-system/DOMAIN-PLAYBOOK.md` — 8 domain scenarios, discovery checklist, client comms
-- `~/agency-templates/7thsense-system/DEPLOYMENT-PROCESS.md` — go-live decisions, 54-step checklist, client handoff template
-- `~/agency-templates/7thsense-system/scripts/qualify-prospect.sh` — automated prospect pre-qualification
-- `~/client-sites/dashboard/index.html` — Jarvis operations dashboard (HUD animation, pipeline, voice briefing)
+### System Scripts (~/agency-templates/7thsense-system/scripts/)
+- `prospect-pipeline.sh` — **MASTER** automated pipeline (Maps search → score → CSV)
+- `qualify-prospect.sh` — domain/technical pre-qualification (GREEN/AMBER/RED)
+- `enrich-lead.sh` — contact enrichment (phone, email, social, Google Places)
+- `enrich-batch.sh` — batch enrichment for lead lists
+- `detect-google-ads.sh` — Google Ads tag detection on websites
+- `detect-meta-ads.sh` — Facebook Pixel/Meta tag detection
+- `mine-negative-reviews.sh` — pain language mining from Google reviews
+- `check-instagram.sh` — Instagram presence detection
+- `check-hiring.sh` — Indeed.co.za job board monitoring
+- `check-domain-age.sh` — whois domain age and expiry
+- `check-social-activity.sh` — social media presence scan
+- `qa-pre-deploy.sh` — pre-deployment quality checks
+- `validate-niche-config.sh` — niche config validation
 
-### Total skills installed: 120+ (full marketing, SEO, GEO, design, engineering library)
+### System Documents
+- `~/agency-templates/7thsense-system/PROSPECTING-V2.md` — full council output, signal upgrade, scoring model
+- `~/agency-templates/7thsense-system/STRATEGY-V2-INNOVATIONS.md` — GBP playbook, automation stack
+- `~/agency-templates/7thsense-system/DEPLOYMENT-PROCESS.md` — 54-step go-live checklist
+- `~/agency-templates/7thsense-system/DOMAIN-PLAYBOOK.md` — 8 domain scenarios
+- `~/agency-templates/7thsense-system/SEO-TRANSITION-PROTOCOL.md` — domain migration
+- `~/agency-templates/7thsense-system/CURRENT-STATUS.md` — live system status
+- `~/agency-templates/tasks/lessons.md` — operational lessons learned
+
+### Total skills installed: 26 custom 7thsense + 90+ supporting (marketing, SEO, GEO, design, engineering)
 
 ---
 
@@ -311,10 +343,28 @@ These are the 15 rules most frequently violated or most damaging when violated:
 - 21st.dev Magic MCP — premium UI components
 - Firecrawl MCP — web scraping, brand extraction
 
+### Mobile Access
+- **Tailscale** — VPN mesh network, Mac IP: 100.124.236.67
+- **Termius** — SSH client on iPhone, full terminal access to Mac
+- Can run any script, deploy sites, manage pipeline from phone
+
 ### Machine
 - MacBook Air M4
-- Claude Code v2.1.76
+- Claude Code (latest)
 - Two terminal tabs: Tab 1 (Pipeline/Strategy), Tab 2 (Execution/Builds)
+
+### Monthly Costs
+| Item | Cost |
+|------|------|
+| Claude Max | $100/mo |
+| ElevenLabs Starter | $5/mo |
+| Gemini API | ~$0.15/site ($300 free until June 14 2026) |
+| Vercel | Free |
+| GitHub | Free |
+| Make.com | Free tier |
+| Tally.so | Free tier |
+| Tailscale | Free tier |
+| **Total now** | **~$105/mo** |
 
 ---
 
@@ -324,24 +374,12 @@ These are the 15 rules most frequently violated or most damaging when violated:
 
 | Package | Price | Key Deliverables |
 |---------|-------|------------------|
-| Starter | R7,500 | 1 premium single-page site, up to 8 sections, 1 round revisions |
-| Growth | R12,500 | Up to 12 sections, AI images, analytics, sitemap, 2 rounds revisions |
-| Full System | R18,500 | Multi-page option, Make.com automation, WhatsApp Business, 3 months analytics, 3 rounds revisions |
-| Monthly Retainer | R2,500/mo | 4 content changes, Lighthouse checks, uptime monitoring, monthly report, priority support |
+| Starter | R5,000 | Full website build, mobile-optimised, SEO-ready, live on your domain, contact form |
+| Growth | R9,000 | Everything in Starter + GBP optimisation, Google Reviews automation, monthly dashboard, GA4, speed optimisation, priority support |
+| Monthly Retainer | R2,500/mo | Monthly updates, uptime monitoring, monthly report, priority support, content changes |
 
 **Payment terms:** 50% deposit, 50% before go-live. EFT or payment link.
 **Add-ons:** Additional page R1,500, Blog R2,500, Google Ads setup R5,000, Logo R3,500
-
-### Monthly costs
-| Item | Cost |
-|------|------|
-| Claude Max | $100/mo |
-| Gemini API | ~$0.15/site ($300 free until June 14 2026) |
-| Vercel | Free |
-| GitHub | Free |
-| Make.com | Free tier |
-| Tally.so | Free tier |
-| **Total now** | **~$100/mo** |
 
 ---
 
@@ -389,47 +427,54 @@ These are the 15 rules most frequently violated or most damaging when violated:
 
 | Gap | Impact | When |
 |-----|--------|------|
-| Gemini image generation returning 404 | Cannot generate AI images — must use Firecrawl extraction only | Critical — fix before sending demos |
+| ~~Gemini image generation~~ | ~~FIXED~~ — gemini-2.5-flash-image working | ✅ DONE |
+| ~~Mobile access~~ | ~~FIXED~~ — Tailscale + Termius working | ✅ DONE |
+| ~~Dashboard~~ | ~~FIXED~~ — Jarvis v5 live | ✅ DONE |
 | No analytics on demo sites | Cannot prove prospects viewed demos | V2 |
 | No Make.com → Tally wiring | Form submissions not automated | V2 |
-| No visual QA step enforced | Risk of sending visually broken demo | Need VISUAL-PRE-SEND-CHECKLIST.md |
-| No prospect-tracker.md | Cannot track pipeline systematically | This week |
-| No build-history.md | Cannot track what was built and when | This week |
 | No invoice template | Cannot bill professionally | Before first payment |
+| Zoho email not set up | No professional email addresses | This week |
+| Ad detection relies on pixel proxies | Need real Ads Transparency/Ad Library integration | Prospecting upgrade session |
 | Railway cloud orchestration | Agents can't run while Mac is off | V3 (~4 weeks) |
-| Custom dashboard | No visual overview of business | V4 (~6 weeks) |
-| Voice briefing (Vapi.ai) | No morning audio summary | V4 |
 
 ---
 
-## NEXT PRIORITIES — V2 LAUNCH
+## OUTSTANDING TO-DO LIST
 
-*V1 is complete. These are the priorities for converting the system into revenue.*
+### Priority 1 — Makes Money
+1. Werner Joubert follow-up if no response by 20 March
+2. Run pipeline on aesthetics: `zsh prospect-pipeline.sh "aesthetics clinic" "Cape Town" --count 20`
+3. Dental & Orthodontic Clinic (577 reviews, no website) — investigate and build demo
+4. Build 2-3 more dental prospect demos from pipeline output
 
-### Immediate — This Week
-1. ~~Fix Gemini image generation~~ ✅ DONE (gemini-2.5-flash-image)
-2. ~~Prove locked components in fresh build~~ ✅ DONE (Werner Joubert)
-3. Visual QA on phone for Werner Joubert demo → then SEND outreach
-4. Set up payment collection (EFT with invoice template)
-5. Create prospect-tracker.md
-6. Build 2-3 more dental prospect demos (batch from opportunity scanner)
+### Priority 2 — Prospecting System Upgrade (dedicated session)
+5. Fix scoring model — businesses without detectable ad data should not be penalised
+6. Research APIs: SerpAPI, Apify, PhantomBuster, Apollo.io, Hunter.io
+7. Fix ad detection to use real sources (Ads Transparency, Ad Library) not just pixel proxies
+8. Build smarter scoring fallback when ad data unavailable
+9. Identify free vs paid tools for lead intelligence
 
-### V2 — First Revenue
-7. Werner Joubert outreach sent → follow-up sequence running
-8. Team24 payment confirmed → go-live on custom domain
-9. First paying client confirmed
-10. Make.com wired to Tally form submissions
-11. GA4 on all production sites
-12. WiserReview or Make.com + WATI reviews automation for first retainer client
+### Priority 3 — System
+10. Zoho email setup: hello@7thsense.co.za and max@7thsense.co.za
+11. Agency name decision — register domain once decided
+12. Boris Cherny CLAUDE.md principles merge
+13. Dashboard Ideas tab
+14. System tightening — audit skills, under 80 target
+15. Score-prospect.sh upgrade to full 25-point model
+16. Invoice template creation
 
-### V3 — Scale
-13. 5 demos/week velocity achieved
-14. Tailscale + Termius remote access operational
-15. Railway cloud orchestration (agents run while Mac is off)
-16. GoHighLevel evaluation at 5+ clients
+### Priority 4 — Innovation Lab (separate chat)
+17. YouTube transcripts for master council upgrade ($100M Offers/Leads, Greg Isenberg, Dan Martell)
+18. AI ads innovation session
+19. Chatly investigation for pitch decks
+20. Manus brief — find problems worth solving
+21. OpenClaw investigation
 
-### Reminder
+### Reminders
 - Gemini API free credits expire June 14, 2026. Evaluate paid tier by mid-April.
+- Music chapter closed — no follow-ups needed
+- All future primary build sessions in AI Web Agency Claude Project
+- Use generate-context.sh to create handover prompt when switching chats
 
 ---
 
@@ -438,3 +483,7 @@ These are the 15 rules most frequently violated or most damaging when violated:
 **2026-03-16:** Full build session day 1. Accomplished: locked components skill created (15 components defined), three demos built (Dr. Sonday dental, Team24 insurance), regression audit completed (8 regressions identified and rules created to prevent), Rules 1-42 established across sessions, strategic upgrade to Josh framework (outcome-framed offers, signal detection playbook, undeniable offer structures), 6 new strategic skills installed (opportunity-scanner, signal-detection, roi-calculator, offer-architect, hormozi-offer, undeniable-offer), niche research agent created, council restructured from 9 to 7 roles, QA script expanded to 294+ lines with 7 categories + 6 locked component checks, MASTER_BRIEF updated to v4, all outreach documents written, PACKAGES.md with full pricing, scored system at 7.5/10.
 
 **2026-03-17 (Day 2 — full session):** BRAIN.md created — comprehensive cross-agent memory layer. Rules 43-50 added across session. Skills audit: 23 redundant skills removed. Visual polish pass on all 3 existing sites (peach palette Miami Beach, gradient balance, bible verse Lions Den, mobile hero niche colours). STRATEGY-V1.md written (5,155 words — full business model, client profile, pricing logic, growth model). First Josh-level prospect package written (Werner Joubert Dental, Bellville). Google Maps API key configured and Place IDs auto-retrieved for all sites. Werner Joubert Dental proof build completed — first fully system-built demo. Real logo downloaded, real doctor photo, real Place ID auto-retrieved (ChIJV9t8n75QzB0R-3svvo5aMUI), 6 real reviews, 8 Gemini-generated service images, hero image generated. QA passed 0 errors. Tally placeholder form ID corrected. Site live at werner-joubert.vercel.app. Gemini image generation confirmed working (gemini-2.5-flash-image model) — resolves long-standing 404 issue. Tools confirmed: WiserReview ($9-19/mo) recommended for reviews automation, GoHighLevel ($97/mo) as all-in-one at 5+ clients. Strategic Intelligence skill created (342 lines, 8 sections — Josh framework orchestration, 25-point scoring matrix, offer selection logic, quality gates). Prospect pre-qualification system built (qualify-prospect.sh — GREEN/AMBER/RED routing, domain intelligence, GBP scoring). Werner Joubert qualified GREEN — ready for outreach. Property deCoded real estate demo built (property-decoded.vercel.app — real logo, 6 agent photos, 4.6 stars, 95 reviews). 7thsense Operations Jarvis Dashboard v3 building — HUD animation, voice briefing, 8-stage pipeline, arc reactor. Innovation Lab Claude Project recommended. Tailscale + Termius remote access solution identified. Google Reviews URL fix across all sites (Rule 22 hardened). Google Maps embed added to all sites (Rule 50, Locked Component 16). DEPLOYMENT-PROCESS.md written (54-step go-live checklist, client handoff template). DOMAIN-PLAYBOOK.md written (8 scenarios, 731 lines). STRATEGY-V2-INNOVATIONS.md written (GBP playbook, automation stack, revised 3-tier packages). SEO-TRANSITION-PROTOCOL.md written (domain migration, 301 redirects, 30/60/90 monitoring). V1 declared COMPLETE. System score: 9.4/10. Jarvis Dashboard v5 built and deployed — ElevenLabs voice integrated (ID: wDsJlOXPqcvIUKdLXjDs), DM Mono/DM Sans fonts, intelligence terminal aesthetic, 5 tabs, mobile-first. Font size fix applied. Innovation lab directory created. Tomorrow to-do list finalised: Werner Joubert outreach, Tailscale/Termius, ElevenLabs testing, AI ads innovation session, validation deck for agencies.
+
+**2026-03-18 (Day 3):** Jarvis Dashboard v5 deployed (dashboard-two-chi-28.vercel.app). ElevenLabs Jarvis voice integrated (ID: wDsJlOXPqcvIUKdLXjDs, Starter plan $5/mo). Agency website built and deployed (7thsense-website.vercel.app) — dark navy + teal brand, DM Sans/DM Mono, hero/problem/how-it-works/pricing/contact sections. Pricing updated: Starter R5,000, Growth R9,000, Retainer R2,500/mo. Demo section later removed (no client permission to show). Objection handler built and deployed (objection-handler-rho.vercel.app) — Anthropic API integration, niche/tone pills, 8 quick-load objections, WhatsApp-style reply bubble, session history. 20 dental leads scraped, scored, enriched and sent to Tristan in CSV. Werner Joubert outreach sent by Tristan — first ever agency outreach. Tailscale + Termius set up — full mobile terminal access working (Mac IP: 100.124.236.67). Context generator built (generate-context.sh — paste into new chat for continuity). lessons.md and CURRENT-STATUS.md created. Council session: 90-day revenue plan, honest assessment, skill upgrade recommendations. Tristan briefing document written and sent. Lead enrichment system built: enrich-lead.sh (single lead), enrich-batch.sh (batch with 10 dental leads pre-loaded), 7thsense-lead-enricher skill created. Werner Joubert enriched: phone +27219143884, email reception@joubertdental.co.za, Facebook found. WhatsApp number confirmed for agency: +27791613001.
+
+**2026-03-19 (Day 4):** 26 custom 7thsense skills installed (6 new: debugger, self-healing, webapp-tester, researcher, cost-reducer, superpowers). Prospecting V2 council session completed — PROSPECTING-V2.md saved with full strategic analysis: top 10 new signals ranked by predictive value, top 5 new prospecting channels, updated 25-point scoring model with Budget Signal dimension, niche expansion map (aesthetics #1 at 23/25, physio #2, vet #3, law #4, optometry #5), automation blueprint, Hormozi lens applied, 3 quick wins identified. Automated prospect pipeline built: prospect-pipeline.sh master script — one command searches Google Maps, runs 7 signal detection sub-scripts, scores on 25-point matrix, outputs MD report + CSV for Tristan. 8 signal detection scripts built: detect-google-ads.sh (checks site source for AW- conversion tags, remarketing, GTM), detect-meta-ads.sh (Facebook Pixel, Meta SDK detection), mine-negative-reviews.sh (Google Places API + pain keyword filter), check-instagram.sh (profile detection, bio website check), check-hiring.sh (Indeed.co.za scraping), check-domain-age.sh (whois parsing, expiry urgency), check-social-activity.sh (Facebook/Instagram/LinkedIn/Twitter/YouTube/TikTok presence scan). Pipeline v2 upgraded with: Place Details API 2-step lookup, 4-step website verification chain (master CSV → API → domain patterns → curl HEAD), confidence scoring (HIGH/MEDIUM/LOW), Hellopeter complaint detection, pain language mining with SA-specific phrases, master-leads.csv as single source of truth, 5-dimension scoring (D1 Website Quality, D2 Visibility Gap, D3 Budget Signals, D4 Pain Signals, D5 Urgency Signals), routing at 20-25 CRITICAL, 15-19 HIGH, 10-14 MEDIUM, below 10 PASS. Pipeline tested on "dentist Bellville Cape Town" — found 5 businesses, 4 with NO website (critical opportunity). Key finding: Dental & Orthodontic Clinic has 577 reviews, 4.8 stars, ZERO web presence. Agency website hero updated: "Right now, someone searched for you, saw your site, and left." Objection handler redesigned to Linear-inspired light theme (Figtree + Syne fonts). Data accuracy failure identified and fixed: multi-source verification prevents false "no website" readings. Boris Cherny CLAUDE.md principles identified — integration pending. Prospecting system upgrade session added to priority list for dedicated iteration on scoring model, API integrations, signal detection.
