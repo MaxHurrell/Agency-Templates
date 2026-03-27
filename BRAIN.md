@@ -1,5 +1,5 @@
 # 7thsense BRAIN.md
-*Last updated: March 19, 2026 (Day 4)*
+*Last updated: March 27, 2026 (Day 4 final)*
 *Read this before anything else. Every agent reads this. Update at the end of every session.*
 *Source of truth: MASTER_BRIEF.md + session transcripts + CLAUDE.md. Never written from memory.*
 
@@ -12,7 +12,7 @@
 **Location:** Cape Town, South Africa
 **What we sell:** A customer acquisition system for service businesses — not websites. The website is the entry point. The full system includes: conversion-optimised website, Google Reviews growth automation, missed call text-back, AI chat widget, WhatsApp automation suite, and monthly reporting.
 **Model:** Find service businesses provably losing money online → quantify the loss → build demo proactively → show proof + math → close → retain with ongoing system
-**Status:** V1 COMPLETE. V2 IN PROGRESS. First outreach SENT (Werner Joubert — awaiting response). Automated prospect pipeline built. 26 custom skills installed. Mobile terminal access working.
+**Status:** V1 COMPLETE. V2 IN PROGRESS. First outreach SENT (Werner Joubert — awaiting response). Automated prospect pipeline built. 134 skills installed total. Mobile terminal access working. Accounting niche proven (Hadley-Grave). Plumbing niche proven (Solar Plumbers, Baloo).
 **System version:** V1 COMPLETE → V2 in progress (automated pipeline, expanded niches)
 **Revenue target:** R10-15K/month within 90 days. 5 demos/week → 1 client/week → R50K/month in 5-6 months
 **Outreach team:** Tristan handles WhatsApp/email/LinkedIn/Instagram outreach. Max handles builds and strategy.
@@ -25,18 +25,18 @@
 
 | Metric | Score | Source |
 |--------|-------|--------|
-| System score | 9.6/10 | V1 complete, pipeline automated, 26 custom skills |
-| Days completed | 4 | Day 1: Mar 16, Day 2: Mar 17, Day 3: Mar 18, Day 4: Mar 19 |
-| V1 status | COMPLETE | Locked components proven, Gemini working, 8 client demos + 2 internal live |
+| System score | 9.6/10 | V1 complete, pipeline automated, 134 skills total |
+| Days completed | 4 | Day 1: Mar 16, Day 2: Mar 17, Day 3: Mar 18, Day 4: Mar 19-27 |
+| V1 status | COMPLETE | Locked components proven, Gemini working, 11 client demos + 2 internal live |
 | V2 status | IN PROGRESS | Automated pipeline, expanded scoring, niche expansion |
 | First outreach | SENT | Werner Joubert — Tristan sent, awaiting response |
 | Pipeline | AUTOMATED | prospect-pipeline.sh — one command, full scored CSV |
 | Mobile access | WORKING | Tailscale + Termius (Mac IP: 100.124.236.67) |
 | Dashboard | v5 live | dashboard-two-chi-28.vercel.app — Jarvis intelligence terminal |
 | ElevenLabs | Configured ($5/mo) | Jarvis voice (ID: wDsJlOXPqcvIUKdLXjDs) |
-| Skills | 26 custom + 90+ supporting | See SKILLS INSTALLED section |
+| Skills | 134 total (26 custom 7thsense + 108 supporting) | See SKILLS INSTALLED section |
 
-**V1 is COMPLETE.** V2 is in progress — automated prospect pipeline built, 25-point scoring, AI message generation, CSV output for Tristan.
+**V1 is COMPLETE.** V2 is in progress — automated prospect pipeline built, 25-point scoring, AI message generation, CSV output for Tristan. Token optimisation: fast build profile saving 40% on repeat niche builds.
 
 **Remaining gaps to 10/10:**
 - No analytics on demo sites (-0.15)
@@ -60,6 +60,7 @@
 | Objection Handler | Internal | objection-handler-rho.vercel.app | Live — Max + Tristan tool |
 | Solar Plumbers 4 U | Plumbing | solar-plumbers-4u.vercel.app | Live — no-website pipeline test (GBP data only) |
 | Baloo Plumbing | Plumbing | baloo-plumbing.vercel.app | Live — 18yr Cape Town plumber, commercial + domestic |
+| Hadley-Grave Accounting | Accounting | hadley-grave-accounting.vercel.app | Live — boutique CA firm, yacht crew tax specialist, Calendly + WhatsApp |
 
 *Old auto-generated aliases (dentist-pi-eight.vercel.app, team24-nine.vercel.app) still resolve but not used in client-facing comms.*
 
@@ -69,7 +70,7 @@
 
 1. **Outcomes not deliverables.** We sell "your phone ringing more" — not "a website." (COUNCIL.md positioning statement)
 2. **Demo-first flow.** Build the demo before any contact. Show, don't pitch. (MASTER_BRIEF.md §1)
-3. **First market:** Cape Town service businesses (dental, aesthetics, law, plumbing proven). Miami and law as expansion. (SIGNAL-DETECTION.md)
+3. **First market:** Cape Town service businesses (dental, aesthetics, law, plumbing, accounting proven). Miami and law as expansion. (SIGNAL-DETECTION.md)
 4. **V1 definition:** Manual Claude Code on Mac, two-terminal workflow. No cloud orchestration yet. (MASTER_BRIEF.md §16)
 5. **V2 trigger:** First paying client confirmed → triggers Make.com wiring, proof build, new niche outreach.
 6. **Quality standard:** Every site must match or exceed padentalimplants.com. (CLAUDE.md identity section)
@@ -191,6 +192,7 @@
 - `7thsense-niche-dental` — dental practices, dentists, orthodontists
 - `7thsense-niche-law` — law firms, attorneys, legal practices
 - `7thsense-niche-aesthetics` — medspas, aesthetics clinics, beauty clinics
+- `7thsense-niche-accounting` — accounting firms, tax practitioners, yacht crew tax specialists
 - `7thsense-niche-research-agent` — auto-researches new niches via web search + Firecrawl
 
 ### Strategic Skills
@@ -242,13 +244,13 @@
 - `~/agency-templates/7thsense-system/CURRENT-STATUS.md` — live system status
 - `~/agency-templates/tasks/lessons.md` — operational lessons learned
 
-### Total skills installed: 26 custom 7thsense + 90+ supporting (marketing, SEO, GEO, design, engineering)
+### Total skills installed: 26 custom 7thsense + 108 supporting = 134 total (marketing, SEO, GEO, design, engineering)
 
 ---
 
 ## RULES — TOP 15 MOST CRITICAL
 
-*Source: CLAUDE.md Rules 1-42, REGRESSION-AUDIT.md*
+*Source: CLAUDE.md Rules 1-53, REGRESSION-AUDIT.md*
 
 These are the 15 rules most frequently violated or most damaging when violated:
 
@@ -443,34 +445,29 @@ These are the 15 rules most frequently violated or most damaging when violated:
 
 ## OUTSTANDING TO-DO LIST
 
-### Priority 1 — Makes Money
-1. Werner Joubert follow-up if no response by 20 March
-2. Run pipeline on aesthetics: `zsh prospect-pipeline.sh "aesthetics clinic" "Cape Town" --count 20`
-3. Dental & Orthodontic Clinic (577 reviews, no website) — investigate and build demo
-4. Build 2-3 more dental prospect demos from pipeline output
+### Priority 1 — Makes Money (Tomorrow)
+1. Werner Joubert — follow up if no response
+2. Hadley-Grave Accounting — review demo, send to Jamie
+3. Dental & Orthodontic Clinic (577 reviews, no website) — build demo
+4. Run prospect-pipeline on aesthetics niche
+5. Test Instagram pipeline with Apify
 
-### Priority 2 — Prospecting System Upgrade (dedicated session)
-5. Fix scoring model — businesses without detectable ad data should not be penalised
-6. Research APIs: SerpAPI, Apify, PhantomBuster, Apollo.io, Hunter.io
-7. Fix ad detection to use real sources (Ads Transparency, Ad Library) not just pixel proxies
-8. Build smarter scoring fallback when ad data unavailable
-9. Identify free vs paid tools for lead intelligence
+### Priority 2 — System
+6. Zoho email setup: hello@7thsense.co.za and max@7thsense.co.za
+7. Agency name + domain decision
+8. Upload updated BRAIN.md to AI Web Agency project
 
-### Priority 3 — System
-10. Zoho email setup: hello@7thsense.co.za and max@7thsense.co.za
-11. Agency name decision — register domain once decided
-12. Boris Cherny CLAUDE.md principles merge
-13. Dashboard Ideas tab
-14. System tightening — audit skills, under 80 target
-15. Score-prospect.sh upgrade to full 25-point model
-16. Invoice template creation
+### Priority 3 — Prospecting System Upgrade (dedicated session)
+9. Fix scoring model — businesses without detectable ad data should not be penalised
+10. Research APIs: SerpAPI, Apify, PhantomBuster, Apollo.io, Hunter.io
+11. Fix ad detection to use real sources (Ads Transparency, Ad Library) not just pixel proxies
+12. Build smarter scoring fallback when ad data unavailable
 
-### Priority 4 — Innovation Lab (separate chat)
-17. YouTube transcripts for master council upgrade ($100M Offers/Leads, Greg Isenberg, Dan Martell)
-18. AI ads innovation session
-19. Chatly investigation for pitch decks
-20. Manus brief — find problems worth solving
-21. OpenClaw investigation
+### Priority 4 — Innovation Lab (separate chats — NOT in 7thsense system)
+- PageClone landing page generator — see SEPARATE PROJECTS section below
+- Google Ads AI business — see SEPARATE PROJECTS section below
+- YouTube transcripts for master council upgrade
+- Chatly investigation for pitch decks
 
 ### Reminders
 - Gemini API free credits expire June 14, 2026. Evaluate paid tier by mid-April.
@@ -490,4 +487,25 @@ These are the 15 rules most frequently violated or most damaging when violated:
 
 **2026-03-19 (Day 4):** 26 custom 7thsense skills installed (6 new: debugger, self-healing, webapp-tester, researcher, cost-reducer, superpowers). Prospecting V2 council session completed — PROSPECTING-V2.md saved with full strategic analysis: top 10 new signals ranked by predictive value, top 5 new prospecting channels, updated 25-point scoring model with Budget Signal dimension, niche expansion map (aesthetics #1 at 23/25, physio #2, vet #3, law #4, optometry #5), automation blueprint, Hormozi lens applied, 3 quick wins identified. Automated prospect pipeline built: prospect-pipeline.sh master script — one command searches Google Maps, runs 7 signal detection sub-scripts, scores on 25-point matrix, outputs MD report + CSV for Tristan. 8 signal detection scripts built: detect-google-ads.sh (checks site source for AW- conversion tags, remarketing, GTM), detect-meta-ads.sh (Facebook Pixel, Meta SDK detection), mine-negative-reviews.sh (Google Places API + pain keyword filter), check-instagram.sh (profile detection, bio website check), check-hiring.sh (Indeed.co.za scraping), check-domain-age.sh (whois parsing, expiry urgency), check-social-activity.sh (Facebook/Instagram/LinkedIn/Twitter/YouTube/TikTok presence scan). Pipeline v2 upgraded with: Place Details API 2-step lookup, 4-step website verification chain (master CSV → API → domain patterns → curl HEAD), confidence scoring (HIGH/MEDIUM/LOW), Hellopeter complaint detection, pain language mining with SA-specific phrases, master-leads.csv as single source of truth, 5-dimension scoring (D1 Website Quality, D2 Visibility Gap, D3 Budget Signals, D4 Pain Signals, D5 Urgency Signals), routing at 20-25 CRITICAL, 15-19 HIGH, 10-14 MEDIUM, below 10 PASS. Pipeline tested on "dentist Bellville Cape Town" — found 5 businesses, 4 with NO website (critical opportunity). Key finding: Dental & Orthodontic Clinic has 577 reviews, 4.8 stars, ZERO web presence. Agency website hero updated: "Right now, someone searched for you, saw your site, and left." Objection handler redesigned to Linear-inspired light theme (Figtree + Syne fonts). Data accuracy failure identified and fixed: multi-source verification prevents false "no website" readings. Boris Cherny CLAUDE.md principles identified — integration pending. Prospecting system upgrade session added to priority list for dedicated iteration on scoring model, API integrations, signal detection.
 
-**2026-03-20 (Day 4 continued):** Solar Plumbers 4 U demo built (solar-plumbers-4u.vercel.app) — first no-website pipeline test using only Google Business Profile data. Place ID ChIJ6Xk1PiZdzB0R_3gMqGdBJiM, rating 2.9/5 from 35 reviews shown honestly, 1 real positive review (Debbie Tasker), 9 Gemini Imagen 4 images generated, navy #1A2B4A + orange #F97316 palette. Landline only (021 697 0738) — no WhatsApp per Rule 3. 8 services, See More toggle. Baloo Plumbing demo built (baloo-plumbing.vercel.app) — 18-year Cape Town plumber, founder Frans van Sittert (bicycle-to-business origin story). Place ID ChIJoUNlnFpnzB0Rgu-IIL0OIe4, rating 3.9/5, 18 reviews. 3 real Google reviews used (Nicole Koprivec, James Hoskins, Johan Nel — Estate Manager at Pam Golding). 10 services with See More, commercial + domestic, 2nd largest jet machine in CT. WhatsApp to Frans emergency mobile (083 230 2866). 11 Gemini images. Instagram-to-website pipeline built: scrape-instagram.sh (Apify profile + posts scraper, downloads images, extracts bio/services/contact from captions + hashtags) and build-from-instagram.sh (orchestrates Instagram scrape + Google Places API + generates build brief with reviews). Apify integration planned — free tier ($5/mo) sufficient for our volume. Data Sources Priority Order added to locked-components skill (Website > Google Places > Instagram > Facebook > Manual). Full system verification passed: all 8 client demos + 2 internal tools returning 200, all 16 scripts intact, 134 skills present, qualify-prospect.sh tested and working. Plumbing added as 4th proven niche (dental, aesthetics, law, plumbing).
+**2026-03-20 (Day 4 continued):** Solar Plumbers 4 U demo built (solar-plumbers-4u.vercel.app) — first no-website pipeline test using only Google Business Profile data. Place ID ChIJ6Xk1PiZdzB0R_3gMqGdBJiM, rating 2.9/5 from 35 reviews shown honestly, 1 real positive review (Debbie Tasker), 9 Gemini Imagen 4 images generated, navy #1A2B4A + orange #F97316 palette. Landline only (021 697 0738) — no WhatsApp per Rule 3. 8 services, See More toggle. Baloo Plumbing demo built (baloo-plumbing.vercel.app) — 18-year Cape Town plumber, founder Frans van Sittert (bicycle-to-business origin story). Place ID ChIJoUNlnFpnzB0Rgu-IIL0OIe4, rating 3.9/5, 18 reviews. 3 real Google reviews used (Nicole Koprivec, James Hoskins, Johan Nel — Estate Manager at Pam Golding). 10 services with See More, commercial + domestic, 2nd largest jet machine in CT. WhatsApp to Frans emergency mobile (083 230 2866). 11 Gemini images. Hadley-Grave Accounting demo built (hadley-grave-accounting.vercel.app) — boutique CA firm, yacht crew/seafarer tax specialist, Calendly booking integration + WhatsApp. Accounting added as 5th proven niche. Instagram-to-website pipeline built: scrape-instagram.sh (Apify profile + posts scraper, downloads images, extracts bio/services/contact from captions + hashtags) and build-from-instagram.sh (orchestrates Instagram scrape + Google Places API + generates build brief with reviews). Apify integration planned — free tier ($5/mo) sufficient for our volume. Data Sources Priority Order added to locked-components skill (Website > Google Places > Instagram > Facebook > Manual). Rules 51-53 added: fast build niche template tracking (Rule 51), mobile quality requirements (Rule 52), reference website usage (Rule 53). Token optimisation achieved: fast build profile saves 40% on repeat niche builds. Full system verification passed: all 11 client demos + 2 internal tools returning 200, all 16 scripts intact, 134 skills present, qualify-prospect.sh tested and working. Plumbing added as 4th proven niche, accounting as 5th (dental, aesthetics, law, plumbing, accounting).
+
+---
+
+## SEPARATE PROJECTS — NOT PART OF 7THSENSE DEMO BUILDER
+
+**This BRAIN.md covers ONLY the 7thsense demo site building business. The following are separate products with separate repos, separate BRAIN.md files, and separate Claude Projects. They do NOT share logic with the 7thsense demo builder.**
+
+### PageClone (Landing Page Generator)
+- **Repo:** `~/pageclone/` (separate repo, not yet created)
+- **Own BRAIN.md:** Will live at `~/pageclone/BRAIN.md`
+- **Own Claude Project:** Separate from AI Web Agency
+- **Own Vercel prefix:** `pc-` (e.g., `pc-painfree-smith-dental`)
+- **Council output:** `~/agency-templates/innovation-lab/opportunities/landing-page-generator.md`
+- **Status:** Concept validated by full council. MVP ready to build (3-4 hours). First target: Pain Free Dental Marketing.
+- **What it is:** B2B SaaS — URL → scrape → template → Google Sheet populate → deploy. For dental marketing agencies.
+- **Rule:** Never modify, reference, or share code with the 7thsense demo builder system.
+
+### Google Ads AI Business
+- **Status:** Idea stage — separate innovation chat
+- **Own BRAIN.md:** Will be created once validated
+- **Rule:** Does not affect 7thsense demo builder system in any way.
